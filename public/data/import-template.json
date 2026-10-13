@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "id": "jikn-empty-2026-10-12",
+    "sources": [
+      "snapshot.json — template kosong; dataset simpul terverifikasi belum diberikan"
+    ],
+    "capturedAt": "2026-10-12T19:53:14+07:00",
+    "referenceDate": "2026-10-12",
+    "coverage": "partial",
+    "datasetKind": "empty",
+    "metricDefinitions": {},
+    "verificationNotes": [
+      "Data simpul belum dimuat. Tidak ada angka atau identitas instansi dari screenshot yang dipakai sebagai fakta.",
+      "capturedAt adalah waktu pembuatan template, bukan pengambilan data JIKN."
+    ],
+    "nationalTotal": null
+  },
+  "instansi": [],
+  "statistics": []
+}

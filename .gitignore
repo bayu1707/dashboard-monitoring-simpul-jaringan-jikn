@@ -1,0 +1,36 @@
+node_modules/
+dist/
+# Konfigurasi lokal dan rahasia; hanya template publik yang disertakan.
+.env*
+!.env.example
+.npmrc
+.netrc
+.git-credentials
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Hasil pemeriksaan, cache, dan artefak lokal.
+tmp/
+playwright-report/
+test-results/
+coverage/
+.vite/
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+
+# Referensi desain milik pengguna tetap di laptop, tidak diperlukan saat clone.
+/A_Spesifikasi_UI_UX_JIKN.docx
+/B_Wireframe_JIKN.pdf
+/C_Prompt_Codex_JIKN.md
+/Gambar ChatGPT*.png
+
+# Berkas impor mentah perlu ditinjau izin dan sensitivitasnya sebelum dibagikan.
+/public/data/raw/*
+!/public/data/raw/README.md
+*.sql
+*.sqlite
+*.sqlite3

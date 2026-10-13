@@ -1,0 +1,492 @@
+{
+  "metadata": {
+    "id": "demo-synthetic-2026-10-12",
+    "sources": [
+      "public/demo/snapshot.json — fixture sintetis lokal, bukan data ANRI/JIKN"
+    ],
+    "capturedAt": "2026-10-12T19:53:14+07:00",
+    "referenceDate": "2026-10-12",
+    "coverage": "full",
+    "datasetKind": "demo",
+    "metricDefinitions": {
+      "jumlahArsip": "Record arsip unik sintetis dalam dataset demo pada tanggal acuan",
+      "penciptaArsip": "Entitas pencipta unik sintetis yang terkait dengan record demo",
+      "kopiDigital": "Objek kopi digital sintetis; bukan jumlah record arsip yang memiliki file",
+      "trenInput": "Tambahan record sintetis berdasarkan tahun waktu input, bukan tahun penciptaan",
+      "distribusiArsip": "Record sintetis per kategori demo termasuk kategori belum diklasifikasikan"
+    },
+    "verificationNotes": [
+      "DATA DEMO: semua nama instansi, kode, status, angka, tahun, kontak, dan koordinat instansi sengaja sintetis.",
+      "Seluruh populasi sintetis berisi tujuh instansi, sehingga cakupan full hanya berlaku untuk dunia demo.",
+      "Total 330 record berasal dari spesifikasi fixture lengkap; nilai instansi C sengaja disembunyikan/null untuk menguji profil parsial.",
+      "Wilayah menggunakan ID dan nama sumber BIG; posisi instansi demo tidak menyatakan lokasi instansi nyata.",
+      "capturedAt adalah waktu pembuatan fixture, bukan pengambilan data JIKN."
+    ],
+    "nationalTotal": {
+      "value": 330,
+      "definition": "Record arsip unik sintetis dalam dataset demo pada tanggal acuan",
+      "scope": "nasional",
+      "snapshotId": "demo-synthetic-2026-10-12",
+      "referenceDate": "2026-10-12"
+    }
+  },
+  "instansi": [
+    {
+      "id": "demo-a",
+      "name": "Instansi Demo A",
+      "kode": "DEMO-A",
+      "jenisId": "demo-pemerintah",
+      "provinceId": "36",
+      "kabKotaId": "36.73",
+      "provinceName": "Banten",
+      "kabKotaName": "Kota Serang",
+      "email": "demo-a@example.test",
+      "phone": null,
+      "joinedYear": 2020,
+      "status": "Status demo aktif",
+      "logoUrl": null,
+      "coordinates": [
+        -6.12,
+        106.15
+      ],
+      "sourceUpdatedAt": "2026-10-11",
+      "source": "public/demo/snapshot.json (sintetis)"
+    },
+    {
+      "id": "demo-b",
+      "name": "Instansi Demo B",
+      "kode": "DEMO-B",
+      "jenisId": "demo-pendidikan",
+      "provinceId": "36",
+      "kabKotaId": "36.73",
+      "provinceName": "Banten",
+      "kabKotaName": "Kota Serang",
+      "email": null,
+      "phone": null,
+      "joinedYear": null,
+      "status": null,
+      "logoUrl": null,
+      "coordinates": [
+        -6.12,
+        106.15
+      ],
+      "sourceUpdatedAt": null,
+      "source": "public/demo/snapshot.json (sintetis)"
+    },
+    {
+      "id": "demo-c",
+      "name": "Instansi Demo C",
+      "kode": null,
+      "jenisId": "demo-lainnya",
+      "provinceId": "36",
+      "kabKotaId": "36.73",
+      "provinceName": "Banten",
+      "kabKotaName": "Kota Serang",
+      "email": null,
+      "phone": null,
+      "joinedYear": null,
+      "status": null,
+      "logoUrl": null,
+      "coordinates": null,
+      "sourceUpdatedAt": null,
+      "source": "public/demo/snapshot.json (sintetis)"
+    },
+    {
+      "id": "demo-d",
+      "name": "Instansi Demo D",
+      "kode": "DEMO-D",
+      "jenisId": "demo-pemerintah",
+      "provinceId": "36",
+      "kabKotaId": "36.73",
+      "provinceName": "Banten",
+      "kabKotaName": "Kota Serang",
+      "email": null,
+      "phone": null,
+      "joinedYear": 2022,
+      "status": null,
+      "logoUrl": "/demo/logo-demo-tidak-tersedia.svg",
+      "coordinates": [
+        -6.125,
+        106.157
+      ],
+      "sourceUpdatedAt": null,
+      "source": "public/demo/snapshot.json (sintetis)"
+    },
+    {
+      "id": "demo-e",
+      "name": "Instansi Demo E",
+      "kode": "DEMO-E",
+      "jenisId": "demo-pendidikan",
+      "provinceId": "36",
+      "kabKotaId": "36.73",
+      "provinceName": "Banten",
+      "kabKotaName": "Kota Serang",
+      "email": null,
+      "phone": null,
+      "joinedYear": 2022,
+      "status": null,
+      "logoUrl": null,
+      "coordinates": [
+        -6.13,
+        106.15
+      ],
+      "sourceUpdatedAt": null,
+      "source": "public/demo/snapshot.json (sintetis)"
+    },
+    {
+      "id": "demo-f",
+      "name": "Instansi Demo F",
+      "kode": "DEMO-F",
+      "jenisId": "demo-lainnya",
+      "provinceId": "36",
+      "kabKotaId": "36.73",
+      "provinceName": "Banten",
+      "kabKotaName": "Kota Serang",
+      "email": null,
+      "phone": null,
+      "joinedYear": 2022,
+      "status": null,
+      "logoUrl": null,
+      "coordinates": [
+        -6.117,
+        106.143
+      ],
+      "sourceUpdatedAt": null,
+      "source": "public/demo/snapshot.json (sintetis)"
+    },
+    {
+      "id": "demo-g",
+      "name": "Instansi Demo G",
+      "kode": "DEMO-G",
+      "jenisId": "demo-pemerintah",
+      "provinceId": "36",
+      "kabKotaId": "36.73",
+      "provinceName": "Banten",
+      "kabKotaName": "Kota Serang",
+      "email": null,
+      "phone": null,
+      "joinedYear": 2022,
+      "status": null,
+      "logoUrl": null,
+      "coordinates": [
+        -6.128,
+        106.141
+      ],
+      "sourceUpdatedAt": null,
+      "source": "public/demo/snapshot.json (sintetis)"
+    }
+  ],
+  "statistics": [
+    {
+      "instansiId": "demo-a",
+      "statistik": {
+        "jumlahArsip": {
+          "value": 120,
+          "definition": "Record arsip unik sintetis dalam dataset demo pada tanggal acuan",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "penciptaArsip": {
+          "value": 7,
+          "definition": "Entitas pencipta unik sintetis yang terkait dengan record demo",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "kopiDigital": {
+          "value": 160,
+          "definition": "Objek kopi digital sintetis; bukan jumlah record arsip yang memiliki file",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        }
+      },
+      "trenInput": [
+        {
+          "year": 2021,
+          "count": 8
+        },
+        {
+          "year": 2022,
+          "count": 15
+        },
+        {
+          "year": 2023,
+          "count": null
+        },
+        {
+          "year": 2024,
+          "count": 22
+        },
+        {
+          "year": 2025,
+          "count": 30
+        },
+        {
+          "year": 2026,
+          "count": 45
+        }
+      ],
+      "distribusiArsip": [
+        {
+          "categoryId": "demo-teks",
+          "label": "Teks demo",
+          "count": 60
+        },
+        {
+          "categoryId": "demo-foto",
+          "label": "Foto demo",
+          "count": 30
+        },
+        {
+          "categoryId": "demo-belum",
+          "label": "Belum diklasifikasikan",
+          "count": 30
+        }
+      ],
+      "penciptaArsip": [
+        {
+          "id": "demo-creator-1",
+          "name": "Pencipta Demo 1",
+          "count": 70
+        },
+        {
+          "id": "demo-creator-2",
+          "name": "Pencipta Demo 2",
+          "count": 25
+        },
+        {
+          "id": "demo-creator-3",
+          "name": "Pencipta Demo 3",
+          "count": 15
+        },
+        {
+          "id": "demo-creator-4",
+          "name": "Pencipta Demo 4",
+          "count": 10
+        },
+        {
+          "id": "demo-creator-5",
+          "name": "Pencipta Demo 5",
+          "count": 8
+        },
+        {
+          "id": "demo-creator-6",
+          "name": "Pencipta Demo 6",
+          "count": 7
+        },
+        {
+          "id": "demo-creator-7",
+          "name": "Pencipta Demo 7",
+          "count": 5
+        }
+      ],
+      "multiCreator": true,
+      "monthlyAdded": {
+        "yearMonth": "2026-10",
+        "count": 4
+      }
+    },
+    {
+      "instansiId": "demo-b",
+      "statistik": {
+        "jumlahArsip": {
+          "value": 0,
+          "definition": "Record arsip unik sintetis dalam dataset demo pada tanggal acuan",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "penciptaArsip": {
+          "value": 0,
+          "definition": "Entitas pencipta unik sintetis yang terkait dengan record demo",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "kopiDigital": {
+          "value": 0,
+          "definition": "Objek kopi digital sintetis; bukan jumlah record arsip yang memiliki file",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        }
+      },
+      "trenInput": [
+        {
+          "year": 2026,
+          "count": 0
+        }
+      ],
+      "distribusiArsip": [
+        {
+          "categoryId": "demo-belum",
+          "label": "Belum diklasifikasikan",
+          "count": 0
+        }
+      ],
+      "penciptaArsip": [],
+      "multiCreator": false,
+      "monthlyAdded": {
+        "yearMonth": "2026-10",
+        "count": 0
+      }
+    },
+    {
+      "instansiId": "demo-c",
+      "statistik": {
+        "jumlahArsip": {
+          "value": null,
+          "definition": "Record arsip unik sintetis dalam dataset demo pada tanggal acuan",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "penciptaArsip": {
+          "value": null,
+          "definition": "Entitas pencipta unik sintetis yang terkait dengan record demo",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "kopiDigital": {
+          "value": null,
+          "definition": "Objek kopi digital sintetis; bukan jumlah record arsip yang memiliki file",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        }
+      },
+      "trenInput": null,
+      "distribusiArsip": null,
+      "penciptaArsip": null,
+      "multiCreator": null,
+      "monthlyAdded": null
+    },
+    {
+      "instansiId": "demo-d",
+      "statistik": {
+        "jumlahArsip": {
+          "value": 60,
+          "definition": "Record arsip unik sintetis dalam dataset demo pada tanggal acuan",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "penciptaArsip": {
+          "value": 3,
+          "definition": "Entitas pencipta unik sintetis yang terkait dengan record demo",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "kopiDigital": {
+          "value": 75,
+          "definition": "Objek kopi digital sintetis; bukan jumlah record arsip yang memiliki file",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        }
+      },
+      "trenInput": null,
+      "distribusiArsip": null,
+      "penciptaArsip": null,
+      "multiCreator": null,
+      "monthlyAdded": null
+    },
+    {
+      "instansiId": "demo-e",
+      "statistik": {
+        "jumlahArsip": {
+          "value": 40,
+          "definition": "Record arsip unik sintetis dalam dataset demo pada tanggal acuan",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "penciptaArsip": {
+          "value": 2,
+          "definition": "Entitas pencipta unik sintetis yang terkait dengan record demo",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "kopiDigital": {
+          "value": 44,
+          "definition": "Objek kopi digital sintetis; bukan jumlah record arsip yang memiliki file",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        }
+      },
+      "trenInput": null,
+      "distribusiArsip": null,
+      "penciptaArsip": null,
+      "multiCreator": null,
+      "monthlyAdded": null
+    },
+    {
+      "instansiId": "demo-f",
+      "statistik": {
+        "jumlahArsip": {
+          "value": 80,
+          "definition": "Record arsip unik sintetis dalam dataset demo pada tanggal acuan",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "penciptaArsip": {
+          "value": 4,
+          "definition": "Entitas pencipta unik sintetis yang terkait dengan record demo",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "kopiDigital": {
+          "value": 95,
+          "definition": "Objek kopi digital sintetis; bukan jumlah record arsip yang memiliki file",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        }
+      },
+      "trenInput": null,
+      "distribusiArsip": null,
+      "penciptaArsip": null,
+      "multiCreator": null,
+      "monthlyAdded": null
+    },
+    {
+      "instansiId": "demo-g",
+      "statistik": {
+        "jumlahArsip": {
+          "value": 30,
+          "definition": "Record arsip unik sintetis dalam dataset demo pada tanggal acuan",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "penciptaArsip": {
+          "value": 1,
+          "definition": "Entitas pencipta unik sintetis yang terkait dengan record demo",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        },
+        "kopiDigital": {
+          "value": 32,
+          "definition": "Objek kopi digital sintetis; bukan jumlah record arsip yang memiliki file",
+          "scope": "instansi",
+          "snapshotId": "demo-synthetic-2026-10-12",
+          "referenceDate": "2026-10-12"
+        }
+      },
+      "trenInput": null,
+      "distribusiArsip": null,
+      "penciptaArsip": null,
+      "multiCreator": null,
+      "monthlyAdded": null
+    }
+  ]
+}

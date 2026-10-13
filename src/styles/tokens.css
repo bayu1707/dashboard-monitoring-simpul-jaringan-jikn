@@ -1,0 +1,223 @@
+:root {
+  font-family: Inter, 'Segoe UI', Arial, sans-serif;
+  color: #203752;
+  background: #f6f9fc;
+  font-synthesis: none;
+  font-size: 16px;
+  line-height: 1.5;
+  --ink: #203752;
+  --muted: #687e96;
+  --blue: #425a9e;
+  --blue-strong: #235fbd;
+  --border: #dfe7ef;
+  --surface: #fff;
+  --surface-soft: #f4f8fc;
+  --teal: #167d7e;
+  --radius: 12px;
+  --shadow: 0 5px 24px #20375210;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+a,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+select {
+  min-height: 44px;
+}
+button {
+  cursor: pointer;
+}
+button:disabled,
+select:disabled {
+  cursor: not-allowed;
+}
+a {
+  color: var(--blue-strong);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #2a7fd5;
+  outline-offset: 3px;
+}
+button svg {
+  flex-shrink: 0;
+}
+img {
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h2 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--blue-strong);
+  border-radius: 8px;
+  padding: 9px 16px;
+  background: var(--blue-strong);
+  color: white;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.button:hover {
+  background: #194e9f;
+  text-decoration: none;
+}
+.button.secondary {
+  color: var(--ink);
+  border-color: var(--border);
+  background: white;
+}
+.button.secondary:hover {
+  background: var(--surface-soft);
+}
+.icon-button {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  padding: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-button:hover {
+  color: var(--blue-strong);
+  background: var(--surface-soft);
+}
+.text-button {
+  background: none;
+  border: 0;
+  padding: 8px 0;
+  color: var(--blue-strong);
+  text-align: left;
+}
+.muted {
+  color: var(--muted);
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  font-weight: 700;
+  color: var(--muted);
+}
+.demo-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #e9bc54;
+  background: #fff4d4;
+  color: #7d5500;
+  padding: 3px 7px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.institution-logo {
+  display: inline-flex;
+  width: 62px;
+  height: 62px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: #8aa0b6;
+  overflow: hidden;
+}
+.institution-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 5px;
+}
+.data-state {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 40px auto;
+  padding: 28px;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 12px;
+  max-width: 650px;
+}
+.data-state > svg {
+  flex-shrink: 0;
+  color: var(--blue-strong);
+  margin-top: 3px;
+}
+.data-state h2 {
+  margin: 0 0 7px;
+}
+.data-state p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.data-state.compact {
+  margin: 0;
+  padding: 16px;
+}
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  padding: 12px 16px;
+  z-index: 5000;
+  background: white;
+  border: 2px solid var(--blue-strong);
+}
+.skip-link:focus {
+  top: 12px;
+}
+.page-loading {
+  padding: 40px 24px;
+}
+
+/* Label tetap tersedia bagi pembaca layar saat desain memakai kontrol ringkas. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
