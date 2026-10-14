@@ -139,6 +139,7 @@ function MapWorkspace({
   const [selection, setSelection] = useState<{
     id: string;
     query: string;
+    fromList: boolean;
   } | null>(null);
   const [preview, setPreview] = useState<{
     id: string;
@@ -147,7 +148,7 @@ function MapWorkspace({
   } | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const origin = useRef<HTMLElement | null>(null);
-  const suppressCloseUntil = useRef(0);
+  const repositioning = useRef(false);
   const touch = useMediaQuery('(max-width: 767px), (hover: none)');
   const navigate = useNavigate();
   const items = useMemo(
@@ -200,16 +201,25 @@ function MapWorkspace({
       closeTimer.current = null;
     }
   }, []);
-  const close = useCallback(() => {
+  const close = useCallback((id?: string) => {
     cancelClose();
-    setSelection(null);
-    origin.current?.focus({ preventScroll: true });
+    setSelection((current) => !id || current?.id === id ? null : current);
+    if (!id) origin.current?.focus({ preventScroll: true });
   }, [cancelClose]);
-  const scheduleClose = useCallback(() => {
+  const scheduleClose = useCallback((id = activeId ?? undefined) => {
+    // Event leave dari marker lama tidak boleh menutup pilihan yang baru.
+    if (!id || id !== activeId) return;
+    // Fokus keyboard tetap menjaga popup meski pointer meninggalkan marker asal.
+    if (document.activeElement?.closest('.instansi-popup')) return;
     cancelClose();
-    if (!touch && Date.now() >= suppressCloseUntil.current)
-      closeTimer.current = setTimeout(() => setSelection(null), 200);
-  }, [cancelClose, touch]);
+    if (!touch && !repositioning.current) {
+      const owner = selection;
+      closeTimer.current = setTimeout(() => {
+        closeTimer.current = null;
+        setSelection((current) => current === owner ? null : current);
+      }, 200);
+    }
+  }, [activeId, selection, cancelClose, touch]);
   useEffect(() => {
     const escape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && activeId) {
@@ -223,9 +233,9 @@ function MapWorkspace({
       cancelClose();
     };
   }, [activeId, close, cancelClose]);
-  const reposition = useCallback(() => {
-    suppressCloseUntil.current = Date.now() + 500;
-    cancelClose();
+  const reposition = useCallback((moving: boolean) => {
+    repositioning.current = moving;
+    if (moving) cancelClose();
   }, [cancelClose]);
   const persist = useCallback(() => {
     if (viewport.current)
@@ -252,7 +262,10 @@ function MapWorkspace({
         (document.activeElement instanceof HTMLElement
           ? document.activeElement
           : null);
-      setSelection({ id, query });
+      setSelection((current) =>
+        current?.id === id && current.query === query && current.fromList === !element
+          ? current : { id, query, fromList: !element },
+      );
     },
     [canPreview, cancelClose, query],
   );
@@ -328,6 +341,7 @@ function MapWorkspace({
           onClose={close}
           onDetail={persist}
           detail={detail}
+          previewFromList={selection?.fromList ?? false}
           demo={demo}
           search={query}
           touch={touch}

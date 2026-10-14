@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type RefObject } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet.markercluster';
@@ -7,7 +7,8 @@ interface Props {
   items: Instansi[];
   onPreview: (id: string, element: HTMLElement | null) => void;
   onNavigate: (id: string) => void;
-  onLeave: () => void;
+  onLeave: (id: string) => void;
+  markers: RefObject<Map<string, L.Marker>>;
   onEnter: () => void;
   touch: boolean;
 }
@@ -19,6 +20,7 @@ export function ClusterLayer({
   onLeave,
   onEnter,
   touch,
+  markers,
 }: Props) {
   const map = useMap();
   const callbacks = useRef({ onPreview, onNavigate, onLeave, onEnter });
@@ -26,6 +28,7 @@ export function ClusterLayer({
     callbacks.current = { onPreview, onNavigate, onLeave, onEnter };
   }, [onPreview, onNavigate, onLeave, onEnter]);
   useEffect(() => {
+    const registry = markers.current;
     const group = L.markerClusterGroup({
       maxClusterRadius: 52,
       spiderfyOnMaxZoom: true,
@@ -54,6 +57,8 @@ export function ClusterLayer({
           html: '<span class="marker-pin"></span>',
           iconSize: [44, 44],
           iconAnchor: [22, 44],
+          // Anchor popup di tengah sisi atas target ikon 44 × 44 px.
+          popupAnchor: [0, -44],
         }),
         title: item.id,
         alt: item.name,
@@ -72,12 +77,13 @@ export function ClusterLayer({
         callbacks.current.onEnter();
         callbacks.current.onPreview(item.id, marker.getElement() ?? null);
       });
-      marker.on('mouseout', () => callbacks.current.onLeave());
+      marker.on('mouseout', () => callbacks.current.onLeave(item.id));
       marker.on('click', () => {
         if (touch)
           callbacks.current.onPreview(item.id, marker.getElement() ?? null);
         else callbacks.current.onNavigate(item.id);
       });
+      registry.set(item.id, marker);
       group.addLayer(marker);
     });
     map.addLayer(group);
@@ -86,7 +92,8 @@ export function ClusterLayer({
       group.off();
       map.removeLayer(group);
       group.clearLayers();
+      registry.clear();
     };
-  }, [map, items, touch]);
+  }, [map, items, touch, markers]);
   return null;
 }

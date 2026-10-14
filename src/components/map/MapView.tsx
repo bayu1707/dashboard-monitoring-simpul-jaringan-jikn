@@ -4,7 +4,6 @@ import {
   TileLayer,
   GeoJSON,
   useMap,
-  Popup,
   Marker,
 } from 'react-leaflet';
 import L from 'leaflet';
@@ -21,6 +20,7 @@ import { NATIONAL_BOUNDS, tileConfig } from '../../data/mapConfig';
 import { countInstansi } from '../../services/exploration';
 import { ClusterLayer } from './ClusterLayer';
 import { InstansiPopup } from './InstansiPopup';
+import { MarkerPopup } from './MarkerPopup';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 interface Props {
@@ -32,11 +32,12 @@ interface Props {
   onPreview: (id: string, element: HTMLElement | null) => void;
   onNavigate: (id: string) => void;
   onEnter: () => void;
-  onReposition: () => void;
-  onLeave: () => void;
-  onClose: () => void;
+  onReposition: (moving: boolean) => void;
+  onLeave: (id?: string) => void;
+  onClose: (id?: string) => void;
   onDetail: () => void;
   detail: InstansiDetail | null;
+  previewFromList: boolean;
   demo: boolean;
   search: string;
   touch: boolean;
@@ -113,48 +114,8 @@ function FocusController({
   }, [map, onViewport]);
   return null;
 }
-function PopupLayer({
-  detail,
-  ...props
-}: Pick<
-  Props,
-  | 'detail'
-  | 'demo'
-  | 'onClose'
-  | 'onDetail'
-  | 'onEnter'
-  | 'onReposition'
-  | 'onLeave'
-  | 'search'
->) {
-  const map = useMap();
-  const popup = useRef<L.Popup>(null);
-  useEffect(() => {
-    map.on('autopanstart', props.onReposition);
-    return () => {
-      map.off('autopanstart', props.onReposition);
-    };
-  }, [map, props.onReposition]);
-  useEffect(() => {
-    if (detail?.instansi.coordinates && popup.current)
-      popup.current.openOn(map);
-  }, [map, detail]);
-  if (!detail?.instansi.coordinates) return null;
-  return (
-    <Popup
-      ref={popup}
-      position={detail.instansi.coordinates}
-      closeButton={false}
-      autoPan={true}
-      autoPanPaddingTopLeft={[24, 150]}
-      autoPanPaddingBottomRight={[24, 65]}
-      eventHandlers={{ remove: props.onClose }}
-    >
-      <InstansiPopup detail={detail} {...props} />
-    </Popup>
-  );
-}
 export function MapView(props: Props) {
+  const markers = useRef(new Map<string, L.Marker>());
   const [tileFailed, setTileFailed] = useState(false);
   const [tileAttempt, setTileAttempt] = useState(0);
   const [notice, setNotice] = useState<string | null>(null);
@@ -264,6 +225,7 @@ export function MapView(props: Props) {
           })}
         {props.state.level === 'instansi' && (
           <ClusterLayer
+            markers={markers}
             items={props.items}
             onPreview={props.onPreview}
             onNavigate={props.onNavigate}
@@ -272,8 +234,9 @@ export function MapView(props: Props) {
             touch={props.touch}
           />
         )}
-        {!props.touch && (
-          <PopupLayer
+        {!props.touch && !props.previewFromList && props.detail?.instansi.coordinates && (
+          <MarkerPopup
+            markers={markers}
             detail={props.detail}
             demo={props.demo}
             search={props.search}
@@ -303,7 +266,7 @@ export function MapView(props: Props) {
           {notice}
         </span>
       )}
-      {props.detail && (props.touch || !props.detail.instansi.coordinates) && (
+      {props.detail && (props.touch || props.previewFromList || !props.detail.instansi.coordinates) && (
         <div
           className="mobile-popup"
           role="dialog"

@@ -1,0 +1,23 @@
+{
+  "tanggal": "2026-10-14",
+  "metode": "Klik Perbesar Teks melalui menu Chrome; label native Zoom: 200%",
+  "normal": {
+    "width": 1440,
+    "height": 778,
+    "devicePixelRatio": 2
+  },
+  "zoom200": {
+    "width": 720,
+    "height": 389,
+    "devicePixelRatio": 4,
+    "horizontalOverflow": false
+  },
+  "interaksi": [
+    "Daftar",
+    "Pratinjau Instansi Demo A",
+    "Lihat detail",
+    "Kembali ke Peta"
+  ],
+  "zoomDipulihkan": "100% (width 1440, devicePixelRatio 2)",
+  "catatanScreenshot": "Tidak disertakan karena hasil capture ekstensi terpotong pada zoom 200%."
+}

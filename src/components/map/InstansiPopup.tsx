@@ -35,7 +35,7 @@ export function InstansiPopup({
       <button
         className="popup-close icon-button"
         aria-label="Tutup popup"
-        onClick={onClose}
+        onClick={() => onClose()}
       >
         <X size={18} />
       </button>

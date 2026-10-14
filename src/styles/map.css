@@ -506,6 +506,32 @@
   margin: 0 !important;
   width: 320px !important;
 }
+/* Segitiga setinggi 10 px mengisi padding popup dan berakhir di popupAnchor.
+   Area panah ikut menerima pointer agar lintasan dari marker tetap tersambung. */
+.map-canvas .instansi-leaflet-popup {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+.instansi-leaflet-popup .leaflet-popup-tip-container {
+  bottom: 0;
+  width: 20px;
+  height: 10px;
+  margin-left: -10px;
+  pointer-events: auto;
+}
+.instansi-leaflet-popup .leaflet-popup-tip {
+  box-sizing: content-box;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+}
 .leaflet-popup-tip {
   background: white;
 }

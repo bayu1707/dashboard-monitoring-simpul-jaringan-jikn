@@ -71,7 +71,7 @@ vi.mock('../src/components/map/MapView', async () => {
                       props.onEnter();
                       props.onPreview(item.id, event.currentTarget);
                     }}
-                    onPointerLeave={props.onLeave}
+                    onPointerLeave={() => props.onLeave(item.id)}
                     onClick={(event) => {
                       if (props.touch)
                         props.onPreview(item.id, event.currentTarget);
@@ -446,6 +446,84 @@ describe('Integrasi peta, filter, popup dan URL', () => {
     expect(
       screen.getByRole('complementary', { name: 'Kabupaten / Kota' }),
     ).toBeInTheDocument();
+  });
+});
+
+describe('Regresi lifecycle popup instansi', () => {
+  it('mouseleave marker lama tidak menutup marker terbaru; hanya leave ID aktif menutup tepat setelah jeda 200ms', async () => {
+    setup('/simpul-jaringan?provinsi=36&kabKota=36.73&demo=1');
+    const markerA = await screen.findByRole('button', {
+      name: 'Marker Instansi Demo A',
+    });
+    const markerB = screen.getByRole('button', { name: 'Marker Instansi Demo B' });
+    fireEvent.pointerEnter(markerA);
+    await screen.findByRole('region', { name: 'Pratinjau Instansi Demo A' });
+    fireEvent.pointerEnter(markerB);
+    const popupB = await screen.findByRole('region', {
+      name: 'Pratinjau Instansi Demo B',
+    });
+
+    vi.useFakeTimers();
+    // Urutan ini dapat terjadi ketika perpindahan marker/spiderfy mengirim leave lama.
+    fireEvent.pointerLeave(markerA);
+    act(() => vi.advanceTimersByTime(250));
+    expect(popupB).toBeInTheDocument();
+    expect(within(popupB).getByRole('link', { name: 'Lihat detail' }))
+      .toHaveAttribute('href', '/simpul-jaringan/demo-b?provinsi=36&kabKota=36.73&demo=1');
+
+    fireEvent.pointerLeave(markerB);
+    act(() => vi.advanceTimersByTime(199));
+    expect(popupB).toBeInTheDocument();
+    act(() => vi.advanceTimersByTime(1));
+    expect(popupB).not.toBeInTheDocument();
+  });
+
+  it('timer close A yang sudah terjadwal dibatalkan ketika pointer masuk marker B', async () => {
+    setup('/simpul-jaringan?provinsi=36&kabKota=36.73&demo=1');
+    const markerA = await screen.findByRole('button', {
+      name: 'Marker Instansi Demo A',
+    });
+    const markerB = screen.getByRole('button', { name: 'Marker Instansi Demo B' });
+    fireEvent.pointerEnter(markerA);
+    await screen.findByRole('region', { name: 'Pratinjau Instansi Demo A' });
+    vi.useFakeTimers();
+    fireEvent.pointerLeave(markerA);
+    act(() => vi.advanceTimersByTime(150));
+    fireEvent.pointerEnter(markerB);
+    await act(async () => {
+      await Promise.resolve();
+    });
+    const popupB = screen.getByRole('region', { name: 'Pratinjau Instansi Demo B' });
+    act(() => vi.advanceTimersByTime(300));
+    expect(popupB).toBeInTheDocument();
+    expect(screen.queryByRole('region', { name: 'Pratinjau Instansi Demo A' }))
+      .not.toBeInTheDocument();
+  });
+
+  it('respons profil A yang terlambat tidak mengganti popup B yang dipilih terakhir', async () => {
+    const repository = createFixtureRepository();
+    const readDetail = repository.getInstansiDetail;
+    type DetailResult = Awaited<ReturnType<InstansiRepository['getInstansiDetail']>>;
+    let finishA: (detail: DetailResult) => void = () => {};
+    const pendingA = new Promise<DetailResult>((resolve) => { finishA = resolve; });
+    repository.getInstansiDetail = vi.fn((id) =>
+      id === 'demo-a' ? pendingA : readDetail(id),
+    );
+    setup('/simpul-jaringan?provinsi=36&kabKota=36.73&demo=1', repository);
+    const markerA = await screen.findByRole('button', {
+      name: 'Marker Instansi Demo A',
+    });
+    const markerB = screen.getByRole('button', { name: 'Marker Instansi Demo B' });
+    fireEvent.pointerEnter(markerA);
+    expect(repository.getInstansiDetail).toHaveBeenCalledWith('demo-a');
+    fireEvent.pointerEnter(markerB);
+    const popupB = await screen.findByRole('region', {
+      name: 'Pratinjau Instansi Demo B',
+    });
+    await act(async () => { finishA(await readDetail('demo-a')); });
+    expect(popupB).toBeInTheDocument();
+    expect(screen.queryByRole('region', { name: 'Pratinjau Instansi Demo A' }))
+      .not.toBeInTheDocument();
   });
 });
 
