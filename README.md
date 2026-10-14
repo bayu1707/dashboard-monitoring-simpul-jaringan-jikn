@@ -1,3 +1,8 @@
+## Kolaborasi Tim
+
+Proyek Dashboard Monitoring Simpul Jaringan JIKN
+dikembangkan secara kolaboratif menggunakan GitHub.
+
 # Dashboard Monitoring Simpul Jaringan JIKN
 
 Frontend untuk mempelajari dan mengembangkan halaman Simpul Jaringan ANRI. Aplikasi menyediakan peta nasional di `/simpul-jaringan` dan detail instansi di `/simpul-jaringan/:id`, dengan antarmuka bahasa Indonesia. Data dibaca melalui repository asinkron sehingga sumber lokal dapat diganti dengan REST API resmi pada tahap berikutnya.
