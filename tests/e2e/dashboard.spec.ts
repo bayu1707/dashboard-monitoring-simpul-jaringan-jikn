@@ -1,4 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+const emptySnapshot = readFileSync(new URL('../../public/data/snapshot.json', import.meta.url), 'utf8');
 const demoUrl = '/simpul-jaringan?demo=1';
 const runtimeErrors = new WeakMap<Page, string[]>();
 function trackRuntime(page: Page) {
@@ -39,7 +41,7 @@ async function chooseSerang(page: Page) {
 async function waitForMapMotion(page: Page) {
   // Marker dapat ada sebelum animasi zoom/pan Leaflet selesai.
   await expect(
-    page.locator('.map-canvas .leaflet-zoom-anim, .map-canvas .leaflet-pan-anim'),
+    page.locator('.map-canvas.leaflet-zoom-anim, .map-canvas.leaflet-pan-anim'),
   ).toHaveCount(0);
 }
 async function unfoldClusters(page: Page) {
@@ -167,7 +169,14 @@ test('scope change closes popup, daftar nullable, back satu tingkat dan browser 
 test('dataset bawaan kosong, ID asing, query invalid, JSON rusak dan retry sumber sama', async ({
   page,
 }) => {
-  await page.goto('/simpul-jaringan');
+  let broken = false;
+  // Skenario kosong harus tetap dapat diuji saat server lokal sedang mereview Excel.
+  await page.route(/\/(?:data|local-data)\/snapshot\.json$/, (route) => route.fulfill({
+    status: 200,
+    contentType: 'application/json',
+    body: broken ? '{rusak' : emptySnapshot,
+  }));
+  await page.goto('/simpul-jaringan?data=excel');
   await expect(
     page.getByRole('heading', { name: 'Data simpul belum dimuat' }),
   ).toBeVisible();
@@ -177,22 +186,13 @@ test('dataset bawaan kosong, ID asing, query invalid, JSON rusak dan retry sumbe
     page.getByRole('heading', { name: 'Simpul tidak ditemukan' }),
   ).toBeVisible();
   await page.goto(
-    '/simpul-jaringan?provinsi=tidak-sah&kabKota=36.73&jenis=asing',
+    '/simpul-jaringan?data=excel&provinsi=tidak-sah&kabKota=36.73&jenis=asing',
   );
   await expect(page.locator('.map-stage')).toHaveAttribute(
     'data-level',
     'nasional',
   );
-  let broken = true;
-  await page.route('**/data/snapshot.json', (route) =>
-    broken
-      ? route.fulfill({
-          status: 200,
-          contentType: 'application/json',
-          body: '{rusak',
-        })
-      : route.continue(),
-  );
+  broken = true;
   await page.reload();
   await expect(
     page.getByRole('heading', { name: 'Data belum dapat dimuat' }),

@@ -14,10 +14,12 @@ import { createLocalRepository } from './services/localRepository';
 export function App() {
   const [params] = useSearchParams();
   const demo = params.get('demo') === '1';
-  const repository = useMemo(() => createLocalRepository(demo), [demo]);
+  const pilot = !demo && import.meta.env.DEV && import.meta.env.VITE_LOCAL_PILOT === '1' && params.get('data') !== 'excel';
+  const mapSearch = demo ? '?demo=1' : params.get('data') === 'excel' ? '?data=excel' : '';
+  const repository = useMemo(() => createLocalRepository(demo, undefined, pilot), [demo, pilot]);
   return (
     <>
-      <SiteHeader demo={demo} />
+      <SiteHeader demo={demo} pilot={pilot} mapSearch={mapSearch} />
       <Suspense
         fallback={
           <main id="konten" className="page-loading">
@@ -30,7 +32,7 @@ export function App() {
             path="/"
             element={
               <Navigate
-                to={`/simpul-jaringan${demo ? '?demo=1' : ''}`}
+                to={`/simpul-jaringan${mapSearch}`}
                 replace
               />
             }
@@ -50,7 +52,7 @@ export function App() {
                 <h1>Halaman tidak ditemukan</h1>
                 <a
                   className="button"
-                  href={`/simpul-jaringan${demo ? '?demo=1' : ''}`}
+                  href={`/simpul-jaringan${mapSearch}`}
                 >
                   Kembali ke Peta
                 </a>

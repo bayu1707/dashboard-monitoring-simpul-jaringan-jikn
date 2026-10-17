@@ -13,9 +13,11 @@ import { validEmail, validPhone } from '../../services/metrics';
 export function ProfileCard({
   instansi,
   jenisName,
+  compact = false,
 }: {
   instansi: Instansi;
   jenisName: string | null;
+  compact?: boolean;
 }) {
   const emailIsValid = validEmail(instansi.email);
   const phoneIsValid = validPhone(instansi.phone);
@@ -54,7 +56,7 @@ export function ProfileCard({
           </dt>
           <dd>{jenisName ?? unavailable}</dd>
         </div>
-        <div>
+        {(!compact || instansi.email !== null) && <div>
           <dt>
             <Mail size={17} aria-hidden="true" />
             Email publik
@@ -66,8 +68,8 @@ export function ProfileCard({
               (instansi.email ?? unavailable)
             )}
           </dd>
-        </div>
-        <div>
+        </div>}
+        {(!compact || instansi.phone !== null) && <div>
           <dt>
             <Phone size={17} aria-hidden="true" />
             Telepon publik
@@ -81,20 +83,20 @@ export function ProfileCard({
               (instansi.phone ?? unavailable)
             )}
           </dd>
-        </div>
+        </div>}
         <div>
           <dt>
             <MapPin size={17} aria-hidden="true" />
             Provinsi
           </dt>
-          <dd>{instansi.provinceName}</dd>
+          <dd>{instansi.provinceName ?? 'Belum terverifikasi'}</dd>
         </div>
         <div>
           <dt>
             <MapPin size={17} aria-hidden="true" />
             Kabupaten/Kota
           </dt>
-          <dd>{instansi.kabKotaName}</dd>
+          <dd>{instansi.kabKotaName ?? 'Belum terverifikasi'}</dd>
         </div>
         <div>
           <dt>
@@ -103,13 +105,13 @@ export function ProfileCard({
           </dt>
           <dd>{instansi.joinedYear ?? unavailable}</dd>
         </div>
-        <div>
+        {(!compact || instansi.status !== null) && <div>
           <dt>
             <Building2 size={17} aria-hidden="true" />
             Status simpul
           </dt>
           <dd>{instansi.status ?? unavailable}</dd>
-        </div>
+        </div>}
       </dl>
     </section>
   );

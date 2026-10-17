@@ -16,6 +16,7 @@ import { MapFilters } from '../components/map/MapFilters';
 import { MapView } from '../components/map/MapView';
 import { ResultsList } from '../components/map/ResultsList';
 import { useMediaQuery } from '../hooks/useMediaQuery';
+import { useRegionGeometry } from '../hooks/useRegionGeometry';
 import {
   canPreviewInstansi,
   countInstansi,
@@ -32,6 +33,10 @@ interface Loaded {
   references: ReferenceData;
   items: Instansi[];
   metadata: SnapshotMetadata;
+}
+function popupHasInteraction() {
+  return Boolean(document.querySelector('.instansi-leaflet-popup:hover, .instansi-popup:hover') ||
+    document.activeElement?.closest('.instansi-popup'));
 }
 export function MapPage({
   repository,
@@ -123,9 +128,22 @@ function MapWorkspace({
     () => parseExplorationQuery(params, references),
     [params, references],
   );
-  const query = explorationToQuery(state, demo);
-  const [initialSession] = useState(() => readMapSession(query));
-  const [listOpen, setListOpen] = useState(initialSession?.listOpen ?? false);
+  const sourceOverride = params.get('data') === 'excel' ? 'excel' : null;
+  const queryForState = useCallback((next: ExplorationState) => {
+    const value = new URLSearchParams(explorationToQuery(next, demo));
+    if (sourceOverride) value.set('data', sourceOverride);
+    return value;
+  }, [demo, sourceOverride]);
+  const listMode = params.get('daftar') === 'instansi' ? 'instansi'
+    : params.get('daftar') === 'belum-terpetakan' ? 'belum-terpetakan' : 'wilayah';
+  const listSearch = (params.get('cari') ?? '').slice(0, 120);
+  const queryParams = queryForState(state);
+  if (listMode !== 'wilayah') queryParams.set('daftar', listMode);
+  if (listSearch) queryParams.set('cari', listSearch);
+  const query = queryParams.size ? `?${queryParams}` : '';
+  const { mapReferences, geometryError, retryGeometry } = useRegionGeometry(repository, references, state.provinceId);
+  const [initialSession] = useState(() => readMapSession(query, metadata.datasetKind));
+  const [listOpen, setListOpen] = useState(initialSession?.listOpen ?? listMode !== 'wilayah');
   const listScroll = useRef(initialSession?.listScroll ?? 0);
   const [restoredScroll, setRestoredScroll] = useState(
     initialSession?.listScroll ?? 0,
@@ -148,6 +166,7 @@ function MapWorkspace({
   } | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const origin = useRef<HTMLElement | null>(null);
+  const restoringFocus = useRef(false);
   const repositioning = useRef(false);
   const touch = useMediaQuery('(max-width: 767px), (hover: none)');
   const navigate = useNavigate();
@@ -157,7 +176,7 @@ function MapWorkspace({
   );
   const canPreview = canPreviewInstansi(state, references);
   const activeId =
-    canPreview &&
+    (canPreview || selection?.fromList) &&
     selection?.query === query &&
     items.some((i) => i.id === selection.id)
       ? selection.id
@@ -204,18 +223,25 @@ function MapWorkspace({
   const close = useCallback((id?: string) => {
     cancelClose();
     setSelection((current) => !id || current?.id === id ? null : current);
-    if (!id) origin.current?.focus({ preventScroll: true });
+    if (!id) {
+      // Focus kembali karena Escape tidak boleh dianggap pemilihan profil baru.
+      restoringFocus.current = true;
+      try { origin.current?.focus({ preventScroll: true }); }
+      finally { restoringFocus.current = false; }
+    }
   }, [cancelClose]);
   const scheduleClose = useCallback((id = activeId ?? undefined) => {
     // Event leave dari marker lama tidak boleh menutup pilihan yang baru.
     if (!id || id !== activeId) return;
     // Fokus keyboard tetap menjaga popup meski pointer meninggalkan marker asal.
-    if (document.activeElement?.closest('.instansi-popup')) return;
+    // Pointerenter popup dapat mendahului mouseout marker atau moveend autopan.
+    if (popupHasInteraction()) return;
     cancelClose();
     if (!touch && !repositioning.current) {
       const owner = selection;
       closeTimer.current = setTimeout(() => {
         closeTimer.current = null;
+        if (popupHasInteraction()) return;
         setSelection((current) => current === owner ? null : current);
       }, 200);
     }
@@ -237,15 +263,17 @@ function MapWorkspace({
     repositioning.current = moving;
     if (moving) cancelClose();
   }, [cancelClose]);
-  const persist = useCallback(() => {
+  const persist = useCallback((detailId?: string) => {
     if (viewport.current)
       saveMapSession({
+        datasetKind: metadata.datasetKind,
         query,
         ...viewport.current,
         listScroll: listScroll.current,
         listOpen,
+        detailId,
       });
-  }, [query, listOpen]);
+  }, [query, listOpen, metadata.datasetKind]);
   const updateViewport = useCallback(
     (center: Coordinates, zoom: number) => {
       viewport.current = { center, zoom };
@@ -254,8 +282,9 @@ function MapWorkspace({
     [persist],
   );
   const previewInstansi = useCallback(
-    (id: string, element: HTMLElement | null) => {
-      if (!canPreview) return;
+    (id: string, element: HTMLElement | null, fromList = false) => {
+      if (restoringFocus.current) return;
+      if (element && !fromList && !canPreview) return;
       cancelClose();
       origin.current =
         element ??
@@ -263,8 +292,8 @@ function MapWorkspace({
           ? document.activeElement
           : null);
       setSelection((current) =>
-        current?.id === id && current.query === query && current.fromList === !element
-          ? current : { id, query, fromList: !element },
+        current?.id === id && current.query === query && current.fromList === (fromList || !element)
+          ? current : { id, query, fromList: fromList || !element },
       );
     },
     [canPreview, cancelClose, query],
@@ -272,7 +301,7 @@ function MapWorkspace({
   const openDetail = useCallback(
     (id: string) => {
       cancelClose();
-      persist();
+      persist(id);
       navigate(`/simpul-jaringan/${encodeURIComponent(id)}${query}`);
     },
     [cancelClose, persist, navigate, query],
@@ -283,9 +312,9 @@ function MapWorkspace({
       setSelection(null);
       listScroll.current = 0;
       setRestoredScroll(0);
-      setParams(new URLSearchParams(explorationToQuery(next, demo)));
+      setParams(queryForState(next));
     },
-    [cancelClose, setParams, demo],
+    [cancelClose, setParams, queryForState],
   );
   const chooseRegion = useCallback(
     (region: Wilayah) => {
@@ -326,10 +355,10 @@ function MapWorkspace({
   }).format(new Date(metadata.capturedAt));
   return (
     <main id="konten" tabIndex={-1} className="map-page">
-      <div className="map-stage" data-level={state.level}>
+      <div className={`map-stage ${metadata.datasetKind === 'pilot' ? 'pilot-map' : ''}`} data-level={state.level}>
         <MapView
           state={state}
-          references={references}
+          references={mapReferences}
           items={items}
           allItems={allItems}
           onRegion={chooseRegion}
@@ -339,10 +368,11 @@ function MapWorkspace({
           onReposition={reposition}
           onLeave={scheduleClose}
           onClose={close}
-          onDetail={persist}
+          onDetail={() => persist(activeId ?? undefined)}
           detail={detail}
           previewFromList={selection?.fromList ?? false}
           demo={demo}
+          pilot={metadata.datasetKind === 'pilot'}
           search={query}
           touch={touch}
           initialSession={initialSession}
@@ -370,7 +400,7 @@ function MapWorkspace({
           <div className="map-scope-header">
             <MapPin size={17} aria-hidden="true" />
             <h1>
-              {kabKota?.name ?? province?.name ?? 'Simpul Jaringan Indonesia'}
+              {kabKota?.name ?? (province ? metadata.datasetKind === 'pilot' ? province.name : `Kabupaten / Kota di ${province.name}` : metadata.datasetKind === 'pilot' ? 'Simpul Jaringan Jawa' : 'Simpul Jaringan Indonesia')}
             </h1>
             <div className="map-level-actions">
               {state.level === 'instansi' && (
@@ -397,23 +427,36 @@ function MapWorkspace({
               )}
             </div>
           </div>
-          <p>
+          <p className={metadata.datasetKind === 'pilot' && state.level !== 'instansi' ? 'sr-only' : undefined}>
             {state.level === 'nasional'
-              ? 'Klik wilayah atau pilih provinsi untuk mulai.'
+              ? metadata.datasetKind === 'pilot' ? 'Klik provinsi untuk mulai.' : `Klik provinsi atau buka Daftar${allItems.length ? ` · ${counts.total} instansi dalam snapshot` : ''}.`
               : state.level === 'provinsi'
-                ? 'Pilih kabupaten/kota untuk melihat instansi.'
+                ? 'Klik kabupaten/kota untuk membuka titik instansi.'
                 : `${counts.total} hasil · ${counts.mapped} terpetakan · ${counts.unmapped} tanpa koordinat${demo ? ' (demo)' : ''}`}
+            {state.level === 'provinsi' && allItems.length > 0 && metadata.datasetKind !== 'pilot' && ` ${counts.total} instansi dalam cakupan snapshot; buka Daftar.`}
           </p>
         </div>
         {listOpen && (
           <ResultsList
             state={state}
             references={references}
-            items={state.level === 'instansi' ? items : allItems}
+            items={items}
             onRegion={chooseRegion}
-            onPreview={(id) => previewInstansi(id, null)}
+            onPreview={(id, element) => previewInstansi(id, element ?? null, true)}
             onClose={toggleList}
             onDetail={persist}
+            mode={listMode}
+            searchText={listSearch}
+            onCatalogChange={(mode, text) => {
+              cancelClose();
+              setSelection(null);
+              const next = queryForState(state);
+              if (mode !== 'wilayah') next.set('daftar', mode);
+              if (text) next.set('cari', text.slice(0, 120));
+              listScroll.current = 0;
+              setRestoredScroll(0);
+              setParams(next, { replace: true });
+            }}
             search={query}
             initialScroll={restoredScroll}
             onScroll={scrollList}
@@ -424,8 +467,8 @@ function MapWorkspace({
           <div className="map-empty-notice" role="status">
             <h2>Data simpul belum dimuat</h2>
             <p>
-              Snapshot instansi terverifikasi belum tersedia. Referensi batas
-              Banten dapat dijelajahi; provinsi lain tersedia melalui Daftar.
+              Snapshot instansi belum tersedia. Referensi wilayah dapat
+              dijelajahi melalui peta dan Daftar.
             </p>
             <Link to="/simpul-jaringan?demo=1">
               Coba interaksi dengan DATA DEMO →
@@ -443,6 +486,13 @@ function MapWorkspace({
               </p>
             </div>
           )}
+        {state.level === 'instansi' && counts.total > 0 && counts.mapped === 0 && !listOpen && (
+          <div className="map-empty-notice" role="status">
+            <h2>Titik instansi belum tersedia</h2>
+            <p>Data instansi sudah dimuat, tetapi koordinat kantornya belum tersedia. Marker dan popup hover akan tampil setelah koordinat terverifikasi ditambahkan.</p>
+            <button className="text-button" onClick={toggleList}>Buka daftar instansi</button>
+          </div>
+        )}
         {previewError && (
           <div className="map-empty-notice">
             <DataState
@@ -468,18 +518,41 @@ function MapWorkspace({
             />
           </div>
         )}
+        {geometryError && (
+          <div className="tile-error" role="status">
+            Batas kabupaten/kota belum dapat dimuat. Gunakan Daftar atau dropdown.
+            <button onClick={retryGeometry}>Coba muat batas lagi</button>
+          </div>
+        )}
+        {allItems.length > 0 && metadata.datasetKind !== 'pilot' && <div className="region-summary-legend">
+          <span>Angka menunjukkan jumlah instansi per wilayah.</span>
+          {state.level === 'nasional' && allItems.some((item) => item.provinceId === null) && <button
+            className="text-button"
+            onClick={() => {
+              cancelClose();
+              setSelection(null);
+              setListOpen(true);
+              setRestoredScroll(0);
+              listScroll.current = 0;
+              const next = queryForState(goNational());
+              next.set('daftar', 'belum-terpetakan');
+              setParams(next);
+            }}>
+            {countInstansi(allItems.filter((item) => item.provinceId === null)).total} belum terpetakan
+          </button>}
+        </div>}
         <div className="map-footer">
           <span
             className="snapshot-note"
-            title={`Cakupan snapshot ${metadata.coverage === 'full' ? 'penuh menurut sumber' : 'parsial'}; bukan pemantauan real time.`}
+            title={`${metadata.coverageDescription ?? `Cakupan snapshot ${metadata.coverage}`}; bukan pemantauan real time.`}
           >
-            Snapshot {snapshotTime} WIB{demo ? ' · sintetis' : ' · parsial'}
+            {metadata.datasetKind === 'pilot' ? <>{allItems.length} instansi percontohan · DATA SIMULASI<span className="sr-only"> · Nama/tahun: Excel · Lokasi: sumber publik per record · Angka lingkaran: jumlah instansi per wilayah.</span></> : <>{metadata.datasetKind === 'excel' ? 'Snapshot Excel · review lokal · ' : 'Snapshot '}{snapshotTime} WIB{demo ? ' · sintetis' : ' · bukan real time'}</>}
           </span>
           <span
             className="map-source-note"
-            title="Geometri yang tersedia mencakup Banten; geometri nasional belum lengkap."
+            title={references.metadata.verificationNotes.join(' ')}
           >
-            Batas: BIG · peta parsial
+            {references.provinces.length} provinsi · {references.kabKota.length} kab/kota{metadata.datasetKind === 'pilot' ? ` · ${allItems.length} instansi percontohan` : ' · referensi wilayah'}
           </span>
           {demo && (
             <Link className="demo-exit" to="/simpul-jaringan">

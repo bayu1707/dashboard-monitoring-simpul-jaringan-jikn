@@ -1,6 +1,7 @@
 import type { Geometry } from 'geojson';
 export type Coordinates = [number, number]; // latitude, longitude (GeoJSON memakai urutan sebaliknya)
 export type Bounds = [Coordinates, Coordinates];
+export type CoordinateVerificationMethod = 'google-maps-place' | 'official-map-embed' | 'official-published-coordinates';
 export interface Metric {
   value: number | null;
   definition: string;
@@ -14,10 +15,12 @@ export interface SnapshotMetadata {
   capturedAt: string; // ISO 8601 dengan zona waktu
   referenceDate: string;
   coverage: 'full' | 'partial';
-  datasetKind: 'verified' | 'empty' | 'demo';
+  datasetKind: 'verified' | 'empty' | 'demo' | 'excel' | 'pilot';
+  coverageDescription?: string;
   metricDefinitions: Record<string, string>;
   verificationNotes: string[];
   nationalTotal: Metric | null;
+  sampleTotal?: Metric | null;
 }
 export interface Wilayah {
   id: string;
@@ -27,8 +30,10 @@ export interface Wilayah {
   geometry: Geometry | null;
   bounds: Bounds | null;
   labelPosition: Coordinates | null;
+  labelPositionSource?: string;
   source: string;
   sourceId: string | null;
+  geometryUrl?: string;
 }
 export interface Kategori {
   id: string;
@@ -46,18 +51,30 @@ export interface Instansi {
   name: string;
   kode: string | null;
   jenisId: string | null;
-  provinceId: string;
-  kabKotaId: string;
-  provinceName: string;
-  kabKotaName: string;
+  provinceId: string | null;
+  kabKotaId: string | null;
+  provinceName: string | null;
+  kabKotaName: string | null;
   email: string | null;
   phone: string | null;
   joinedYear: number | null;
   status: string | null;
   logoUrl: string | null;
   coordinates: Coordinates | null;
+  coordinateSource?: string;
+  coordinatesVerifiedAt?: string;
+  coordinatesVerificationNotes?: string;
+  coordinatesVerificationMethod?: CoordinateVerificationMethod;
+  coordinateLocationLabel?: string;
   sourceUpdatedAt: string | null;
   source: string;
+  locationVerificationStatus?: 'verified' | 'needs-review' | 'unresolved';
+  locationVerificationNotes?: string;
+  joinedYearSource?: string;
+  landingPageUrl?: string | null;
+  landingPageSource?: string | null;
+  landingPageVerificationStatus?: 'verified' | 'needs-review' | 'unavailable';
+  landingPageVerifiedAt?: string | null;
 }
 export interface StatistikSimpul {
   jumlahArsip: Metric;
@@ -104,14 +121,17 @@ export interface ExplorationState {
   jenisId: string | null;
 }
 export interface MapSession {
+  datasetKind?: SnapshotMetadata['datasetKind'];
   query: string;
   center: Coordinates;
   zoom: number;
   listScroll: number;
   listOpen: boolean;
+  detailId?: string;
 }
 export interface InstansiRepository {
   getReferenceData(): Promise<ReferenceData>;
+  getKabKotaGeometry?(provinceId: string): Promise<Wilayah[]>;
   listInstansi(
     filters?: Partial<ExplorationState>,
   ): Promise<{ items: Instansi[]; metadata: SnapshotMetadata }>;

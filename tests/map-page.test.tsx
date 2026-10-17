@@ -93,7 +93,7 @@ vi.mock('../src/components/map/MapView', async () => {
               onClose={props.onClose}
               onDetail={props.onDetail}
               onEnter={props.onEnter}
-              onLeave={props.onLeave}
+              onLeave={() => props.onLeave(props.detail?.instansi.id)}
               search={props.search}
             />
           )}
@@ -524,6 +524,146 @@ describe('Regresi lifecycle popup instansi', () => {
     expect(popupB).toBeInTheDocument();
     expect(screen.queryByRole('region', { name: 'Pratinjau Instansi Demo A' }))
       .not.toBeInTheDocument();
+  });
+});
+
+describe('Katalog instansi di luar marker', () => {
+  it('Pratinjau profil secara eksplisit membuka instansi tanpa koordinat dan mempertahankan nilai null serta tautan detail', async () => {
+    const { user, container, desktop } = setup('/simpul-jaringan?provinsi=36&kabKota=36.73&demo=1');
+    await user.click(await screen.findByRole('button', { name: 'Daftar' }));
+    expect(desktop().getByLabelText('Jenis Instansi')).toHaveValue('');
+    const row = container.querySelector<HTMLElement>('[data-result-instansi-id="demo-c"]')!;
+    expect(row).not.toBeNull();
+    expect(screen.queryByRole('button', { name: 'Marker Instansi Demo C' })).not.toBeInTheDocument();
+    await user.click(within(row).getByRole('button', { name: 'Pratinjau profil' }));
+    const popup = await screen.findByRole('region', { name: 'Pratinjau Instansi Demo C' });
+    expect(within(popup).getAllByText('Belum tersedia')).toHaveLength(3);
+    expect(within(popup).getByRole('link', { name: 'Lihat detail' })).toHaveAttribute(
+      'href', '/simpul-jaringan/demo-c?provinsi=36&kabKota=36.73&demo=1',
+    );
+
+    await user.click(within(popup).getByRole('link', { name: 'Lihat detail' }));
+    expect(await screen.findByRole('heading', { name: 'Detail navigasi demo-c' })).toBeInTheDocument();
+  });
+
+  it.each([
+    ['nasional', '/simpul-jaringan?demo=1&daftar=instansi'],
+    ['provinsi', '/simpul-jaringan?provinsi=36&demo=1&daftar=instansi'],
+    ['instansi', '/simpul-jaringan?provinsi=36&kabKota=36.73&demo=1&daftar=instansi'],
+  ])('hover dan fokus katalog pada tingkat %s tidak otomatis membuka profil instansi', async (level, entry) => {
+    const { user, container, repository } = setup(entry);
+    const panel = await screen.findByRole('complementary', { name: 'Daftar instansi' });
+    expect(screen.getByTestId('map-level')).toHaveTextContent(level);
+    const row = container.querySelector<HTMLElement>('[data-result-instansi-id="demo-a"]')!;
+    await user.hover(row);
+    act(() => within(row).getByRole('link', { name: 'Instansi Demo A' }).focus());
+    fireEvent.pointerLeave(row);
+    expect(repository.getInstansiDetail).not.toHaveBeenCalled();
+    expect(screen.queryByRole('region', { name: 'Pratinjau Instansi Demo A' })).not.toBeInTheDocument();
+
+    // Akses profil di katalog tetap tersedia sebagai aksi eksplisit, bukan hover wilayah.
+    await user.click(within(row).getByRole('button', { name: 'Pratinjau profil' }));
+    expect(await screen.findByRole('region', { name: 'Pratinjau Instansi Demo A' })).toBeInTheDocument();
+    expect(panel).toBeInTheDocument();
+    expect(screen.getByTestId('map-level')).toHaveTextContent(level);
+  });
+
+  it('mengubah kabupaten/kota menutup popup yang berasal dari Pratinjau profil', async () => {
+    const { user, container, desktop } = setup('/simpul-jaringan?provinsi=36&kabKota=36.73&demo=1');
+    await user.click(await screen.findByRole('button', { name: 'Daftar' }));
+    const row = container.querySelector<HTMLElement>('[data-result-instansi-id="demo-c"]')!;
+    await user.click(within(row).getByRole('button', { name: 'Pratinjau profil' }));
+    await screen.findByRole('region', { name: 'Pratinjau Instansi Demo C' });
+    await user.selectOptions(desktop().getByLabelText('Kabupaten / Kota'), '36.74');
+    expect(screen.getByTestId('map-level')).toHaveTextContent('instansi');
+    expect(desktop().getByLabelText('Kabupaten / Kota')).toHaveValue('36.74');
+    expect(desktop().getByLabelText('Jenis Instansi')).toHaveValue('');
+    expect(screen.queryByRole('region', { name: 'Pratinjau Instansi Demo C' })).not.toBeInTheDocument();
+    expect(container.querySelector('[data-result-instansi-id="demo-c"]')).not.toBeInTheDocument();
+  });
+
+  it('Escape menutup popup daftar dan memulihkan fokus tombol Pratinjau tanpa membuka ulang profil', async () => {
+    const { user, container } = setup('/simpul-jaringan?provinsi=36&kabKota=36.73&demo=1');
+    await user.click(await screen.findByRole('button', { name: 'Daftar' }));
+    const row = container.querySelector<HTMLElement>('[data-result-instansi-id="demo-c"]')!;
+    const origin = within(row).getByRole('button', { name: 'Pratinjau profil' });
+    await user.click(origin);
+    await screen.findByRole('region', { name: 'Pratinjau Instansi Demo C' });
+    await user.keyboard('{Escape}');
+    expect(origin).toHaveFocus();
+    expect(screen.queryByRole('region', { name: 'Pratinjau Instansi Demo C' })).not.toBeInTheDocument();
+  });
+
+  it('kabupaten/kota tanpa koordinat kantor mempertahankan peta dan hanya membuka daftar melalui aksi eksplisit', async () => {
+    const repository = createFixtureRepository();
+    const { snapshot } = makeFixture();
+    repository.listInstansi = async () => ({
+      metadata: snapshot.metadata,
+      items: snapshot.instansi.map((item) => ({ ...item, coordinates: null })),
+    });
+    const { user } = setup('/simpul-jaringan?demo=1', repository);
+    await enterInstansi(user);
+    expect(screen.queryByRole('complementary', { name: 'Daftar instansi' })).not.toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Titik instansi belum tersedia' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /^Marker / })).not.toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Buka daftar instansi' }));
+    const list = await screen.findByRole('complementary', { name: 'Daftar instansi' });
+    expect(within(list).getAllByRole('link')).toHaveLength(7);
+    expect(within(list).getByText('7 hasil · 0 terpetakan · 7 belum memiliki koordinat (demo).')).toBeInTheDocument();
+  });
+  function catalogRepository() {
+    const fixture = makeFixture();
+    const provinceOnly = fixture.snapshot.instansi[0]!;
+    provinceOnly.kabKotaId = null;
+    provinceOnly.kabKotaName = null;
+    provinceOnly.coordinates = null;
+    const unknown = fixture.snapshot.instansi[1]!;
+    unknown.provinceId = null;
+    unknown.provinceName = null;
+    unknown.kabKotaId = null;
+    unknown.kabKotaName = null;
+    unknown.coordinates = null;
+    return {
+      getReferenceData: async () => fixture.references,
+      listInstansi: async () => ({ items: fixture.snapshot.instansi, metadata: fixture.snapshot.metadata }),
+      getInstansiDetail: async (id: string) => {
+        const instansi = fixture.snapshot.instansi.find((item) => item.id === id);
+        const record = fixture.snapshot.statistics.find((item) => item.instansiId === id);
+        return instansi && record ? { ...record, instansi, metadata: fixture.snapshot.metadata } : null;
+      },
+    };
+  }
+  it('instansi tanpa wilayah dapat dipratinjau dan detail kembali memulihkan katalog nasional', async () => {
+    const { user, container } = setup('/simpul-jaringan?demo=1&daftar=belum-terpetakan', catalogRepository());
+    const panel = await screen.findByRole('complementary', { name: 'Belum Terpetakan' });
+    expect(within(panel).getByRole('link', { name: 'Instansi Demo B' })).toBeInTheDocument();
+    expect(within(panel).queryByRole('link', { name: 'Instansi Demo A' })).not.toBeInTheDocument();
+    await user.click(within(panel).getByRole('button', { name: 'Pratinjau profil' }));
+    const popup = await screen.findByRole('region', { name: 'Pratinjau Instansi Demo B' });
+    expect(screen.getByTestId('map-level')).toHaveTextContent('nasional');
+    expect(within(popup).getAllByText('0')).toHaveLength(2);
+    await user.keyboard('{Escape}');
+    await user.click(screen.getByRole('button', { name: 'Geser peta uji' }));
+    const scrolling = container.querySelector<HTMLElement>('.results-scroll')!;
+    scrolling.scrollTop = 70;
+    fireEvent.scroll(scrolling);
+    await user.click(within(panel).getByRole('link', { name: 'Instansi Demo B' }));
+    await user.click(await screen.findByRole('link', { name: 'Kembali ke Peta' }));
+    await screen.findByRole('complementary', { name: 'Belum Terpetakan' });
+    expect(screen.getByTestId('map-level')).toHaveTextContent('nasional');
+    expect(container.querySelector<HTMLElement>('.results-scroll')?.scrollTop).toBe(70);
+  });
+  it('instansi yang hanya terverifikasi provinsinya tersedia pada daftar provinsi tanpa marker', async () => {
+    const { user } = setup('/simpul-jaringan?demo=1', catalogRepository());
+    await user.click(await screen.findByRole('button', { name: 'Peta Banten' }));
+    await user.click(screen.getByRole('button', { name: 'Daftar' }));
+    const section = screen.getByRole('region', { name: 'Instansi dengan provinsi terverifikasi' });
+    expect(within(section).getByRole('link', { name: 'Instansi Demo A' })).toBeInTheDocument();
+    await user.click(within(section).getByRole('button', { name: 'Pratinjau profil' }));
+    await screen.findByRole('region', { name: 'Pratinjau Instansi Demo A' });
+    await user.click(screen.getByRole('button', { name: 'Peta Kota Serang' }));
+    expect(screen.queryByRole('region', { name: 'Pratinjau Instansi Demo A' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Instansi Demo A' })).not.toBeInTheDocument();
   });
 });
 

@@ -1,4 +1,4 @@
-import type { Instansi, MapSession } from '../types/domain';
+import type { Instansi, MapSession, SnapshotMetadata } from '../types/domain';
 const KEY = 'jikn-map-session-v1';
 export function saveMapSession(session: MapSession) {
   try {
@@ -7,7 +7,7 @@ export function saveMapSession(session: MapSession) {
     /* Penyimpanan browser dapat dinonaktifkan. */
   }
 }
-export function readMapSession(query?: string): MapSession | null {
+export function readMapSession(query?: string, datasetKind?: SnapshotMetadata['datasetKind']): MapSession | null {
   try {
     const raw: unknown = JSON.parse(sessionStorage.getItem(KEY) ?? 'null');
     if (!raw || typeof raw !== 'object') return null;
@@ -29,6 +29,8 @@ export function readMapSession(query?: string): MapSession | null {
     )
       return null;
     if (query !== undefined && value.query !== query) return null;
+    if (datasetKind === 'pilot' && value.datasetKind !== 'pilot') return null;
+    if (datasetKind && value.datasetKind && value.datasetKind !== datasetKind) return null;
     return value;
   } catch {
     return null;
@@ -41,16 +43,19 @@ export function getReturnMapUrl(search: string, detail?: Instansi): string {
   if (
     saved &&
     savedParams.get('demo') === current.get('demo') &&
+    savedParams.get('data') === current.get('data') &&
     (!detail ||
+      saved.detailId === detail.id ||
       (savedParams.get('provinsi') === detail.provinceId &&
         savedParams.get('kabKota') === detail.kabKotaId))
   )
     return `/simpul-jaringan${saved.query}`;
   const query = new URLSearchParams();
   if (current.get('demo') === '1') query.set('demo', '1');
+  if (current.get('data') === 'excel') query.set('data', 'excel');
   if (detail) {
-    query.set('provinsi', detail.provinceId);
-    query.set('kabKota', detail.kabKotaId);
+    if (detail.provinceId) query.set('provinsi', detail.provinceId);
+    if (detail.provinceId && detail.kabKotaId) query.set('kabKota', detail.kabKotaId);
     // Tipe dari profil diketahui valid; query jenis asing tidak diwariskan.
     if (current.get('jenis') === detail.jenisId && detail.jenisId)
       query.set('jenis', detail.jenisId);

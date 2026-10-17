@@ -16,9 +16,11 @@ import { formatMetric, trendForRange } from '../../services/metrics';
 export function TrendCard({
   series,
   referenceDate,
+  simulation = false,
 }: {
   series: TrenInput[] | null;
   referenceDate: string;
+  simulation?: boolean;
 }) {
   const [range, setRange] = useState<'1' | '5' | 'all'>('5');
   const rows = trendForRange(series, range, referenceDate);
@@ -41,6 +43,7 @@ export function TrendCard({
         <h2 id="trend-title" className="detail-section-title">
           <ChartNoAxesCombined size={20} aria-hidden="true" />
           Tren Input Arsip
+          {simulation && <span className="simulation-label">SIMULASI</span>}
         </h2>
         <label className="trend-range">
           <span className="visually-hidden">Rentang tren input arsip</span>

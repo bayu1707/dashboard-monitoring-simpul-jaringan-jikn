@@ -8,7 +8,7 @@
   background: #add4de;
   overflow: hidden;
 }
-.map-canvas {
+.map-canvas.leaflet-container {
   position: absolute;
   inset: 0;
   height: 100%;
@@ -266,7 +266,7 @@
 .tile-error {
   position: absolute;
   z-index: 800;
-  bottom: 82px;
+  bottom: 180px;
   right: 16px;
   max-width: 340px;
   background: #fff8e7;
@@ -328,6 +328,24 @@
   padding: 0 16px 12px;
   flex: 1;
   overscroll-behavior: contain;
+}
+.catalog-controls {
+  padding: 10px 16px;
+  display: grid;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.catalog-controls label { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+.catalog-controls input, .catalog-controls select {
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: white;
+  color: var(--ink);
+  padding: 8px;
+  font: inherit;
 }
 .results-description {
   padding: 12px 2px 3px;
@@ -449,6 +467,102 @@
 .instansi-marker {
   background: none;
   border: 0;
+}
+.map-canvas .region-count-marker.leaflet-interactive { background: none; border: 0; pointer-events: none; }
+.region-count-marker > div { position: relative; width: 48px; height: 48px; }
+.region-count-label { position: absolute; inset: 0; pointer-events: none; }
+.region-count-leader { position: absolute; inset: 0; width: 48px; height: 48px; overflow: visible; pointer-events: none; }
+.region-count-leader line { stroke: #4d7392; stroke-width: 1.5; }
+.region-count-circle {
+  /* Hit area mengikuti lingkaran; sudut transparan tidak menutup tombol tetangga. */
+  pointer-events: auto;
+  clip-path: circle(50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 6px solid #ffffff70;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px #234b652b;
+  font-size: 16px;
+  font-weight: 600;
+}
+.region-count-small { background: #a3d674; color: #2d6524; }
+.region-count-medium { background: #f6d366; color: #645215; }
+.region-count-large { background: #f2aa6e; color: #824313; }
+.region-count-caption {
+  display: none;
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 190px;
+  padding: 4px 7px;
+  border-radius: 4px;
+  color: var(--ink);
+  background: #fffffff2;
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.region-count-marker:hover .region-count-caption,
+.region-count-marker:focus-visible .region-count-caption { display: block; }
+.region-count-marker:focus-visible .region-count-circle { outline: 3px solid var(--blue-strong); outline-offset: -3px; }
+.region-summary-legend {
+  position: absolute;
+  z-index: 750;
+  left: 16px;
+  bottom: 56px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: calc(100% - 90px);
+  padding: 4px 9px;
+  background: #fffffff0;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.region-summary-legend .text-button { min-height: 44px; padding: 0 4px; }
+.region-count-tooltip { max-width: 260px; white-space: normal; }
+.region-count-compact .region-count-circle {
+  border-width: 8px;
+  background-clip: padding-box;
+  font-weight: 500;
+  box-shadow: none;
+}
+.region-count-compact .region-count-small { border-color: #b5e28c80; }
+.region-count-compact .region-count-medium { border-color: #f7d76d80; }
+.region-count-compact .region-count-large { border-color: #f3ac7080; }
+.pilot-map .map-navigation p.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  min-height: 0;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+}
+.pilot-map .map-source-note { display: none; }
+@media (max-width: 767px) {
+  .region-summary-legend { left: 12px; bottom: 56px; max-width: calc(100% - 90px); }
+}
+@media (min-width: 768px) {
+  .mobile-popup.list-profile-popup {
+    right: 380px;
+    top: 130px;
+    bottom: auto;
+    width: 320px;
+    max-width: calc(100% - 410px);
+    max-height: calc(100% - 160px);
+  }
 }
 .marker-pin {
   margin: 4px 7px;
@@ -748,7 +862,7 @@
   .tile-error {
     left: 12px;
     right: 12px;
-    bottom: 80px;
+    bottom: 190px;
     max-width: none;
   }
   .map-empty-notice + .tile-error {

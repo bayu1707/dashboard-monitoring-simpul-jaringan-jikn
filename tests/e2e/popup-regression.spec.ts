@@ -1,4 +1,6 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import type { SnapshotData } from '../../src/types/domain';
 
 const serangUrl = '/simpul-jaringan?provinsi=36&kabKota=36.73&demo=1';
 const markerFor = (page: Page, id: string) =>
@@ -19,6 +21,7 @@ test.beforeEach(({ page }) => {
 test.afterEach(({ page }) => expect(runtimeErrors.get(page)).toEqual([]));
 
 async function waitForMapMotion(page: Page) {
+  await expect(page.locator('[data-zoom-moving="true"]')).toHaveCount(0);
   await expect(page.locator('.map-canvas.leaflet-zoom-anim, .map-canvas .leaflet-pan-anim'))
     .toHaveCount(0);
   await expect.poll(async () => {
@@ -155,6 +158,28 @@ test('pergantian cepat A/B memakai marker terakhir; timer lama dan fokus keyboar
   await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'provinsi');
   await expect(popup(page)).toHaveCount(0);
   await expect(markerFor(page, 'demo-b')).toHaveCount(0);
+});
+
+test('popup nama panjang setelah kembali tetap terbuka ketika langsung berpindah dari marker ke tombol', async ({ page }) => {
+  // Memakai instansi sintetis yang sudah ada; tidak menambah data atau mengubah sumber produksi.
+  const fixture = JSON.parse(readFileSync('public/demo/snapshot.json', 'utf8')) as SnapshotData;
+  for (const item of fixture.instansi.filter((item) => ['demo-a', 'demo-b'].includes(item.id)))
+    item.name = `${item.name} dengan Nama Panjang untuk Regresi Perpindahan Pointer`;
+  await page.route('**/demo/snapshot.json', (route) => route.fulfill({ json: fixture }));
+  await openSerang(page);
+  for (const id of ['demo-a', 'demo-b']) {
+    await unfoldAandB(page);
+    await openMarker(page, id);
+    const link = popup(page).getByRole('link', { name: 'Lihat detail' });
+    await link.hover();
+    await page.waitForTimeout(350);
+    await expect(popup(page)).toBeVisible();
+    await expectAnchor(page, id);
+    await link.click();
+    await expect(page.locator('.profile-identity h1')).toHaveText(fixture.instansi.find((item) => item.id === id)!.name);
+    await page.getByRole('link', { name: 'Kembali ke Peta', exact: true }).click();
+    await waitForMapMotion(page);
+  }
 });
 
 async function dragMapBy(page: Page, dx: number, dy: number) {

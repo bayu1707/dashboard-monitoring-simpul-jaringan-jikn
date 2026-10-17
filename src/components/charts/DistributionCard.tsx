@@ -14,9 +14,11 @@ const categoryColors = [
 export function DistributionCard({
   series,
   totalArsip,
+  simulation = false,
 }: {
   series: DistribusiArsip[] | null;
   totalArsip: number | null;
+  simulation?: boolean;
 }) {
   const known = series?.filter((row) => row.count !== null) ?? [];
   const plotted = known.filter((row) => (row.count ?? 0) > 0);
@@ -32,6 +34,7 @@ export function DistributionCard({
       <h2 id="distribution-title" className="detail-section-title">
         <ChartPie size={20} aria-hidden="true" />
         Distribusi Arsip
+        {simulation && <span className="simulation-label">SIMULASI</span>}
       </h2>
       {series === null || series.length === 0 ? (
         <div className="chart-empty">
