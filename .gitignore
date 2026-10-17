@@ -34,3 +34,9 @@ Thumbs.db
 *.sql
 *.sqlite
 *.sqlite3
+
+# Snapshot Excel dan laporan berisi data pengguna: review lokal dahulu.
+.local/
+*.xlsx
+*.xls
+__pycache__/

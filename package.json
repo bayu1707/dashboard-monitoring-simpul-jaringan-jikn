@@ -15,7 +15,13 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "validate:data": "tsx scripts/validate-data.ts"
+    "validate:data": "tsx scripts/validate-data.ts",
+    "import:casefile": "python3 scripts/import-casefile.py",
+    "import:landing-pages": "tsx scripts/import-landing-pages.ts",
+    "build:references": "tsx scripts/build-national-references.ts",
+    "build:pilot": "tsx scripts/build-local-pilot.ts",
+    "prepare:java": "tsx scripts/prepare-java-locations.ts",
+    "test:import": "python3 -m unittest discover -s tests -p 'test_import_*.py'"
   },
   "dependencies": {
     "react": "19.3.0",

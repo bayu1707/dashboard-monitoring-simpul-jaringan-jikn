@@ -9,6 +9,7 @@ interface Props {
   detail: InstansiDetail;
   markers: RefObject<Map<string, L.Marker>>;
   demo: boolean;
+  jenisName?: string | null;
   search: string;
   onClose: (id?: string) => void;
   onDetail: () => void;
@@ -129,7 +130,7 @@ export function MarkerPopup({ detail, markers, ...props }: Props) {
     };
   }, [map, id, markers, content]);
   return createPortal(
-    <InstansiPopup detail={detail} demo={props.demo} search={props.search}
+    <InstansiPopup detail={detail} demo={props.demo} search={props.search} jenisName={props.jenisName}
       onClose={() => props.onClose()} onDetail={props.onDetail}
       onEnter={noop} onLeave={noop} />,
     content,

@@ -21,6 +21,7 @@ import { CreatorsCard } from '../components/charts/CreatorsCard';
 import { calculateContribution, formatMetric } from '../services/metrics';
 import { getReturnMapUrl } from '../services/session';
 import '../styles/detail.css';
+import '../styles/landing-page.css';
 
 const dateFormatter = new Intl.DateTimeFormat('id-ID', {
   dateStyle: 'long',
@@ -149,10 +150,16 @@ export function InstansiDetailPage({
       </main>
     );
   const { instansi, metadata, statistik } = detail;
+  const simulation = metadata.datasetKind === 'pilot';
+  const coordinateLink = sourceLink(instansi.coordinateSource ?? '');
   const jenisName =
     data.references.jenisInstansi.find((jenis) => jenis.id === instansi.jenisId)
       ?.name ?? null;
-  const contribution = calculateContribution(statistik.jumlahArsip, metadata);
+  const sampleTotal = metadata.sampleTotal?.value ?? null;
+  const contribution = simulation
+    ? sampleTotal !== null && sampleTotal > 0 && statistik.jumlahArsip.value !== null
+      ? statistik.jumlahArsip.value / sampleTotal * 100 : null
+    : calculateContribution(statistik.jumlahArsip, metadata);
   const monthlyAdded =
     detail.monthlyAdded !== null &&
     detail.monthlyAdded.yearMonth === metadata.referenceDate.slice(0, 7)
@@ -163,9 +170,9 @@ export function InstansiDetailPage({
       <nav className="detail-breadcrumb" aria-label="Breadcrumb">
         <Link to={returnUrl}>Simpul Jaringan</Link>
         <span aria-hidden="true">/</span>
-        <span>{instansi.provinceName}</span>
+        <span>{instansi.provinceName ?? 'Provinsi belum terverifikasi'}</span>
         <span aria-hidden="true">/</span>
-        <span>{instansi.kabKotaName}</span>
+        <span>{instansi.kabKotaName ?? 'Kabupaten/kota belum terverifikasi'}</span>
         <span aria-hidden="true">/</span>
         <span aria-current="page">{instansi.name}</span>
       </nav>
@@ -179,17 +186,31 @@ export function InstansiDetailPage({
           ANRI.
         </p>
       )}
+      {metadata.datasetKind === 'excel' && (
+        <p className="detail-snapshot-label">
+          Snapshot Excel · Data Pengelolaan Casefile. Tahun bergabung berasal dari Excel;
+          data ini bukan sinkronisasi API SIKN.
+        </p>
+      )}
+      {simulation && (
+        <p className="detail-snapshot-label">
+          <strong>DATA SIMULASI</strong> · Nama dan tahun bergabung dari Excel.
+          {instansi.coordinates ? ' Pin kantor dicocokkan dengan sumber publik yang dicatat per instansi.' : ' Pin kantor belum dapat dipastikan; instansi tersedia melalui daftar.'}
+          Statistik dan grafik adalah contoh, bukan data resmi JIKN.
+        </p>
+      )}
       <div className="detail-columns">
         <div className="detail-left">
-          <ProfileCard instansi={instansi} jenisName={jenisName} />
-          <StatisticCards statistik={statistik} />
+          <ProfileCard instansi={instansi} jenisName={jenisName} compact={simulation} />
+          <StatisticCards statistik={statistik} simulation={simulation} />
           <section
             className="detail-card contribution-card"
             aria-labelledby="contribution-title"
           >
             <h2 id="contribution-title" className="detail-section-title">
               <Database size={20} aria-hidden="true" />
-              Kontribusi terhadap JIKN
+              {simulation ? 'Kontribusi pada percontohan' : 'Kontribusi terhadap JIKN'}
+              {simulation && <span className="simulation-label">SIMULASI</span>}
             </h2>
             {contribution === null ? (
               <>
@@ -209,14 +230,14 @@ export function InstansiDetailPage({
                     }).format(contribution)}
                     %
                   </strong>
-                  <span>dari total arsip JIKN pada snapshot ini</span>
+                  <span>{simulation ? 'dari total arsip simulasi pada sampel ini' : 'dari total arsip JIKN pada snapshot ini'}</span>
                 </div>
                 <div className="contribution-track" aria-hidden="true">
                   <span style={{ width: `${Math.min(contribution, 100)}%` }} />
                 </div>
                 <p className="detail-note">
                   {formatMetric(statistik.jumlahArsip.value)} dari{' '}
-                  {formatMetric(metadata.nationalTotal?.value ?? null)} arsip.
+                  {formatMetric(simulation ? sampleTotal : metadata.nationalTotal?.value ?? null)} arsip{simulation ? ' simulasi' : ''}.
                   Tanggal acuan:{' '}
                   {dateFormatter.format(new Date(metadata.referenceDate))}.
                 </p>
@@ -227,6 +248,7 @@ export function InstansiDetailPage({
             <h2 id="update-title" className="detail-section-title">
               <RefreshCw size={20} aria-hidden="true" />
               Pembaruan Data
+              {simulation && <span className="simulation-label">PERCONTOHAN</span>}
             </h2>
             <dl className="update-fields">
               <div>
@@ -272,15 +294,18 @@ export function InstansiDetailPage({
             key={`tren-${instansi.id}`}
             series={detail.trenInput}
             referenceDate={metadata.referenceDate}
+            simulation={simulation}
           />
           <DistributionCard
             series={detail.distribusiArsip}
             totalArsip={statistik.jumlahArsip.value}
+            simulation={simulation}
           />
           <CreatorsCard
             key={`pencipta-${instansi.id}`}
             creators={detail.penciptaArsip}
             multiCreator={detail.multiCreator}
+            simulation={simulation}
           />
           <section
             className="detail-card source-card"
@@ -291,10 +316,24 @@ export function InstansiDetailPage({
               Catatan Sumber
             </h2>
             <p>
-              {metadata.coverage === 'full'
+              {metadata.coverageDescription ?? (metadata.coverage === 'full'
                 ? 'Cakupan snapshot: penuh menurut deklarasi sumber.'
-                : 'Cakupan snapshot: parsial. Data ini tidak mewakili total seluruh simpul JIKN.'}
+                : 'Cakupan snapshot: parsial. Data ini tidak mewakili total seluruh simpul JIKN.')}
             </p>
+            {instansi.joinedYearSource && (
+              <p>Sumber tahun bergabung: {instansi.joinedYearSource}.</p>
+            )}
+            {instansi.locationVerificationNotes && (
+              <p>Verifikasi lokasi: {instansi.locationVerificationNotes}</p>
+            )}
+            {coordinateLink && (
+              <p>Lokasi kantor: <a href={coordinateLink} target="_blank" rel="noopener noreferrer">{simulation && (!instansi.coordinatesVerificationMethod || instansi.coordinatesVerificationMethod === 'google-maps-place') ? 'Lihat pin Google Maps' : 'Sumber koordinat'}</a>.
+                {instansi.coordinatesVerifiedAt && Number.isFinite(Date.parse(instansi.coordinatesVerifiedAt)) && ` Diperiksa ${timeFormatter.format(new Date(instansi.coordinatesVerifiedAt))} WIB.`}
+                {!simulation && instansi.coordinatesVerificationNotes && ` ${instansi.coordinatesVerificationNotes}`}</p>
+            )}
+            {instansi.coordinateLocationLabel && <p>Titik yang ditampilkan: {instansi.coordinateLocationLabel}.</p>}
+            <details open={simulation ? undefined : true}>
+            <summary>Referensi dan catatan verifikasi</summary>
             <ul className="source-list">
               {metadata.sources.map((source) => {
                 const href = sourceLink(source);
@@ -318,6 +357,7 @@ export function InstansiDetailPage({
                 ))}
               </ul>
             )}
+            </details>
             <p className="detail-note">
               Snapshot {metadata.id} · diambil{' '}
               {timeFormatter.format(new Date(metadata.capturedAt))} WIB. Nilai

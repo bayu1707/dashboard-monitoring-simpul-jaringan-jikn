@@ -6,9 +6,11 @@ import { formatMetric } from '../../services/metrics';
 export function CreatorsCard({
   creators,
   multiCreator,
+  simulation = false,
 }: {
   creators: PenciptaArsip[] | null;
   multiCreator: boolean | null;
+  simulation?: boolean;
 }) {
   const [expanded, setExpanded] = useState(false);
   const rows = expanded ? creators : creators?.slice(0, 5);
@@ -24,7 +26,8 @@ export function CreatorsCard({
       <div className="card-title-row">
         <h2 id="creators-title" className="detail-section-title">
           <Users size={20} aria-hidden="true" />
-          Pencipta Arsip
+        Pencipta Arsip
+        {simulation && <span className="simulation-label">SIMULASI</span>}
         </h2>
         {creators !== null && creators.length > 5 && (
           <button

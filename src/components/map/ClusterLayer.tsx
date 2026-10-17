@@ -71,6 +71,8 @@ export function ClusterLayer({
           element.setAttribute('aria-label', item.name);
           element.setAttribute('data-instansi-id', item.id);
           element.setAttribute('role', 'button');
+          // ID tetap dipakai untuk count cluster; pengguna melihat nama lewat popup dan aria-label.
+          element.removeAttribute('title');
         }
       });
       marker.on('mouseover', () => {

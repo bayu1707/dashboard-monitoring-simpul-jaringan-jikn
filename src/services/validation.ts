@@ -3,6 +3,8 @@ import type {
   SnapshotData,
   SnapshotMetadata,
 } from '../types/domain';
+import { safeLandingPageUrl, validLandingPageTimestamp } from './landingPage';
+import { coordinateMethod, safeCoordinateSource } from './coordinateSource';
 
 export class DataValidationError extends Error {
   readonly issues: string[];
@@ -141,7 +143,7 @@ function validateMetadata(
     issues.push(`${path}.referenceDate tidak valid`);
   if (!['full', 'partial'].includes(String(metadata.coverage)))
     issues.push(`${path}.coverage harus full atau partial`);
-  if (!['verified', 'empty', 'demo'].includes(String(metadata.datasetKind)))
+  if (!['verified', 'empty', 'demo', 'excel', 'pilot'].includes(String(metadata.datasetKind)))
     issues.push(`${path}.datasetKind tidak sah`);
   const definitions = object(
     metadata.metricDefinitions,
@@ -174,6 +176,12 @@ function validateMetadata(
       issues.push(
         `${path}.nationalTotal.definition harus sesuai definisi jumlahArsip metadata`,
       );
+  }
+  if (metadata.sampleTotal !== undefined && metadata.sampleTotal !== null) {
+    validateMetric(metadata.sampleTotal, `${path}.sampleTotal`, issues, metadata, 'percontohan');
+    if (metadata.datasetKind !== 'pilot') issues.push(`${path}.sampleTotal hanya untuk data percontohan`);
+    if (isObject(metadata.sampleTotal) && metadata.sampleTotal.definition !== definitions.jumlahArsip)
+      issues.push(`${path}.sampleTotal.definition harus sesuai jumlahArsip simulasi`);
   }
   return metadata;
 }
@@ -238,6 +246,12 @@ export function parseReferenceData(value: unknown): ReferenceData {
       for (const key of ['id', 'name', 'source'])
         requireText(region[key], `${path}.${key}`, issues);
       requireNullableText(region.sourceId, `${path}.sourceId`, issues);
+      if (region.labelPositionSource !== undefined)
+        requireText(region.labelPositionSource, `${path}.labelPositionSource`, issues);
+      if (region.geometryUrl !== undefined &&
+        (typeof region.geometryUrl !== 'string' ||
+          !/^\/data\/geometry\/kab-kota\/\d{2}\.json$/.test(region.geometryUrl)))
+        issues.push(`${path}.geometryUrl harus menunjuk aset geometri lokal`);
       if (region.level !== level) issues.push(`${path}.level harus ${level}`);
       if (level === 'province' && region.provinceId !== null)
         issues.push(`${path}.provinceId harus null`);
@@ -303,16 +317,13 @@ export function parseSnapshotData(
   const institutionIds = new Set(
     institutions.filter(isObject).map((item) => item.id),
   );
+  const landingOwners = new Map<string, string>();
   institutions.forEach((value, index) => {
     const path = `snapshot.instansi[${index}]`;
     const item = object(value, path, issues);
     for (const key of [
       'id',
       'name',
-      'provinceId',
-      'kabKotaId',
-      'provinceName',
-      'kabKotaName',
       'source',
     ])
       requireText(item[key], `${path}.${key}`, issues);
@@ -323,15 +334,19 @@ export function parseSnapshotData(
       'phone',
       'status',
       'logoUrl',
+      'provinceId',
+      'kabKotaId',
+      'provinceName',
+      'kabKotaName',
     ])
       requireNullableText(item[key], `${path}.${key}`, issues);
     const province = provinceMap.get(String(item.provinceId));
     const region = regionMap.get(String(item.kabKotaId));
-    if (!province)
+    if (item.provinceId !== null && !province)
       issues.push(
         `${path}: provinsi ${String(item.provinceId)} tidak ditemukan`,
       );
-    if (!region || region.provinceId !== item.provinceId)
+    if (item.kabKotaId !== null && (!region || region.provinceId !== item.provinceId))
       issues.push(
         `${path}: kabupaten/kota ${String(item.kabKotaId)} tidak sesuai provinsi ${String(item.provinceId)}`,
       );
@@ -339,6 +354,68 @@ export function parseSnapshotData(
       issues.push(`${path}.provinceName tidak sesuai nama referensi asli`);
     if (region && item.kabKotaName !== region.name)
       issues.push(`${path}.kabKotaName tidak sesuai nama referensi asli`);
+    if (item.provinceId === null && item.provinceName !== null)
+      issues.push(`${path}.provinceName harus null bila provinsi belum diketahui`);
+    if (item.kabKotaId === null && item.kabKotaName !== null)
+      issues.push(`${path}.kabKotaName harus null bila kabupaten/kota belum diketahui`);
+    if (item.locationVerificationStatus !== undefined &&
+      !['verified', 'needs-review', 'unresolved'].includes(String(item.locationVerificationStatus)))
+      issues.push(`${path}.locationVerificationStatus tidak sah`);
+    if (item.locationVerificationStatus === 'verified' && !province)
+      issues.push(`${path}: lokasi verified memerlukan provinsi yang sah`);
+    if (item.coordinateLocationLabel !== undefined) {
+      requireText(item.coordinateLocationLabel, `${path}.coordinateLocationLabel`, issues);
+      if (item.coordinates === null) issues.push(`${path}: label lokasi memerlukan koordinat yang tersedia`);
+    }
+    if (metadata.datasetKind === 'excel') {
+      requireText(item.joinedYearSource, `${path}.joinedYearSource`, issues);
+      requireText(item.locationVerificationNotes, `${path}.locationVerificationNotes`, issues);
+      if (!['verified', 'needs-review', 'unresolved'].includes(String(item.locationVerificationStatus)))
+        issues.push(`${path}: snapshot Excel memerlukan status verifikasi lokasi`);
+      if (metadata.nationalTotal !== null)
+        issues.push('Snapshot casefile bukan sumber total arsip nasional');
+    }
+    if (metadata.datasetKind === 'pilot') {
+      requireText(item.joinedYearSource, `${path}.joinedYearSource`, issues);
+      requireText(item.locationVerificationNotes, `${path}.locationVerificationNotes`, issues);
+      if (!province || !['verified', 'needs-review'].includes(String(item.locationVerificationStatus)))
+        issues.push(`${path}: percontohan memerlukan provinsi dan status tinjauan wilayah`);
+      if (item.coordinates !== null) {
+        requireText(item.coordinateSource, `${path}.coordinateSource`, issues);
+        requireText(item.coordinatesVerificationNotes, `${path}.coordinatesVerificationNotes`, issues);
+        if (!validTimestamp(item.coordinatesVerifiedAt))
+          issues.push(`${path}.coordinatesVerifiedAt harus timestamp valid dengan zona waktu`);
+        const method = coordinateMethod(item.coordinatesVerificationMethod);
+        if (!method || !safeCoordinateSource(item.coordinateSource, method))
+          issues.push(`${path}.coordinateSource harus URL HTTPS Google Maps atau sumber koordinat resmi sesuai metode pemeriksaan`);
+        if (!validCoordinates(item.coordinates) || !region || item.locationVerificationStatus !== 'verified')
+          issues.push(`${path}: marker percontohan memerlukan koordinat kantor dan kab/kota terverifikasi`);
+      } else if (item.coordinateSource || item.coordinatesVerifiedAt)
+        issues.push(`${path}: record tanpa koordinat tidak boleh mempunyai sumber/timestamp pin terverifikasi`);
+      if (metadata.nationalTotal !== null)
+        issues.push('Data percontohan bukan total nasional JIKN');
+      for (const [name, definition] of Object.entries(isObject(metadata.metricDefinitions) ? metadata.metricDefinitions : {}))
+        if (!String(definition).toUpperCase().includes('SIMULASI'))
+          issues.push(`snapshot.metadata.metricDefinitions.${name} harus menyebut SIMULASI`);
+    }
+    if (item.landingPageVerificationStatus !== undefined &&
+      !['verified', 'needs-review', 'unavailable'].includes(String(item.landingPageVerificationStatus)))
+      issues.push(`${path}.landingPageVerificationStatus tidak sah`);
+    if (item.landingPageUrl !== undefined && item.landingPageUrl !== null) {
+      const url = safeLandingPageUrl(item.landingPageUrl);
+      if (!url) issues.push(`${path}.landingPageUrl bukan URL JIKN yang diizinkan`);
+      else {
+        const owner = landingOwners.get(url.toLowerCase());
+        if (owner) issues.push(`${path}: URL Landing Page dipakai oleh ${owner} dan ${String(item.id)}`);
+        landingOwners.set(url.toLowerCase(), String(item.id));
+      }
+    }
+    if (item.landingPageVerificationStatus === 'verified') {
+      if (!safeLandingPageUrl(item.landingPageUrl)) issues.push(`${path}: URL verified wajib tersedia`);
+      requireText(item.landingPageSource, `${path}.landingPageSource`, issues);
+      if (!validLandingPageTimestamp(item.landingPageVerifiedAt) || Date.parse(String(item.landingPageVerifiedAt)) > Date.now())
+        issues.push(`${path}.landingPageVerifiedAt harus waktu verifikasi yang sah`);
+    }
     if (item.jenisId !== null && !kinds.has(String(item.jenisId)))
       issues.push(`${path}.jenisId kategori tidak sah`);
     if (item.coordinates !== null && !validCoordinates(item.coordinates))

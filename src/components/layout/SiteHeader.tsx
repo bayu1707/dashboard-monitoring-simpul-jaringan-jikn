@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
 import { useState } from 'react';
-export function SiteHeader({ demo }: { demo: boolean }) {
+export function SiteHeader({ demo, pilot = false, mapSearch = demo ? '?demo=1' : '' }: { demo: boolean; pilot?: boolean; mapSearch?: string }) {
   const [failed, setFailed] = useState(false);
   return (
     <>
@@ -11,7 +11,7 @@ export function SiteHeader({ demo }: { demo: boolean }) {
       <header className="site-header">
         <div className="identity-row">
           <Link
-            to={`/simpul-jaringan${demo ? '?demo=1' : ''}`}
+            to={`/simpul-jaringan${mapSearch}`}
             className="brand"
             aria-label="JIKN, kembali ke peta nasional"
           >
@@ -32,6 +32,7 @@ export function SiteHeader({ demo }: { demo: boolean }) {
           </Link>
           <div className="header-utility">
             {demo && <span className="demo-badge">DATA DEMO</span>}
+            {pilot && <span className="demo-badge">DATA SIMULASI</span>}
             <span className="language" aria-label="Bahasa antarmuka: Indonesia">
               <span className="country-flag" aria-hidden="true" />
               Indonesia
@@ -53,7 +54,7 @@ export function SiteHeader({ demo }: { demo: boolean }) {
           <Link
             aria-current="page"
             className="active"
-            to={`/simpul-jaringan${demo ? '?demo=1' : ''}`}
+            to={`/simpul-jaringan${mapSearch}`}
           >
             Simpul Jaringan
           </Link>
