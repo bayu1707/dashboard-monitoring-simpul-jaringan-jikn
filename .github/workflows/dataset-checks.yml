@@ -1,7 +1,7 @@
 name: Validasi dataset dan clone tim
 on:
   push:
-    branches: [main, 'codex/dataset-kolaborasi-jawa']
+    branches: [main]
   pull_request:
 permissions:
   contents: read

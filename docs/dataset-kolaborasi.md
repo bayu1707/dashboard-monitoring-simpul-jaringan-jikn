@@ -82,3 +82,5 @@ Workflow GitHub menjalankan pemeriksaan dan smoke browser pada Ubuntu/Windows. S
 - Salinan bersih hanya berisi file calon commit, tanpa `.local`/`.env.local`: `npm ci`, kedua validator, typecheck, lint, 135 tes dan build lulus; dua smoke browser kolaborasi lulus. Folder asal dan lokasi clone berbeda.
 - Preview hasil build salinan bersih memuat pilot enam provinsi dan katalog Excel 643 record, tanpa request `/local-data/` atau error runtime.
 - Windows fisik belum diuji. Hasil workflow Windows/Ubuntu dilihat pada run GitHub yang menyertai PR, bukan diasumsikan dari hasil MacBook.
+
+Perbaikan hasil CI awal: checkout Windows mengubah baris file lisensi menjadi CRLF sehingga checksum berbeda. `.gitattributes` kini memaksa LF untuk TXT/Python juga; exporter menulis UTF-8/LF secara eksplisit. Smoke test menunggu transform peta stabil sebelum memindahkan pointer ke popup setelah autopan, dengan pemeriksaan popup tetap terbuka lebih dari 200 ms dipertahankan.

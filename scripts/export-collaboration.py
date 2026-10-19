@@ -34,7 +34,7 @@ def main():
         ('pilot', '.local/pilot/snapshot.json', '.local/pilot/references.json'),
         ('excel', '.local/casefile/snapshot.json', 'public/data/references.json'),
     ]:
-        original = json.loads((ROOT / source).read_text())
+        original = json.loads((ROOT / source).read_text(encoding='utf-8'))
         data = sanitize(original)
         for item in data['instansi']:
             if set(item) - FIELDS or item['email'] is not None or item['phone'] is not None:
@@ -49,7 +49,7 @@ def main():
         staged[snapshot_path] = data
         if mode == 'pilot':
             reference_path = output / mode / 'references.json'
-            staged[reference_path] = sanitize(json.loads((ROOT / references).read_text()))
+            staged[reference_path] = sanitize(json.loads((ROOT / references).read_text(encoding='utf-8')))
         else:
             reference_path = ROOT / references
         catalog[mode] = {
@@ -64,7 +64,7 @@ def main():
     # Review/validasi seluruh input diselesaikan sebelum menulis keluaran.
     for path, data in staged.items():
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+        path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     dependencies = set(staged) | {ROOT / 'public/data/references.json'}
     dependencies.update(path for path in (ROOT / 'public/data/geometry').rglob('*') if path.is_file())
     hashes = {'/' + path.relative_to(ROOT / 'public').as_posix(): hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(dependencies)}
@@ -77,7 +77,7 @@ def main():
         },
         'datasets': catalog, 'sha256': hashes,
     }
-    (output / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
+    (output / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     print(json.dumps(catalog, ensure_ascii=False))
 
 

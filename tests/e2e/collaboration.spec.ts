@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import type { SnapshotData } from '../../src/types/domain';
 
@@ -21,6 +21,16 @@ test.afterEach(async ({ page }) => {
   })).toEqual([]);
 });
 
+async function mapSettled(page: Page) {
+  await expect(page.locator('[data-zoom-moving="true"]')).toHaveCount(0);
+  await expect.poll(async () => {
+    const pane = page.locator('.leaflet-map-pane');
+    const before = await pane.evaluate((element) => getComputedStyle(element).transform);
+    await page.waitForTimeout(100);
+    return before === await pane.evaluate((element) => getComputedStyle(element).transform);
+  }).toBe(true);
+}
+
 test('clone: default Jawa → Jepara → hover → detail → kembali; Excel tetap 643 tanpa pin', async ({ page }) => {
   const privateRequests: string[] = [];
   page.on('request', (request) => { if (request.url().includes('/local-data/')) privateRequests.push(request.url()); });
@@ -30,17 +40,20 @@ test('clone: default Jawa → Jepara → hover → detail → kembali; Excel tet
   await page.locator('[data-region-count-id="33"]').click();
   await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'provinsi');
   await expect(page.locator('#desktop-province')).toHaveValue('33');
-  await expect(page.locator('[data-zoom-moving="true"]')).toHaveCount(0);
+  await mapSettled(page);
   await page.locator('[data-region-count-id="33.20"]').click();
   await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'instansi');
   await expect(page.locator('#desktop-kabkota')).toHaveValue('33.20');
   await expect(page.locator('#desktop-jenis')).toHaveValue('');
   const marker = page.locator(`[data-instansi-id="${jepara.id}"]`);
+  await mapSettled(page);
   await marker.hover();
   const popup = page.locator('.leaflet-popup .instansi-popup');
   await expect(popup.getByRole('heading')).toHaveText(jepara.name);
   await expect(popup).toContainText('DATA SIMULASI');
   await expect(popup.locator('.popup-metrics dd').last()).toHaveText(String(jepara.joinedYear));
+  // Tunggu autopan menyelesaikan perpindahan sebelum menghitung posisi tombol.
+  await mapSettled(page);
   await popup.getByRole('link', { name: 'Lihat detail' }).hover();
   await page.waitForTimeout(250);
   await expect(popup).toBeVisible();
