@@ -1,9 +1,11 @@
+import { useFixtureTiles } from './tileFixture';
 import { expect, test } from '@playwright/test';
+test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { existsSync, readFileSync } from 'node:fs';
 import type { SnapshotData } from '../../src/types/domain';
 
-const snapshot: SnapshotData | null = existsSync('.local/pilot/snapshot.json')
-  ? JSON.parse(readFileSync('.local/pilot/snapshot.json', 'utf8')) as SnapshotData : null;
+const snapshot: SnapshotData | null = existsSync('public/data/datasets/pilot/snapshot.json')
+  ? JSON.parse(readFileSync('public/data/datasets/pilot/snapshot.json', 'utf8')) as SnapshotData : null;
 const records = snapshot?.instansi ?? [];
 const targetNames = [
   'Dinas Perpustakaan dan Kearsipan Kabupaten Ciamis',

@@ -1,9 +1,11 @@
+import { useFixtureTiles } from './tileFixture';
 import { expect, test, type Page } from '@playwright/test';
+test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import type { Instansi, SnapshotData } from '../../src/types/domain';
 
 const reviewPath = '.local/coordinate-review-google-20261017/updates.json';
-const snapshotPath = '.local/pilot/snapshot.json';
+const snapshotPath = 'public/data/datasets/pilot/snapshot.json';
 const snapshot: SnapshotData | null = existsSync(snapshotPath)
   ? JSON.parse(readFileSync(snapshotPath, 'utf8')) as SnapshotData : null;
 const ids = new Set(existsSync(reviewPath)

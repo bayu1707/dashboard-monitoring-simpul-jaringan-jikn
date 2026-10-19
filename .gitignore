@@ -40,3 +40,7 @@ Thumbs.db
 *.xlsx
 *.xls
 __pycache__/
+
+# Handoff tetap privat pada seluruh clone tim.
+/PROJECT_HANDOFF_BRIEF.md
+/PROJECT_HANDOFF_FULL.md

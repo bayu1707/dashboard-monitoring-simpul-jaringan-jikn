@@ -546,7 +546,7 @@ function MapWorkspace({
             className="snapshot-note"
             title={`${metadata.coverageDescription ?? `Cakupan snapshot ${metadata.coverage}`}; bukan pemantauan real time.`}
           >
-            {metadata.datasetKind === 'pilot' ? <>{allItems.length} instansi percontohan · DATA SIMULASI<span className="sr-only"> · Nama/tahun: Excel · Lokasi: sumber publik per record · Angka lingkaran: jumlah instansi per wilayah.</span></> : <>{metadata.datasetKind === 'excel' ? 'Snapshot Excel · review lokal · ' : 'Snapshot '}{snapshotTime} WIB{demo ? ' · sintetis' : ' · bukan real time'}</>}
+            {metadata.datasetKind === 'pilot' ? <>{allItems.length} instansi percontohan · DATA SIMULASI<span className="sr-only"> · Nama/tahun: Excel · Lokasi: sumber publik per record · Angka lingkaran: jumlah instansi per wilayah.</span></> : <>{metadata.datasetKind === 'excel' ? 'Snapshot Excel · ' : 'Snapshot '}{snapshotTime} WIB{demo ? ' · sintetis' : ' · bukan real time'}</>}
           </span>
           <span
             className="map-source-note"

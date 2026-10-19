@@ -1,5 +1,8 @@
 # Koordinat kantor dan unit layanan
 
+> Pembaruan kolaborasi 19 Oktober 2026: clone baru memakai snapshot bersama, bukan middleware `.local`. [Panduan dataset bersama](dataset-kolaborasi.md) menjadi acuan menjalankan aplikasi. Perintah impor/riset di bawah adalah proses pemeliharaan lokal, bukan syarat clone.
+
+
 Review lokal 17 Oktober 2026 menambahkan **108 pin Google Maps**, sesudah audit Jepara dan Jawa Tengah. Jumlah berubah dari **82 → 127 → 141 → 249 pin**, dengan **0 dari 249 record katalog tanpa pin**. Kelengkapan ini berlaku untuk katalog percontohan enam provinsi yang telah dipilih, bukan seluruh 643 record Excel dan bukan jaminan semua simpul Jawa. Ini pemeriksaan sumber publik, bukan pengesahan ANRI atau sinkronisasi API.
 
 | Provinsi | Record | Pin publik/unit | Tanpa pin |

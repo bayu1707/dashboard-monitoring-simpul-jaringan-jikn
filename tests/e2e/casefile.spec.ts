@@ -1,8 +1,10 @@
+import { useFixtureTiles } from './tileFixture';
 import { test, expect, type Page } from '@playwright/test';
+test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { existsSync, readFileSync } from 'node:fs';
 import type { SnapshotData } from '../../src/types/domain';
 
-const path = '.local/casefile/snapshot.json';
+const path = 'public/data/datasets/excel/snapshot.json';
 const snapshot: SnapshotData | null = existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) as SnapshotData : null;
 test.skip(!snapshot, 'Snapshot pengguna belum diimpor di laptop ini; jalankan import:casefile untuk review lokal.');
 

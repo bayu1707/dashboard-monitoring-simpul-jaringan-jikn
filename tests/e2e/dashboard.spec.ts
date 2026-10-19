@@ -1,6 +1,8 @@
+import { useFixtureTiles } from './tileFixture';
 import { test, expect, type Page } from '@playwright/test';
+test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { readFileSync } from 'node:fs';
-const emptySnapshot = readFileSync(new URL('../../public/data/snapshot.json', import.meta.url), 'utf8');
+const emptySnapshot = JSON.stringify({ ...JSON.parse(readFileSync(new URL('../../public/data/snapshot.json', import.meta.url), 'utf8')), metadata: { ...JSON.parse(readFileSync(new URL('../../public/data/snapshot.json', import.meta.url), 'utf8')).metadata, datasetKind: 'excel' } });
 const demoUrl = '/simpul-jaringan?demo=1';
 const runtimeErrors = new WeakMap<Page, string[]>();
 function trackRuntime(page: Page) {
@@ -171,7 +173,7 @@ test('dataset bawaan kosong, ID asing, query invalid, JSON rusak dan retry sumbe
 }) => {
   let broken = false;
   // Skenario kosong harus tetap dapat diuji saat server lokal sedang mereview Excel.
-  await page.route(/\/(?:data|local-data)\/snapshot\.json$/, (route) => route.fulfill({
+  await page.route(/\/data\/datasets\/excel\/snapshot\.json$/, (route) => route.fulfill({
     status: 200,
     contentType: 'application/json',
     body: broken ? '{rusak' : emptySnapshot,

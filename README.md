@@ -7,11 +7,11 @@ dikembangkan secara kolaboratif menggunakan GitHub.
 
 Frontend untuk mempelajari dan mengembangkan halaman Simpul Jaringan ANRI. Aplikasi menyediakan peta nasional di `/simpul-jaringan` dan detail instansi di `/simpul-jaringan/:id`, dengan antarmuka bahasa Indonesia. Data dibaca melalui repository asinkron sehingga sumber lokal dapat diganti dengan REST API resmi pada tahap berikutnya.
 
-Dataset publik di Git tetap **kosong**. Tampilan development lokal diperluas ke **enam provinsi Jawa dan 119 kabupaten/kota**. Katalog memuat **249 instansi**, termasuk **120 record LKD** yang teridentifikasi dari Excel: **249 sudah mempunyai pin rujukan publik kantor/unit layanan** dan **0 tanpa pin** setelah penambahan 108 pin Google Maps (review 17 Oktober 2026). Tujuh pin mempunyai perbedaan alamat yang perlu dikonfirmasi, dua merupakan rujukan historis, dan tiga mempunyai tinjauan batas geometri yang dicatat per record. Nama/kode/tahun berasal dari Excel; statistik dan grafik berlabel **DATA SIMULASI**. Kelengkapan pin berlaku untuk 249 record percontohan yang dipilih, belum seluruh 643 record Excel atau jaminan seluruh instansi Jawa. Pin publik bukan pengesahan koordinat lapangan oleh ANRI. Baca [panduan koordinat](docs/koordinat-kantor.md) dan [panduan Jawa](docs/pilot-jawa.md); [panduan Jakarta–Banten](docs/pilot-jakarta-banten.md) merupakan riwayat tahap 28 record sebelumnya.
+Dataset kolaborasi kini ikut Git setelah konfirmasi izin berbagi dari pengguna pada 19 Oktober 2026. Clone baru langsung membuka **pilot Jawa** tanpa `.local` atau `.env.local`, pada development maupun build/preview. Cakupannya **enam provinsi Jawa dan 119 kabupaten/kota**. Katalog memuat **249 instansi**, termasuk **120 record LKD** yang teridentifikasi dari Excel: **249 sudah mempunyai pin rujukan publik kantor/unit layanan** dan **0 tanpa pin** setelah penambahan 108 pin Google Maps (review 17 Oktober 2026). Tujuh pin mempunyai perbedaan alamat yang perlu dikonfirmasi, dua merupakan rujukan historis, dan tiga mempunyai tinjauan batas geometri yang dicatat per record. Nama/kode/tahun berasal dari Excel; statistik dan grafik berlabel **DATA SIMULASI**. Kelengkapan pin berlaku untuk 249 record percontohan yang dipilih, belum seluruh 643 record Excel atau jaminan seluruh instansi Jawa. Pin publik bukan pengesahan koordinat lapangan oleh ANRI. Baca [panduan koordinat](docs/koordinat-kantor.md) dan [panduan Jawa](docs/pilot-jawa.md); [panduan Jakarta–Banten](docs/pilot-jakarta-banten.md) merupakan riwayat tahap 28 record sebelumnya.
 
-Tampilan awal dapat diperkecil hingga skala dunia, tanpa batas tambahan berdasarkan cakupan percontohan. Saat kab/kota suatu provinsi ditampilkan, batas zoom out mengikuti cakupannya agar lingkaran tidak menyebar keluar daerah. Gunakan **Kembali ke Nasional** atau **Reset** untuk kembali ke tampilan awal. Zoom pada lapisan instansi tetap tersedia untuk clustering. Tombol dan keyboard kini berubah 0,5 level dengan transisi 320 ms; scroll dibatasi 0,25–0,5 level per burst. Preferensi reduced motion tetap dihormati. Satu sampel Landing Page **Arsip Nasional RI** sudah aktif pada pilot lokal berdasarkan hyperlink dari pengguna; lihat [panduan mapping](docs/landing-pages.md).
+Tampilan awal dapat diperkecil hingga skala dunia, tanpa batas tambahan berdasarkan cakupan percontohan. Saat kab/kota suatu provinsi ditampilkan, batas zoom out mengikuti cakupannya agar lingkaran tidak menyebar keluar daerah. Gunakan **Kembali ke Nasional** atau **Reset** untuk kembali ke tampilan awal. Zoom pada lapisan instansi tetap tersedia untuk clustering. Tombol dan keyboard kini berubah 0,5 level dengan transisi 320 ms; scroll dibatasi 0,25–0,5 level per burst. Preferensi reduced motion tetap dihormati. Satu sampel Landing Page **Arsip Nasional RI** sudah aktif pada pilot kolaborasi berdasarkan hyperlink dari pengguna; lihat [panduan mapping](docs/landing-pages.md).
 
-Hasil impor penuh **643 instansi** tetap tersimpan di `.local/casefile/` dan dapat direview dengan `?data=excel`. Mode **DATA DEMO** sintetis lama tetap terpisah melalui `demo=1`. Koordinat, kontak, dan hyperlink yang belum diketahui tetap null; statistik simulasi tidak ditambahkan ke snapshot Excel penuh. Cadangan sebelum penyederhanaan berada di `.local/backups/`.
+Snapshot Excel penuh **643 instansi dan 0 pin** tersedia terpisah di `public/data/datasets/excel/snapshot.json`, dibuka melalui `?data=excel`. Workbook asli dan bahan impor tetap lokal. Paket pilot dan Excel memiliki manifest versi serta checksum; baca [panduan dataset bersama](docs/dataset-kolaborasi.md). Mode **DATA DEMO** sintetis lama tetap terpisah melalui `demo=1`. Koordinat, kontak, dan hyperlink yang belum diketahui tetap null; statistik simulasi tidak ditambahkan ke snapshot Excel penuh. Cadangan sebelum penyederhanaan berada di `.local/backups/`.
 
 Data instansi resmi belum terintegrasi dengan SIKN/JIKN. Proyek saat ini hanya frontend dengan JSON lokal; tidak membutuhkan backend atau database untuk dijalankan tim.
 
@@ -118,7 +118,7 @@ src/
   styles/                Design tokens, layout, peta, detail
 public/
   assets/                Logo ANRI bersumber resmi
-  data/                  Referensi dan snapshot utama kosong
+  data/                  Referensi, template kosong dan paket datasets pilot/Excel
     geometry/kab-kota/   GeoJSON kabupaten/kota per provinsi
   demo/                  Referensi taksonomi dan snapshot demo opt-in
 tests/                   Unit, komponen, fixture sintetis, browser E2E
@@ -127,9 +127,9 @@ scripts/                 Validator JSON, importer Excel/mapping, generator wilay
 docs/                    Panduan sumber, impor, detail, pemeriksaan manual
 ```
 
-File pendukung untuk clone meliputi `package.json`, `package-lock.json`, `.nvmrc`, konfigurasi Vite/TypeScript/ESLint/Playwright, `.gitignore`, `.gitattributes`, `.env.example`, serta template Pull Request di `.github/pull_request_template.md`. Source, aset frontend, JSON utama kosong/demo, validator, tes, dan dokumentasi ikut dipakai dari repositori. Lampiran rancangan serta screenshot pribadi di folder awal tidak diperlukan untuk menjalankan aplikasi dan tetap diabaikan Git.
+File pendukung untuk clone meliputi `package.json`, `package-lock.json`, `.nvmrc`, konfigurasi Vite/TypeScript/ESLint/Playwright, `.gitignore`, `.gitattributes`, `.env.example`, serta template Pull Request di `.github/pull_request_template.md`. Source, aset frontend, JSON pilot/Excel, template kosong/demo, validator, tes, dan dokumentasi ikut dipakai dari repositori. Lampiran rancangan serta screenshot pribadi di folder awal tidak diperlukan untuk menjalankan aplikasi dan tetap diabaikan Git.
 
-Dependency terpasang, hasil build, environment lokal, log, trace, screenshot pengujian, dan cache dibuat pada laptop masing-masing. Workbook dan hasil impor disimpan di luar aset `public/`; `.local/`, `.env.local`, dan workbook diabaikan Git. Jangan menaruh berkas internal di `public/data/raw/`, karena folder publik disajikan kepada browser walaupun diabaikan Git.
+Dependency terpasang, hasil build, environment lokal, log, trace, screenshot pengujian, dan cache dibuat pada laptop masing-masing. Workbook dan bahan impor privat disimpan di luar aset `public/`; hanya snapshot turunan yang disetujui diekspor ke paket datasets. `.local/`, `.env.local`, dan workbook diabaikan Git. Jangan menaruh berkas internal di `public/data/raw/`, karena folder publik disajikan kepada browser walaupun diabaikan Git.
 
 Mulai dari `src/types/domain.ts`, lalu baca `services/validation.ts` dan `localRepository.ts`. Model utama meliputi `Instansi`, `Wilayah`, `StatistikSimpul`, `TrenInput`, `DistribusiArsip`, `PenciptaArsip`, serta `SnapshotMetadata`. Komponen meminta data melalui `InstansiRepository`; komponen tidak mengimpor JSON mentah.
 
@@ -141,13 +141,13 @@ Berikutnya, baca `services/exploration.ts`. Query memakai `provinsi`, `kabKota`,
 
 ## Data utama, referensi, dan impor
 
-`public/data/references.json` memisahkan provinsi, kabupaten/kota, taksonomi jenis instansi, dan kategori arsip. `public/data/snapshot.json` memisahkan metadata, instansi, dan statistik. `public/data/import-template.json` menyediakan template kosong. `public/demo/` tidak menjadi fallback otomatis apabila data utama gagal dimuat.
+`public/data/references.json` memisahkan provinsi, kabupaten/kota, taksonomi jenis instansi, dan kategori arsip. `public/data/snapshot.json` tetap template kosong; snapshot aktif pilot dan Excel berada di `public/data/datasets/`, memisahkan metadata, instansi, dan statistik. `public/data/import-template.json` menyediakan template kosong. `public/demo/` tidak menjadi fallback otomatis apabila data utama gagal dimuat.
 
 Referensi utama kini mencakup **38 provinsi dan 514 kabupaten/kota**, termasuk pemekaran Papua. Registry dan geometri publik berasal dari `cahyadsn/wilayah` serta `cahyadsn/wilayah_boundaries`, dengan lisensi MIT dan commit sumber yang dikunci. Geometri provinsi dimuat pada awal; GeoJSON kabupaten/kota dimuat hanya untuk provinsi yang dipilih. Banten memakai ID `36`, Kota Serang `36.73`. Penanda jumlah menggunakan posisi navigasi wilayah dari kolom lat/lng sumber, dengan provenance terpisah dari koordinat kantor. Geometri komunitas ini adalah referensi tampilan, bukan penetapan batas hukum atau lokasi kantor.
 
 Sumber beracuan Kepmendagri 300.2.2-2430 Tahun 2025 menurut penerbit. [Catatan sumber](docs/reference-sources.md) menjelaskan versi, lisensi, sistem koordinat, keterbatasan datum, serta perbaikan validasi ring degeneratif. Geometri demo Banten tetap memakai referensi BIG sebelumnya agar fixture interaksi tidak berubah. Header memakai aset simbol ANRI resmi yang diunduh utuh dari halaman Arti Logo.
 
-Snapshot Excel pengguna tersedia untuk review lokal. Nama, kode, kategori, dan tahun bergabung berasal dari sheet `pengelolaan casefile`. Nilai pada screenshot tidak diimpor. Tidak dilakukan geocoding otomatis atau akses admin. Petunjuk impor ulang tersedia pada [panduan casefile](docs/casefile-import.md), sedangkan [panduan Landing Page](docs/landing-pages.md) menjelaskan mapping hyperlink.
+Snapshot turunan Excel sudah tersedia untuk kolaborasi; workbook dan bahan review tetap lokal. Nama, kode, kategori, dan tahun bergabung berasal dari sheet `pengelolaan casefile`. Nilai pada screenshot tidak diimpor. Tidak dilakukan geocoding otomatis atau akses admin. Petunjuk impor ulang tersedia pada [panduan casefile](docs/casefile-import.md), sedangkan [panduan Landing Page](docs/landing-pages.md) menjelaskan mapping hyperlink.
 
 Untuk mengisi snapshot:
 
@@ -203,6 +203,7 @@ Tile dapat membutuhkan internet walaupun JSON instansi disimpan lokal. Aplikasi 
 npm run typecheck
 npm run lint
 npm run validate:data
+npm run validate:shared
 npm run test:import
 npm test
 npm run build
@@ -248,7 +249,7 @@ Remove-Item Env:PLAYWRIGHT_PORT
 
 Variabel `PLAYWRIGHT_PORT` dapat dipakai bersama `PLAYWRIGHT_CHANNEL`. Konfigurasi memvalidasi nomor port 1–65535, memakai host `127.0.0.1`, dan otomatis menjalankan Vite pada port yang dipilih. Di luar CI, server pada port tersebut dapat dipakai kembali; pastikan server itu menjalankan proyek ini, bukan aplikasi lain. Pengujian mencakup klik geometri Banten → Kota Serang, cluster, hover dengan Semua Jenis, detail/kembali, daftar tanpa koordinat, data kosong/rusak, retry, tile gagal, serta viewport 1440 dan sentuh 390. Tes otomatis reflow 200% memakai viewport 720 px. Zoom Chrome aktual 200% juga telah diperiksa langsung pada peta dan detail: lebar CSS 720 px, devicePixelRatio 4, tanpa overflow horizontal. Perangkat sentuh fisik belum diperiksa.
 
-Screenshot demo berada di `tmp/qa/`, screenshot review Excel di `.local/qa/`, dan trace kegagalan di `test-results/`; semuanya diabaikan Git. Skenario browser `casefile.spec.ts` memerlukan snapshot lokal dan dilewati pada clone tanpa workbook. Laporan tahap casefile ada di [review casefile](docs/review-casefile.md). Daftar langkah manual ada pada [checklist manual](docs/checklist-manual.md). Pengujian Windows dan perangkat sentuh fisik belum dilakukan.
+Screenshot demo berada di `tmp/qa/`, screenshot review Excel di `.local/qa/`, dan trace kegagalan di `test-results/`; semuanya diabaikan Git. Skenario browser `casefile.spec.ts` dan regresi pilot kini membaca snapshot bersama. Tes audit yang memerlukan bukti riset privat tetap dapat dilewati; pengujian runtime utama tidak memerlukan workbook. Laporan tahap casefile ada di [review casefile](docs/review-casefile.md). Daftar langkah manual ada pada [checklist manual](docs/checklist-manual.md). Pengujian Windows dan perangkat sentuh fisik belum dilakukan.
 
 ## Troubleshooting laptop tim
 
@@ -263,7 +264,7 @@ Screenshot demo berada di `tmp/qa/`, screenshot review Excel di `.local/qa/`, da
 | Pemasangan berhenti karena jaringan | Periksa koneksi internet/proxy yang dipakai laptop, lalu ulangi `npm ci`. Hindari menonaktifkan pemeriksaan TLS untuk mengatasi koneksi. |
 | Port 5173 sedang dipakai | Ikuti URL baru dari Vite atau jalankan `npm run dev -- --port 5174`. Untuk uji E2E terpisah, gunakan `PLAYWRIGHT_PORT` dengan nomor port kosong; jangan memakai kembali server aplikasi lain. |
 | Browser tidak dapat membuka website | Pastikan `npm run dev` masih berjalan, gunakan host dan port **Local** dari terminal, lalu buka `/simpul-jaringan`. `npm run preview` dijalankan setelah build dan biasanya memakai port 4173. |
-| Tile peta gagal atau layar awal tidak memuat instansi | Tile membutuhkan koneksi ke provider; gunakan **Daftar** ketika tile gagal. Dataset utama memang kosong. Buka `?demo=1` untuk latihan; jangan menambahkan data contoh sebagai fallback produksi. |
+| Tile peta gagal atau layar awal tidak memuat instansi | Tile membutuhkan koneksi ke provider; gunakan **Daftar** ketika tile gagal. Jalankan `npm run validate:shared` untuk memeriksa paket pilot/Excel. Buka `?demo=1` untuk latihan sintetis; data demo tidak menjadi fallback sumber yang gagal. |
 | Playwright tidak menemukan browser | Jalankan `npx playwright install chromium`, lalu ulangi `npm run test:e2e`, atau gunakan Chrome dengan contoh environment sesuai sistem operasi di atas. |
 
 ## Kolaborasi empat anggota

@@ -1,16 +1,17 @@
+import { useFixtureTiles } from './tileFixture';
 import { expect, test, type Page } from '@playwright/test';
+test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { existsSync, readFileSync } from 'node:fs';
 import type { Instansi, MapSession, ReferenceData, SnapshotData } from '../../src/types/domain';
 
-const pilotPath = '.local/pilot/snapshot.json';
+const pilotPath = 'public/data/datasets/pilot/snapshot.json';
 const snapshot: SnapshotData | null = existsSync(pilotPath)
   ? JSON.parse(readFileSync(pilotPath, 'utf8')) as SnapshotData
   : null;
-const referencesPath = '.local/pilot/references.json';
+const referencesPath = 'public/data/datasets/pilot/references.json';
 const references: ReferenceData | null = existsSync(referencesPath)
   ? JSON.parse(readFileSync(referencesPath, 'utf8')) as ReferenceData : null;
-const env = existsSync('.env.local') ? readFileSync('.env.local', 'utf8') : '';
-test.skip(!snapshot || !references || !/^VITE_LOCAL_PILOT=1\s*$/m.test(env),
+test.skip(!snapshot || !references,
   'Pilot lokal belum dibuat atau VITE_LOCAL_PILOT=1 belum diaktifkan; data pengguna tidak dibuat oleh tes.');
 
 const markerFor = (page: Page, id: string) => page.locator(`[data-instansi-id="${id}"]`);

@@ -1,13 +1,14 @@
+import { useFixtureTiles } from './tileFixture';
 import { expect, test, type Page } from '@playwright/test';
+test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { existsSync, readFileSync } from 'node:fs';
 import type { Instansi, MapSession, ReferenceData, SnapshotData } from '../../src/types/domain';
 
-const snapshot: SnapshotData | null = existsSync('.local/pilot/snapshot.json')
-  ? JSON.parse(readFileSync('.local/pilot/snapshot.json', 'utf8')) as SnapshotData : null;
-const references: ReferenceData | null = existsSync('.local/pilot/references.json')
-  ? JSON.parse(readFileSync('.local/pilot/references.json', 'utf8')) as ReferenceData : null;
-const env = existsSync('.env.local') ? readFileSync('.env.local', 'utf8') : '';
-test.skip(!snapshot?.metadata.id.startsWith('pilot-jawa-') || references?.provinces.length !== 6 || !/^VITE_LOCAL_PILOT=1\s*$/m.test(env), 'Percontohan Jawa lokal belum dibuat/diaktifkan.');
+const snapshot: SnapshotData | null = existsSync('public/data/datasets/pilot/snapshot.json')
+  ? JSON.parse(readFileSync('public/data/datasets/pilot/snapshot.json', 'utf8')) as SnapshotData : null;
+const references: ReferenceData | null = existsSync('public/data/datasets/pilot/references.json')
+  ? JSON.parse(readFileSync('public/data/datasets/pilot/references.json', 'utf8')) as ReferenceData : null;
+test.skip(!snapshot?.metadata.id.startsWith('pilot-jawa-') || references?.provinces.length !== 6, 'Percontohan Jawa lokal belum dibuat/diaktifkan.');
 const viewport = (page: Page) => page.evaluate(() => JSON.parse(sessionStorage.getItem('jikn-map-session-v1') ?? '{}') as MapSession);
 async function stable(page: Page) {
   await expect(page.locator('[data-zoom-moving="true"]')).toHaveCount(0);

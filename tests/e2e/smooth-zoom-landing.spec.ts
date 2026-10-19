@@ -1,4 +1,6 @@
+import { useFixtureTiles } from './tileFixture';
 import { expect, test, type Page } from '@playwright/test';
+test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { existsSync, readFileSync } from 'node:fs';
 import type { MapSession, SnapshotData } from '../../src/types/domain';
 
@@ -71,8 +73,8 @@ test('reduced motion meniadakan animasi sambil menjaga langkah zoom dan state', 
   await expect(page.locator('[data-zoom-moving]')).toHaveCount(0);
 });
 
-const snapshot: SnapshotData | null = existsSync('.local/pilot/snapshot.json')
-  ? JSON.parse(readFileSync('.local/pilot/snapshot.json', 'utf8')) as SnapshotData : null;
+const snapshot: SnapshotData | null = existsSync('public/data/datasets/pilot/snapshot.json')
+  ? JSON.parse(readFileSync('public/data/datasets/pilot/snapshot.json', 'utf8')) as SnapshotData : null;
 const anri = snapshot?.instansi.find((item) => item.name === 'Arsip Nasional RI');
 
 test('ANRI: hanya pemilik mapping aktif; hover → Landing Page tab baru → detail dan kembali', async ({ page, context }) => {

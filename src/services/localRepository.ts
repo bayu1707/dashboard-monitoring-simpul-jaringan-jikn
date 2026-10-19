@@ -6,6 +6,7 @@ import type {
   Wilayah,
 } from '../types/domain';
 import { filterInstansi } from './exploration';
+import { SHARED_DATASETS } from '../data/sharedDatasets';
 import {
   DataValidationError,
   parseJson,
@@ -28,11 +29,12 @@ export function createLocalRepository(
   demo: boolean,
   localCasefile = import.meta.env.DEV && import.meta.env.VITE_LOCAL_CASEFILE === '1',
   pilot = false,
+  shared?: { snapshot: string; references: string; datasetKind: 'pilot' | 'excel' },
 ): InstansiRepository {
   const base = demo ? '/demo' : '/data';
-  const snapshotPath = !demo && pilot ? '/local-data/pilot-snapshot.json'
-    : !demo && localCasefile ? '/local-data/snapshot.json' : `${base}/snapshot.json`;
-  const referencePath = !demo && pilot ? '/local-data/pilot-references.json' : `${base}/references.json`;
+  const snapshotPath = shared?.snapshot ?? (!demo && pilot ? '/local-data/pilot-snapshot.json'
+    : !demo && localCasefile ? '/local-data/snapshot.json' : `${base}/snapshot.json`);
+  const referencePath = shared?.references ?? (!demo && pilot ? '/local-data/pilot-references.json' : `${base}/references.json`);
   const geometryCache = new Map<string, Promise<Wilayah[]>>();
   let referencePromise: Promise<ReferenceData> | null = null;
   let snapshotPromise: Promise<SnapshotData> | null = null;
@@ -52,6 +54,8 @@ export function createLocalRepository(
     ])
       .then(([references, source]) => {
         const snapshot = parseSnapshotData(source, references);
+        if (shared && snapshot.metadata.datasetKind !== shared.datasetKind)
+          throw new DataValidationError(['Penanda dataset tidak sesuai katalog kolaborasi.']);
         if (demo !== (snapshot.metadata.datasetKind === 'demo'))
           throw new DataValidationError([
             'Mode dan penanda dataset demo tidak sesuai.',
@@ -137,4 +141,12 @@ export function createLocalRepository(
       return { ...(record ?? empty), instansi, metadata: source.metadata };
     },
   };
+}
+
+/** Sumber kolaborasi sama pada dev, build dan preview; tidak membaca environment privat. */
+export function createSharedRepository(mode: 'pilot' | 'excel' | 'demo'): InstansiRepository {
+  if (mode === 'demo') return createLocalRepository(true, false, false);
+  return createLocalRepository(false, false, mode === 'pilot', {
+    ...SHARED_DATASETS[mode], datasetKind: mode,
+  });
 }

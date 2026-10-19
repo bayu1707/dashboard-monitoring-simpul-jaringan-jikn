@@ -1,5 +1,8 @@
 # Perluasan percontohan ke Jawa
 
+> Pembaruan kolaborasi 19 Oktober 2026: clone baru memakai snapshot bersama, bukan middleware `.local`. [Panduan dataset bersama](dataset-kolaborasi.md) menjadi acuan menjalankan aplikasi. Perintah impor/riset di bawah adalah proses pemeliharaan lokal, bukan syarat clone.
+
+
 Tampilan development sekarang mencakup enam provinsi: DKI Jakarta, Jawa Barat, Jawa Tengah, DI Yogyakarta, Jawa Timur, dan Banten. Referensi navigasi menyediakan **119 kabupaten/kota**. Ini perluasan kode lama; adapter repository, popup Leaflet, cluster/spiderfy, halaman detail dan pemulihan state tetap digunakan.
 
 **Cakupan peta bukan jaminan seluruh pin kantor atau seluruh simpul Jawa sudah lengkap.** Katalog memasukkan record yang wilayahnya dapat diidentifikasi dari Excel dan sumber publik. Record tanpa pin tersedia melalui **Daftar**. Identitas lembaga yang berubah karena reorganisasi ditahan untuk review dan tetap ada pada snapshot Excel penuh. Jumlah terbaru per provinsi, jenis, status, dan pin tersedia di `.local/pilot/report.json`.

@@ -1,4 +1,6 @@
+import { useFixtureTiles } from './tileFixture';
 import { expect, test, type Page } from '@playwright/test';
+test.beforeEach(async ({ page }) => useFixtureTiles(page));
 
 const readZoom = (page: Page) => page.evaluate(() =>
   (JSON.parse(sessionStorage.getItem('jikn-map-session-v1') ?? '{}') as { zoom: number }).zoom);

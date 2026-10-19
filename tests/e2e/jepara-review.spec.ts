@@ -1,11 +1,12 @@
+import { useFixtureTiles } from './tileFixture';
 import { expect, test, type Page } from '@playwright/test';
+test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { existsSync, readFileSync } from 'node:fs';
 import type { SnapshotData } from '../../src/types/domain';
 
-const snapshot: SnapshotData | null = existsSync('.local/pilot/snapshot.json')
-  ? JSON.parse(readFileSync('.local/pilot/snapshot.json', 'utf8')) as SnapshotData : null;
-const env = existsSync('.env.local') ? readFileSync('.env.local', 'utf8') : '';
-test.skip(!snapshot?.metadata.id.startsWith('pilot-jawa-') || !/^VITE_LOCAL_PILOT=1\s*$/m.test(env),
+const snapshot: SnapshotData | null = existsSync('public/data/datasets/pilot/snapshot.json')
+  ? JSON.parse(readFileSync('public/data/datasets/pilot/snapshot.json', 'utf8')) as SnapshotData : null;
+test.skip(!snapshot?.metadata.id.startsWith('pilot-jawa-'),
   'Data percontohan privat belum tersedia atau belum aktif; tidak membuat data pengguna dari fixture.');
 const jepara = snapshot?.instansi.find((item) => item.id === 'casefile-91d847febf4139c9ae964166');
 async function stable(page: Page) {
