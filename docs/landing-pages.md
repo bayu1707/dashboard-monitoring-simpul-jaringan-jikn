@@ -1,5 +1,8 @@
 # Pemetaan Landing Page JIKN
 
+> Pembaruan kolaborasi 19 Oktober 2026: clone baru memakai snapshot bersama, bukan middleware `.local`. [Panduan dataset bersama](dataset-kolaborasi.md) menjadi acuan menjalankan aplikasi. Perintah impor/riset di bawah adalah proses pemeliharaan lokal, bukan syarat clone.
+
+
 Popup memakai dua aksi: **Lihat detail** untuk halaman internal dan **Landing Page** untuk halaman instansi pada JIKN. Tombol eksternal aktif hanya jika URL, sumber pencocokan, waktu verifikasi, dan status `verified` lengkap. URL kosong atau belum terverifikasi menampilkan tombol disabled dengan keterangan **Tautan belum tersedia**. Domain yang diizinkan hanya `https://jikn.anri.go.id` dengan path `/deskripsi-arsip/sj/<UUID>`.
 
 Pemeriksaan bentuk URL bukan bukti bahwa URL milik instansi tersebut. Nama pada halaman tujuan harus dibandingkan dengan nama snapshot atau dokumen pemetaan resmi. Tidak ada pengumpulan massal maupun permintaan kredensial dalam importer.

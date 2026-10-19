@@ -1,4 +1,6 @@
+import { useFixtureTiles } from './tileFixture';
 import { expect, test, type Locator, type Page } from '@playwright/test';
+test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { readFileSync } from 'node:fs';
 import type { SnapshotData } from '../../src/types/domain';
 

@@ -1,5 +1,8 @@
 # Snapshot Pengelolaan Casefile
 
+> Pembaruan kolaborasi 19 Oktober 2026: clone baru memakai snapshot bersama, bukan middleware `.local`. [Panduan dataset bersama](dataset-kolaborasi.md) menjadi acuan menjalankan aplikasi. Perintah impor/riset di bawah adalah proses pemeliharaan lokal, bukan syarat clone.
+
+
 Alur data: **Excel → validasi/normalisasi → snapshot JSON → repository asinkron → peta, popup, detail**. Komponen tidak membaca Excel. Workbook pengguna tetap utuh dan tidak dimasukkan ke Git atau aset publik.
 
 ## Menjalankan dan mengimpor ulang

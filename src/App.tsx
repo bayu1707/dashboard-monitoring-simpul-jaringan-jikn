@@ -10,13 +10,13 @@ const InstansiDetailPage = lazy(() =>
     default: module.InstansiDetailPage,
   })),
 );
-import { createLocalRepository } from './services/localRepository';
+import { createSharedRepository } from './services/localRepository';
 export function App() {
   const [params] = useSearchParams();
   const demo = params.get('demo') === '1';
-  const pilot = !demo && import.meta.env.DEV && import.meta.env.VITE_LOCAL_PILOT === '1' && params.get('data') !== 'excel';
+  const pilot = !demo && params.get('data') !== 'excel';
   const mapSearch = demo ? '?demo=1' : params.get('data') === 'excel' ? '?data=excel' : '';
-  const repository = useMemo(() => createLocalRepository(demo, undefined, pilot), [demo, pilot]);
+  const repository = useMemo(() => createSharedRepository(demo ? 'demo' : pilot ? 'pilot' : 'excel'), [demo, pilot]);
   return (
     <>
       <SiteHeader demo={demo} pilot={pilot} mapSearch={mapSearch} />

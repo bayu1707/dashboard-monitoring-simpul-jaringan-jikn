@@ -1,4 +1,6 @@
+import { useFixtureTiles } from './tileFixture';
 import { test, expect, type Locator, type Page } from '@playwright/test';
+test.beforeEach(async ({ page }) => useFixtureTiles(page));
 
 async function verifyTarget(locator: Locator) {
   const box = await locator.boundingBox();

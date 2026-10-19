@@ -1,15 +1,16 @@
+import { useFixtureTiles } from './tileFixture';
 import { expect, test, type Page } from '@playwright/test';
+test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { existsSync, readFileSync } from 'node:fs';
 import type { MapSession, ReferenceData, SnapshotData } from '../../src/types/domain';
 
-const referencesPath = '.local/pilot/references.json';
+const referencesPath = 'public/data/datasets/pilot/references.json';
 const references: ReferenceData | null = existsSync(referencesPath)
   ? JSON.parse(readFileSync(referencesPath, 'utf8')) as ReferenceData : null;
-const env = existsSync('.env.local') ? readFileSync('.env.local', 'utf8') : '';
-const snapshot: SnapshotData | null = existsSync('.local/pilot/snapshot.json')
-  ? JSON.parse(readFileSync('.local/pilot/snapshot.json', 'utf8')) as SnapshotData : null;
+const snapshot: SnapshotData | null = existsSync('public/data/datasets/pilot/snapshot.json')
+  ? JSON.parse(readFileSync('public/data/datasets/pilot/snapshot.json', 'utf8')) as SnapshotData : null;
 const overviewCount = new Set(snapshot?.instansi.map((item) => item.provinceId).filter(Boolean)).size;
-test.skip(!references || !/^VITE_LOCAL_PILOT=1\s*$/m.test(env), 'Pilot lokal belum diaktifkan.');
+test.skip(!references, 'Pilot lokal belum diaktifkan.');
 
 const session = (page: Page) => page.evaluate(() =>
   JSON.parse(sessionStorage.getItem('jikn-map-session-v1') ?? '{}') as MapSession);

@@ -21,7 +21,9 @@
     "build:references": "tsx scripts/build-national-references.ts",
     "build:pilot": "tsx scripts/build-local-pilot.ts",
     "prepare:java": "tsx scripts/prepare-java-locations.ts",
-    "test:import": "python3 -m unittest discover -s tests -p 'test_import_*.py'"
+    "test:import": "python3 -m unittest discover -s tests -p 'test_import_*.py'",
+    "validate:shared": "tsx scripts/validate-shared-data.ts",
+    "export:shared": "python3 scripts/export-collaboration.py"
   },
   "dependencies": {
     "react": "19.3.0",

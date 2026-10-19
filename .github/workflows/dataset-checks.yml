@@ -1,0 +1,31 @@
+name: Validasi dataset dan clone tim
+on:
+  push:
+    branches: [main, 'codex/dataset-kolaborasi-jawa']
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  clone-bersih:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run validate:shared
+      - run: npm run validate:data
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e -- tests/e2e/collaboration.spec.ts
+        env:
+          CI: 'true'
