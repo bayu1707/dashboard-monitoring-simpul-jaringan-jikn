@@ -400,7 +400,7 @@ function MapWorkspace({
           <div className="map-scope-header">
             <MapPin size={17} aria-hidden="true" />
             <h1>
-              {kabKota?.name ?? (province ? metadata.datasetKind === 'pilot' ? province.name : `Kabupaten / Kota di ${province.name}` : metadata.datasetKind === 'pilot' ? 'Simpul Jaringan Jawa' : 'Simpul Jaringan Indonesia')}
+              {kabKota?.name ?? (province ? metadata.datasetKind === 'pilot' ? province.name : `Kabupaten / Kota di ${province.name}` : metadata.datasetKind === 'pilot' ? 'Simpul Jaringan Indonesia' : 'Simpul Jaringan Indonesia')}
             </h1>
             <div className="map-level-actions">
               {state.level === 'instansi' && (

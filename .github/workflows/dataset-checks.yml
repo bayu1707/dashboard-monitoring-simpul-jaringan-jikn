@@ -26,6 +26,6 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: npx playwright install --with-deps chromium
-      - run: npm run test:e2e -- tests/e2e/collaboration.spec.ts
+      - run: npm run test:e2e -- tests/e2e/collaboration.spec.ts tests/e2e/sumatra.spec.ts
         env:
           CI: 'true'

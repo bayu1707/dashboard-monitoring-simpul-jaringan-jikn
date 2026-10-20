@@ -35,8 +35,8 @@ test('clone: default Jawa → Jepara → hover → detail → kembali; Excel tet
   const privateRequests: string[] = [];
   page.on('request', (request) => { if (request.url().includes('/local-data/')) privateRequests.push(request.url()); });
   await page.goto('/simpul-jaringan');
-  await expect(page.locator('.snapshot-note')).toContainText('249 instansi percontohan');
-  await expect(page.locator('.region-count-marker')).toHaveCount(6);
+  await expect(page.locator('.snapshot-note')).toContainText('418 instansi percontohan');
+  await expect(page.locator('.region-count-marker')).toHaveCount(16);
   await page.locator('[data-region-count-id="33"]').click();
   await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'provinsi');
   await expect(page.locator('#desktop-province')).toHaveValue('33');
@@ -74,7 +74,7 @@ test('mobile 390: daftar dan detail memakai snapshot yang sama', async ({ page }
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto(`/simpul-jaringan?provinsi=33&kabKota=33.20`);
-  await expect(page.locator('.snapshot-note')).toContainText('249 instansi percontohan');
+  await expect(page.locator('.snapshot-note')).toContainText('418 instansi percontohan');
   // Force touch via browser context is tested in touch-specific regressions; here mobile width uses click.
   await page.getByRole('button', { name: 'Daftar', exact: true }).click();
   await expect(page.locator('.results-panel')).toContainText(jepara.name);

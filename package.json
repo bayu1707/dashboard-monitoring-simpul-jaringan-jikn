@@ -20,6 +20,7 @@
     "import:landing-pages": "tsx scripts/import-landing-pages.ts",
     "build:references": "tsx scripts/build-national-references.ts",
     "build:pilot": "tsx scripts/build-local-pilot.ts",
+    "build:sumatra": "tsx scripts/build-sumatra-pilot.ts",
     "prepare:java": "tsx scripts/prepare-java-locations.ts",
     "test:import": "python3 -m unittest discover -s tests -p 'test_import_*.py'",
     "validate:shared": "tsx scripts/validate-shared-data.ts",

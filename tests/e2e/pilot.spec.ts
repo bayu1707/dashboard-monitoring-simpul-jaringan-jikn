@@ -177,10 +177,12 @@ test('pilot bersih Jakarta → Jakarta Selatan → marker nyata → hover → de
   await page.mouse.move(20, 20);
   await page.screenshot({ path: '.local/qa/pilot-overview.png' });
   const initial = await mapSession(page);
-  expect(initial.center[0]).toBeGreaterThan(-9);
-  expect(initial.center[0]).toBeLessThan(-5.2);
-  expect(initial.center[1]).toBeGreaterThan(105);
-  expect(initial.center[1]).toBeLessThan(116);
+  // Overview mencakup seluruh provinsi pilot, termasuk perluasan Sumatra.
+  const bounds = references!.provinces.flatMap((region) => region.bounds ? [region.bounds] : []);
+  expect(initial.center[0]).toBeGreaterThanOrEqual(Math.min(...bounds.map((box) => box[0][0])));
+  expect(initial.center[0]).toBeLessThanOrEqual(Math.max(...bounds.map((box) => box[1][0])));
+  expect(initial.center[1]).toBeGreaterThanOrEqual(Math.min(...bounds.map((box) => box[0][1])));
+  expect(initial.center[1]).toBeLessThanOrEqual(Math.max(...bounds.map((box) => box[1][1])));
   await chooseRegion(page, '31', true);
   await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'provinsi');
   await expect(page.locator('#desktop-province')).toHaveValue('31');
