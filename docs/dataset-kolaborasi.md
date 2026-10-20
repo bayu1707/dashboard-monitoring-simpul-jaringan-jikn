@@ -1,5 +1,7 @@
 # Dataset kolaborasi JIKN
 
+Perluasan 19 Oktober 2026: lihat [pilot Sumatra](pilot-sumatra.md). Angka pengujian 249 di bagian riwayat bawah merupakan hasil rilis Jawa sebelumnya; default kini 418 record dengan 417 pin. Sumatra mempunyai 168/169 pin; satu konflik listing Ogan Komering Ilir masih menunggu konfirmasi.
+
 Paket dirilis setelah pengguna mengonfirmasi telah memperoleh izin berbagi seluruh dataset yang diaudit, pada 19 Oktober 2026. Ini mencatat konfirmasi pemilik proyek; bukan klaim lisensi terbuka universal atau pengesahan ANRI atas lokasi/statistik. Repository private tidak otomatis memberi hak redistribusi. Penambahan data/sumber baru harus ditinjau kembali.
 
 ## Menjalankan pada macOS dan Windows
@@ -16,7 +18,7 @@ Buka alamat yang dicetak Vite:
 
 | URL | Sumber |
 | --- | --- |
-| `/simpul-jaringan` | Pilot Jawa: 249 instansi, 249 pin, 249 tahun, satu Landing Page ANRI |
+| `/simpul-jaringan` | Pilot Jawa + Sumatra: 418 instansi, 417 pin, 418 tahun, satu Landing Page ANRI |
 | `/simpul-jaringan?data=excel` | Excel penuh: 643 instansi, 643 tahun, 0 pin; statistik belum tersedia |
 | `/simpul-jaringan?demo=1` | Tujuh instansi sintetis, enam pin; DATA DEMO |
 
@@ -25,8 +27,8 @@ Tidak perlu workbook, Python, `.local`, `.env.local`, kredensial atau backend un
 ## Isi paket runtime
 
 - `public/data/datasets/manifest.json`: versi, konfirmasi izin, jumlah, path dan SHA-256 dependensi.
-- `public/data/datasets/pilot/snapshot.json`: 249 identitas, tahun, pin bersumber, mapping dan statistik **DATA SIMULASI**.
-- `public/data/datasets/pilot/references.json`: enam provinsi, 119 kab/kota, taksonomi pilot.
+- `public/data/datasets/pilot/snapshot.json`: 418 identitas/tahun, 417 pin bersumber, 1 titik null, mapping dan statistik **DATA SIMULASI**.
+- `public/data/datasets/pilot/references.json`: 16 provinsi, 273 kab/kota, taksonomi pilot.
 - `public/data/datasets/excel/snapshot.json`: 643 record hasil normalisasi sheet `pengelolaan casefile`, tanpa statistik simulasi dan tanpa memaksakan pin.
 - `public/data/references.json`: referensi nasional 38 provinsi/514 kab/kota.
 - `public/data/geometry/`: geometri kab/kota lazy, provenance dan lisensi MIT Cahya DSN. Pilot memakai kode 31–36; mode Excel memerlukan seluruh referensi.
@@ -49,7 +51,8 @@ Lisensi geometri dan attribution provider harus dipertahankan. Izin berbagi pake
 Operator yang berizin memelihara sumber di `.local`. Anggota tim yang hanya menjalankan aplikasi tidak melakukan langkah ini. Bangun ulang pilot menggunakan input koordinat terbaru dan flag mapping Landing Page sesuai panduan lokal; jangan kehilangan mapping ANRI saat rebuild. Tinjau perubahan sumber dan izin baru dahulu, lalu ekspor:
 
 ```sh
-python3 scripts/export-collaboration.py --approved --approved-at 2026-10-19 --release kolaborasi-2026-10-19
+npm run build:sumatra
+python3 scripts/export-collaboration.py --approved --approved-at YYYY-MM-DD --release nama-rilis --pilot-source .local/sumatra/staged --excel-source public/data/datasets/excel/snapshot.json
 npm run validate:shared
 npm run typecheck
 npm run lint

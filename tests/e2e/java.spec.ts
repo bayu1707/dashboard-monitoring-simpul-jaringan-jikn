@@ -8,7 +8,10 @@ const snapshot: SnapshotData | null = existsSync('public/data/datasets/pilot/sna
   ? JSON.parse(readFileSync('public/data/datasets/pilot/snapshot.json', 'utf8')) as SnapshotData : null;
 const references: ReferenceData | null = existsSync('public/data/datasets/pilot/references.json')
   ? JSON.parse(readFileSync('public/data/datasets/pilot/references.json', 'utf8')) as ReferenceData : null;
-test.skip(!snapshot?.metadata.id.startsWith('pilot-jawa-') || references?.provinces.length !== 6, 'Percontohan Jawa lokal belum dibuat/diaktifkan.');
+test.beforeAll(() => {
+  expect(snapshot?.metadata.datasetKind).toBe('pilot');
+  expect(references?.provinces.map((row) => row.id)).toEqual(expect.arrayContaining(['31', '32', '33', '34', '35', '36']));
+});
 const viewport = (page: Page) => page.evaluate(() => JSON.parse(sessionStorage.getItem('jikn-map-session-v1') ?? '{}') as MapSession);
 async function stable(page: Page) {
   await expect(page.locator('[data-zoom-moving="true"]')).toHaveCount(0);
@@ -26,7 +29,7 @@ async function stable(page: Page) {
 async function open(page: Page) {
   await page.goto('/simpul-jaringan');
   await expect(page.locator('.map-stage.pilot-map')).toHaveAttribute('data-level', 'nasional');
-  await expect(page.locator('.region-count-marker')).toHaveCount(6);
+  await expect(page.locator('.region-count-marker')).toHaveCount(references!.provinces.length);
   await stable(page);
 }
 const runtime = new WeakMap<Page, string[]>();
@@ -95,8 +98,8 @@ for (const name of [
 
 test('enam provinsi, hitungan ID unik dan katalog LKD sesuai snapshot; pin Jawa Timur tersedia melalui daftar', async ({ page }) => {
   await open(page);
-  await expect(page.locator('#desktop-province option')).toHaveCount(7);
-  for (const province of references!.provinces) {
+  await expect(page.locator('#desktop-province option')).toHaveCount(references!.provinces.length + 1);
+  for (const province of references!.provinces.filter((item) => ['31', '32', '33', '34', '35', '36'].includes(item.id))) {
     const ids = new Set(snapshot!.instansi.filter((item) => item.provinceId === province.id).map((item) => item.id));
     await expect(page.locator(`[data-region-count-id="${province.id}"] .region-count-circle`)).toHaveText(String(ids.size));
   }
@@ -117,7 +120,7 @@ test('enam provinsi, hitungan ID unik dan katalog LKD sesuai snapshot; pin Jawa 
 
 test('pusat lingkaran kab/kota Jawa tidak terhalang kotak transparan wilayah tetangga', async ({ page }) => {
   await open(page);
-  for (const province of references!.provinces) {
+  for (const province of references!.provinces.filter((item) => ['31', '32', '33', '34', '35', '36'].includes(item.id))) {
     await page.locator('#desktop-province').selectOption(province.id);
     await stable(page);
     const blocked = await page.locator('.region-count-marker').evaluateAll((markers) => markers.flatMap((marker) => {
@@ -139,7 +142,7 @@ test('mobile 390 Jawa: draft provinsi/jenis opsional, tap pin, sheet, detail tan
   const record: Instansi = snapshot!.instansi.find((item) => item.name === 'Dinas Perpustakaan dan Kearsipan Kabupaten Bantul')!;
   await open(page);
   await page.getByRole('button', { name: 'Filter', exact: true }).tap();
-  await expect(page.locator('#mobile-province option')).toHaveCount(7);
+  await expect(page.locator('#mobile-province option')).toHaveCount(references!.provinces.length + 1);
   await page.locator('#mobile-province').selectOption(record.provinceId!);
   await page.getByRole('button', { name: 'Terapkan', exact: true }).tap();
   await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'provinsi');

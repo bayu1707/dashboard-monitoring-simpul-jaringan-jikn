@@ -24,15 +24,22 @@ def main():
     parser.add_argument('--approved', action='store_true', help='Konfirmasi izin berbagi data yang telah ditinjau.')
     parser.add_argument('--approved-at', required=True, help='Tanggal persetujuan berbagi YYYY-MM-DD')
     parser.add_argument('--release', required=True, help='Versi paket, misalnya kolaborasi-2026-10-19')
+    parser.add_argument('--excel-source', default='.local/casefile/snapshot.json', help='Snapshot Excel terstruktur yang sudah direview; tidak membaca workbook mentah.')
+    parser.add_argument('--pilot-source', default='.local/pilot', help='Folder snapshot/references pilot hasil review; sumber lama tidak ditimpa.')
     args = parser.parse_args()
+    pilot_source = Path(args.pilot_source)
+    if not pilot_source.is_absolute():
+        pilot_source = ROOT / pilot_source
+    if not pilot_source.resolve().is_relative_to((ROOT / '.local').resolve()):
+        parser.error('Sumber pilot hasil review harus berada di dalam .local.')
     if not args.approved:
         parser.error('Ekspor memerlukan persetujuan atas dataset yang akan dibagikan.')
     output = ROOT / 'public/data/datasets'
     staged = {}
     catalog = {}
     for mode, source, references in [
-        ('pilot', '.local/pilot/snapshot.json', '.local/pilot/references.json'),
-        ('excel', '.local/casefile/snapshot.json', 'public/data/references.json'),
+        ('pilot', pilot_source / 'snapshot.json', pilot_source / 'references.json'),
+        ('excel', args.excel_source, 'public/data/references.json'),
     ]:
         original = json.loads((ROOT / source).read_text(encoding='utf-8'))
         data = sanitize(original)
@@ -73,7 +80,7 @@ def main():
         'sharingApproval': {
             'confirmedAt': args.approved_at,
             'basis': 'Pengguna mengonfirmasi telah memperoleh izin berbagi seluruh dataset yang diaudit.',
-            'scope': 'Snapshot turunan pilot Jawa dan Excel penuh beserta sumber koordinat/tahun dan mapping yang disertakan; bukan workbook, kredensial, atau dokumen internal.',
+            'scope': 'Snapshot turunan pilot wilayah yang direview dan Excel penuh beserta sumber koordinat/tahun dan mapping yang disertakan; bukan workbook, kredensial, atau dokumen internal.',
         },
         'datasets': catalog, 'sha256': hashes,
     }

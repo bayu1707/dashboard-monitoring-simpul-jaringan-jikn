@@ -25,6 +25,8 @@ export interface PilotLocation {
   coordinateSourceUrl?: string | null;
   coordinateEvidence?: string | null;
   coordinateLocationLabel?: string;
+  /** Pin tempat publik yang ditinjau namanya; alamat belum dikonfirmasi oleh instansi. */
+  publicPlaceOnly?: boolean;
   sourceUrls: string[];
   capturedAt: string;
   notes: string;
@@ -37,6 +39,9 @@ export interface PilotLocation {
 }
 
 export const PILOT_PROVINCES = new Set(['31', '32', '33', '34', '35', '36']);
+export const SUMATRA_PROVINCES = new Set(['11', '12', '13', '14', '15', '16', '17', '18', '19', '21']);
+export interface PilotScope { provinceIds: ReadonlySet<string>; label: string }
+const JAVA_SCOPE: PilotScope = { provinceIds: PILOT_PROVINCES, label: 'Jawa' };
 const SIMULATION = 'SIMULASI — bukan data resmi JIKN';
 const SIMULATED_CATEGORIES = [
   { id: 'simulasi-dokumen', name: 'Dokumen (simulasi)' },
@@ -181,9 +186,9 @@ function geometryReviewNote(location: PilotLocation, region: Wilayah | null): st
   return ` Tinjauan batas geometri: ${location.geometryReview.reason} Jarak ke batas referensi ${boundaryDistance(location.coordinates, region.geometry).toFixed(1)} m; pin sumber tidak dipindahkan. Sumber wilayah/alamat: ${location.geometryReview.sourceUrl}.`;
 }
 
-function validateLocation(location: PilotLocation, instansi: Instansi, references: ReferenceData): Wilayah | null {
+function validateLocation(location: PilotLocation, instansi: Instansi, references: ReferenceData, scope: PilotScope): Wilayah | null {
   const prefix = `Lokasi ${location.instansiId}`;
-  if (!PILOT_PROVINCES.has(location.provinceId)) throw new Error(`${prefix}: pilot dibatasi pada enam provinsi di Jawa.`);
+  if (!scope.provinceIds.has(location.provinceId)) throw new Error(`${prefix}: provinsi di luar cakupan pilot ${scope.label}.`);
   const region = references.kabKota.find((item) => item.id === location.kabKotaId);
   if (location.kabKotaId !== null && (!region || region.provinceId !== location.provinceId))
     throw new Error(`${prefix}: kab/kota tidak sesuai provinsi.`);
@@ -202,13 +207,22 @@ function validateLocation(location: PilotLocation, instansi: Instansi, reference
   if (!Array.isArray(location.sourceUrls) || !location.sourceUrls.length || location.sourceUrls.some((source) => {
     try { return new URL(source).protocol !== 'https:'; } catch { return true; }
   })) throw new Error(`${prefix}: sertakan sumber pemeriksaan HTTPS.`);
+  if (location.publicPlaceOnly !== undefined && (typeof location.publicPlaceOnly !== 'boolean'
+    || (location.publicPlaceOnly && (!location.coordinates || coordinateMethod(location.coordinateMethod ?? undefined) !== 'google-maps-place'))))
+    throw new Error(`${prefix}: tinjauan pin publik hanya untuk fitur Google Maps dengan koordinat.`);
   if (location.geometryReview) {
     const review = location.geometryReview;
+    // Pin publik dekat garis pantai dapat ditinjau tanpa mengklaim konfirmasi alamat resmi.
+    // Sumber harus pin yang sama; toleransi publik lebih ketat (10 m), bukan bypass polygon.
+    const publicBoundaryReview = location.publicPlaceOnly === true
+      && review.sourceUrl === location.googleMapsPlaceUrl
+      && !!safeCoordinateSource(review.sourceUrl, 'google-maps-place')
+      && review.maxDistanceMeters <= 10;
     if (!location.coordinates || !region?.geometry || typeof review.reason !== 'string' || !review.reason.trim()
       || !Number.isFinite(review.maxDistanceMeters) || review.maxDistanceMeters <= 0 || review.maxDistanceMeters > 100
-      || !safeCoordinateSource(review.sourceUrl, 'official-published-coordinates')
+      || (!safeCoordinateSource(review.sourceUrl, 'official-published-coordinates') && !publicBoundaryReview)
       || !location.sourceUrls.includes(review.sourceUrl))
-      throw new Error(`${prefix}: tinjauan batas memerlukan geometri, pin, alasan, sumber alamat resmi yang tercatat, serta batas >0 sampai 100 meter.`);
+      throw new Error(`${prefix}: tinjauan batas memerlukan geometri, pin, alasan dan sumber resmi dengan batas 100 meter, atau pin publik yang sama dengan batas 10 meter.`);
     if (inGeometry(location.coordinates, region.geometry))
       throw new Error(`${prefix}: tinjauan batas hanya diperlukan untuk pin di luar polygon referensi.`);
     if (boundaryDistance(location.coordinates, region.geometry) > review.maxDistanceMeters)
@@ -236,7 +250,7 @@ function validateLocation(location: PilotLocation, instansi: Instansi, reference
     const pair = decodeURIComponent(maps.href).match(/!3d(-?\d+(?:\.\d+)?)!4d(-?\d+(?:\.\d+)?)/);
     if (!pair || Number(pair[1]) !== location.coordinates[0] || Number(pair[2]) !== location.coordinates[1])
       throw new Error(`${prefix}: koordinat harus sesuai !3d/!4d pin tempat, bukan pusat viewport /@.`);
-    if (location.sourceUrls.length < 2) throw new Error(`${prefix}: sertakan sumber Google Maps dan sumber alamat resmi HTTPS.`);
+    if (location.sourceUrls.length < 2 && !location.publicPlaceOnly) throw new Error(`${prefix}: sertakan sumber Google Maps dan sumber alamat resmi HTTPS.`);
   } else {
     // Bukti menyimpan fitur kantor yang diperiksa, bukan pusat kamera iframe.
     const evidence = location.coordinateEvidence;
@@ -257,7 +271,7 @@ function validateLocation(location: PilotLocation, instansi: Instansi, reference
 }
 
 /** Murni: tidak membaca Excel/berkas atau mengubah objek masukan. */
-export function buildPilotSnapshot(excel: SnapshotData, refs: ReferenceData, locations: PilotLocation[], landingPages: unknown = []) {
+export function buildPilotSnapshot(excel: SnapshotData, refs: ReferenceData, locations: PilotLocation[], landingPages: unknown = [], scope: PilotScope = JAVA_SCOPE) {
   parseReferenceData(refs);
   parseSnapshotData(excel, refs);
   if (excel.metadata.datasetKind !== 'excel') throw new Error('Sumber pilot harus snapshot Excel; data demo tidak boleh dicampur.');
@@ -271,7 +285,7 @@ export function buildPilotSnapshot(excel: SnapshotData, refs: ReferenceData, loc
   for (const location of sortedLocations) {
     const instansi = sourceInstitutions.get(location.instansiId);
     if (!instansi) throw new Error(`ID ${location.instansiId} tidak ditemukan pada snapshot Excel; tidak membuat instansi baru.`);
-    validateLocation(location, instansi, refs);
+    validateLocation(location, instansi, refs, scope);
     const previous = unique.get(location.instansiId);
     if (previous) {
       if (hash(JSON.stringify(previous)) !== hash(JSON.stringify(location)))
@@ -286,36 +300,36 @@ export function buildPilotSnapshot(excel: SnapshotData, refs: ReferenceData, loc
   const capturedAt = [excel.metadata.capturedAt, ...ordered.map((location) => location.capturedAt)]
     .sort((a, b) => Date.parse(a) - Date.parse(b)).at(-1) ?? excel.metadata.capturedAt;
   const metadata: SnapshotMetadata = {
-    id: `pilot-jawa-${hash(JSON.stringify({ version: 4, identity, definitions: DEFINITIONS, landingPages })).slice(0, 16)}`,
+    id: `pilot-${scope.label.toLowerCase().replaceAll(/[^a-z]+/g, '-')}-${hash(JSON.stringify({ version: 4, identity, definitions: DEFINITIONS, landingPages })).slice(0, 16)}`,
     datasetKind: 'pilot', coverage: 'partial', capturedAt,
     referenceDate: excel.metadata.referenceDate,
     sources: [...new Set([...excel.metadata.sources, ...ordered.flatMap((item) => item.sourceUrls)])].sort(),
     metricDefinitions: DEFINITIONS,
     nationalTotal: null,
-    coverageDescription: `Percontohan Jawa: ${ordered.length} instansi dari snapshot Excel. Kantor tanpa pin yang dapat dipastikan tetap tersedia dalam daftar. Cakupan instansi masih parsial, bukan seluruh simpul atau statistik resmi JIKN.`,
+    coverageDescription: `Percontohan ${scope.label}: ${ordered.length} instansi dari snapshot Excel. Kantor tanpa pin yang dapat dipastikan tetap tersedia dalam daftar. Cakupan instansi masih parsial, bukan seluruh simpul atau statistik resmi JIKN.`,
     verificationNotes: [
       'DATA SIMULASI: semua statistik, tren, distribusi dan pencipta dibuat untuk demonstrasi antarmuka atas permintaan pengguna; bukan data resmi instansi/JIKN.',
       'Nama, kode, ID lokal dan tahun bergabung tetap berasal dari Indonesia.xlsx — sheet pengelolaan casefile. Tahun bergabung bukan hasil API SIKN.',
       'Koordinat berasal dari pin Google Maps yang diperiksa manual, fitur peta tertanam pada situs resmi, atau publikasi koordinat resmi. Perbedaan alamat dan rujukan historis dicatat per record; pin publik bukan pengesahan lokasi kantor terkini oleh ANRI. Pusat kamera bukan titik kantor. Tidak ada geocoding otomatis.',
-      'Pengecualian pin dekat batas polygon hanya diterima melalui tinjauan per record dengan sumber alamat resmi dan jarak paling jauh 100 meter. Jarak dan alasan dicatat; titik sumber tidak dipindahkan agar masuk polygon.',
+      'Pengecualian pin dekat batas polygon melalui tinjauan per record: sumber alamat resmi paling jauh 100 meter; pin publik Google Maps yang sama paling jauh 10 meter dengan penanda alamat belum dikonfirmasi. Jarak dan alasan dicatat; titik sumber tidak dipindahkan.',
       'Record tanpa koordinat tetap dihitung dan dapat dibuka lewat Daftar. Wilayah administratif yang diketahui tidak diubah menjadi koordinat kantor; konflik alamat dicatat untuk tinjauan.',
       'Posisi institusi bukan jaminan lokasi ruang penyimpanan arsip. Pengelola perlu mengonfirmasi sebelum penggunaan operasional.',
       'Kategori arsip dan nama pencipta pada pilot merupakan contoh sintetis. Seri hingga 2026 membagi jumlah record sintetis menjadi tambahan tahunan yang sama pada bar/garis dan tidak mendahului tahun bergabung pada Excel.',
       'Kontak, status simpul, logo, tanggal pembaruan, jumlah bulan ini dan Landing Page tidak dikarang. Total arsip nasional tidak tersedia.',
       'Kontribusi percontohan membagi jumlah arsip sintetis instansi dengan total arsip sintetis seluruh instansi pilot pada snapshot yang sama; tidak dihitung sebagai kontribusi nasional JIKN.',
-      'Berkas pilot hanya untuk review localhost di .local/pilot; tidak disalin ke build atau diunggah ke GitHub. Data bukan real-time.',
+      'Keluaran builder disiapkan untuk review lokal; ekspor paket kolaborasi hanya setelah audit dan izin berbagi. Data bukan real-time.',
     ],
   };
   const references: ReferenceData = {
     ...structuredClone(refs),
-    provinces: refs.provinces.filter((item) => PILOT_PROVINCES.has(item.id)).map((item) => structuredClone(item)),
-    kabKota: refs.kabKota.filter((item) => item.provinceId && PILOT_PROVINCES.has(item.provinceId))
+    provinces: refs.provinces.filter((item) => scope.provinceIds.has(item.id)).map((item) => structuredClone(item)),
+    kabKota: refs.kabKota.filter((item) => item.provinceId && scope.provinceIds.has(item.provinceId))
       .map((item) => ({ ...structuredClone(item), geometry: item.geometryUrl ? null : structuredClone(item.geometry) })),
     archiveCategories: structuredClone(SIMULATED_CATEGORIES),
     metadata: {
       ...structuredClone(refs.metadata), id: `referensi-${metadata.id}`, coverage: 'partial',
-      coverageDescription: 'Referensi wilayah enam provinsi Jawa beserta seluruh kab/kotanya; geometri kab/kota dimuat saat dipilih.',
-      verificationNotes: [...refs.metadata.verificationNotes, 'Pilot membatasi referensi wilayah ke kode 31–36; label administratif tidak dijadikan koordinat instansi. Empat kategori arsip pilot adalah kategori SIMULASI.'],
+      coverageDescription: `Referensi wilayah ${scope.label} beserta seluruh kab/kotanya; geometri kab/kota dimuat saat dipilih.`,
+      verificationNotes: [...refs.metadata.verificationNotes, `Pilot ${scope.label}: kode provinsi ${[...scope.provinceIds].join(', ')}; label administratif tidak dijadikan koordinat instansi. Empat kategori arsip pilot adalah kategori SIMULASI.`],
       nationalTotal: null, sampleTotal: null,
     },
   };
@@ -333,7 +347,7 @@ export function buildPilotSnapshot(excel: SnapshotData, refs: ReferenceData, loc
       coordinatesVerificationMethod: location.coordinates ? coordinateMethod(location.coordinateMethod ?? undefined)! : undefined,
       coordinateLocationLabel: location.coordinates ? location.coordinateLocationLabel : undefined,
       coordinatesVerifiedAt: location.coordinates ? location.capturedAt : undefined,
-      coordinatesVerificationNotes: location.coordinates ? `${location.address}. ${location.notes}${geometryReviewNote(location, region ?? null)} Sumber pencocokan: ${location.sourceUrls.join(' | ')}` : undefined,
+      coordinatesVerificationNotes: location.coordinates ? `${location.address}. ${location.publicPlaceOnly ? 'Pin publik Google Maps; alamat belum dikonfirmasi oleh instansi. ' : ''}${location.notes}${geometryReviewNote(location, region ?? null)} Sumber pencocokan: ${location.sourceUrls.join(' | ')}` : undefined,
       locationVerificationStatus: location.locationVerificationStatus ?? 'verified',
       locationVerificationNotes: `${location.address ? `${location.address}. ` : 'Alamat kantor belum tersedia. '}${location.notes}${geometryReviewNote(location, region ?? null)}${location.coordinates ? '' : ` Sumber tinjauan: ${location.sourceUrls.join(' | ')}`}`,
     };

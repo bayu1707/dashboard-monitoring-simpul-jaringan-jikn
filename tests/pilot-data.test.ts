@@ -48,6 +48,39 @@ function input(): { excel: SnapshotData; references: ReferenceData; locations: P
 }
 
 describe('builder pilot lokal', () => {
+  it('menerima satu sumber Maps hanya bila ditandai pin publik, tetap menolak koordinat kamera dan sumber palsu', () => {
+    const { excel, references, locations } = input();
+    const original = locations[0]!;
+    const publicPin: PilotLocation = { ...original, publicPlaceOnly: true,
+      sourceUrls: [original.googleMapsPlaceUrl!] };
+    expect(() => buildPilotSnapshot(excel, references, [{ ...publicPin, publicPlaceOnly: false }])).toThrow('sumber Google Maps');
+    expect(buildPilotSnapshot(excel, references, [publicPin]).snapshot.instansi[0]!.coordinatesVerificationNotes)
+      .toContain('alamat belum dikonfirmasi oleh instansi');
+    expect(() => buildPilotSnapshot(excel, references, [{ ...publicPin, coordinates: [-6.2, 106.15] }])).toThrow('!3d/!4d');
+    expect(() => buildPilotSnapshot(excel, references, [{ ...publicPin, coordinates: null,
+      googleMapsPlaceUrl: null, locationVerificationStatus: 'verified' }])).toThrow('pin publik');
+    expect(() => buildPilotSnapshot(excel, references, [{ ...publicPin,
+      coordinateMethod: 'official-published-coordinates' }])).toThrow('pin publik');
+  });
+
+  it('tinjauan batas pin publik hanya menerima sumber pin yang sama dan jarak maksimal 10 meter', () => {
+    const { excel, references, locations } = input();
+    const region = references.kabKota.find((item) => item.id === '36.73')!;
+    region.geometry = { type: 'Polygon', coordinates: [[[106.15005, -6.3], [106.3, -6.3], [106.3, -6.0], [106.15005, -6.0], [106.15005, -6.3]]] };
+    const original = locations[0]!;
+    const reviewed: PilotLocation = { ...original, publicPlaceOnly: true, sourceUrls: [original.googleMapsPlaceUrl!],
+      geometryReview: { reason: 'Fixture dekat batas; alamat belum dikonfirmasi.', sourceUrl: original.googleMapsPlaceUrl!, maxDistanceMeters: 10 } };
+    expect(() => buildPilotSnapshot(excel, references, [{ ...reviewed, geometryReview: undefined }])).toThrow('di luar polygon');
+    const result = buildPilotSnapshot(excel, references, [reviewed]);
+    expect(result.snapshot.instansi[0]!.coordinates).toEqual(original.coordinates);
+    expect(result.report.geometryReviews[0]!.distanceMeters).toBeLessThan(10);
+    expect(() => buildPilotSnapshot(excel, references, [{ ...reviewed,
+      geometryReview: { ...reviewed.geometryReview!, maxDistanceMeters: 11 } }])).toThrow('tinjauan batas memerlukan');
+    expect(() => buildPilotSnapshot(excel, references, [{ ...reviewed, publicPlaceOnly: false }])).toThrow('tinjauan batas memerlukan');
+    region.geometry = { type: 'Polygon', coordinates: [[[106.1502, -6.3], [106.3, -6.3], [106.3, -6.0], [106.1502, -6.0], [106.1502, -6.3]]] };
+    expect(() => buildPilotSnapshot(excel, references, [reviewed])).toThrow('melebihi batas');
+  });
+
   it('menerapkan satu mapping yang ditinjau melalui builder tanpa mengaktifkan instansi lain atau mengganti data Excel', () => {
     const { excel, references, locations } = input();
     const owner = excel.instansi[0]!;
