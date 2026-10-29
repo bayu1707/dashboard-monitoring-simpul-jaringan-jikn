@@ -24,7 +24,9 @@
     "prepare:java": "tsx scripts/prepare-java-locations.ts",
     "test:import": "python3 -m unittest discover -s tests -p 'test_import_*.py'",
     "validate:shared": "tsx scripts/validate-shared-data.ts",
-    "export:shared": "python3 scripts/export-collaboration.py"
+    "export:shared": "python3 scripts/export-collaboration.py",
+    "build:kalimantan-sulawesi": "tsx scripts/build-kalimantan-sulawesi-pilot.ts",
+    "build:indonesia": "tsx scripts/build-national-pilot.ts"
   },
   "dependencies": {
     "react": "19.3.0",

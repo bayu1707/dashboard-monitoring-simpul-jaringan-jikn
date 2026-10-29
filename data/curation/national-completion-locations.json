@@ -1,0 +1,2178 @@
+{
+  "description": "Pelengkap 90 identitas snapshot pengelolaan casefile untuk cakupan Indonesia. Pin rujukan publik, bukan verifikasi lapangan ANRI; data historis dan pengecualian dijelaskan per record.",
+  "reviewedAt": "2026-10-23",
+  "records": [
+    {
+      "instansiId": "casefile-b9f1cabf4ebeb24f69bb5b9f",
+      "name": "Dinas Perpustakaan dan Kearsipan Kota Denpasar",
+      "joinedYear": 2015,
+      "provinceId": "51",
+      "kabKotaId": "51.71",
+      "coordinates": [
+        -8.656658799999999,
+        115.2201415
+      ],
+      "address": "86VC+83J, Dangin Puri, Kec. Denpasar Tim., Kota Denpasar, Bali 80232",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kota%20Denpasar/data=!4m5!3m4!1s0x2dd2409bb6b464cd:0xd3b2e09ba04fa778!8m2!3d-8.656658799999999!4d115.2201415",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kota%20Denpasar/data=!4m5!3m4!1s0x2dd2409bb6b464cd:0xd3b2e09ba04fa778!8m2!3d-8.656658799999999!4d115.2201415"
+      ],
+      "capturedAt": "2026-10-23T13:39:41Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kota%20Denpasar/data=!4m5!3m4!1s0x2dd2409bb6b464cd:0xd3b2e09ba04fa778!8m2!3d-8.656658799999999!4d115.2201415",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dd2409bb6b464cd:0xd3b2e09ba04fa778 bernama Dinas Perpustakaan dan Kearsipan Kota Denpasar; alamat 86VC+83J, Dangin Puri, Kec. Denpasar Tim., Kota Denpasar, Bali 80232; posisi fitur !3d-8.656658799999999!4d115.2201415.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Kota Denpasar",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-07cd4ae9ca618ad1d089c445",
+      "name": "Sekretariat Kabinet",
+      "joinedYear": 2015,
+      "provinceId": "31",
+      "kabKotaId": "31.71",
+      "coordinates": [
+        -6.1691975999999995,
+        106.8226117
+      ],
+      "address": "Jl. Veteran No.18 2, RT.2/RW.3, Gambir, Kecamatan Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10110",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Gedung%20Sekretariat%20Kabinet/data=!4m5!3m4!1s0x2e69f5d6de7e2345:0xb9fdf13e20e1d217!8m2!3d-6.1691975999999995!4d106.8226117",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Gedung%20Sekretariat%20Kabinet/data=!4m5!3m4!1s0x2e69f5d6de7e2345:0xb9fdf13e20e1d217!8m2!3d-6.1691975999999995!4d106.8226117"
+      ],
+      "capturedAt": "2026-10-23T13:39:41Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Pin Gedung Sekretariat Kabinet, bukan titik Pusdatin atau Kementerian Sekretariat Negara. Nama/tahun tetap dari record Excel.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Gedung%20Sekretariat%20Kabinet/data=!4m5!3m4!1s0x2e69f5d6de7e2345:0xb9fdf13e20e1d217!8m2!3d-6.1691975999999995!4d106.8226117",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2e69f5d6de7e2345:0xb9fdf13e20e1d217 bernama Gedung Sekretariat Kabinet; alamat Jl. Veteran No.18 2, RT.2/RW.3, Gambir, Kecamatan Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10110; posisi fitur !3d-6.1691975999999995!4d106.8226117.",
+      "coordinateLocationLabel": "Gedung Sekretariat Kabinet",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-8a0a669dcebc42f2839a6aef",
+      "name": "Kementerian Hukum dan Hak Asasi Manusia (Di perbaharui menjadi Kementerian Hukum)",
+      "joinedYear": 2015,
+      "provinceId": "31",
+      "kabKotaId": "31.74",
+      "coordinates": [
+        -6.2222532,
+        106.831722
+      ],
+      "address": "Jl. H. R. Rasuna Said No.kav. 6-7, RT.16/RW.4, Kuningan, Karet Kuningan, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12940",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Kementerian%20Hukum%20dan%20Hak%20Asasi%20Manusia%20Republik%20Indonesia/data=!4m5!3m4!1s0x2e69f39909f5d6c1:0x9cebbc570bfdfb2b!8m2!3d-6.2222532!4d106.831722",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Kementerian%20Hukum%20dan%20Hak%20Asasi%20Manusia%20Republik%20Indonesia/data=!4m5!3m4!1s0x2e69f39909f5d6c1:0x9cebbc570bfdfb2b!8m2!3d-6.2222532!4d106.831722"
+      ],
+      "capturedAt": "2026-10-23T13:39:41Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Nama Excel memuat perubahan Kementerian Hukum dan HAM menjadi Kementerian Hukum. Pin publik masih berlabel nama lama; jangan digabung dengan record Kementerian HAM yang terpisah. Perlu konfirmasi unit operasional terbaru.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Kementerian%20Hukum%20dan%20Hak%20Asasi%20Manusia%20Republik%20Indonesia/data=!4m5!3m4!1s0x2e69f39909f5d6c1:0x9cebbc570bfdfb2b!8m2!3d-6.2222532!4d106.831722",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2e69f39909f5d6c1:0x9cebbc570bfdfb2b bernama Kementerian Hukum dan Hak Asasi Manusia Republik Indonesia; alamat Jl. H. R. Rasuna Said No.kav. 6-7, RT.16/RW.4, Kuningan, Karet Kuningan, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12940; posisi fitur !3d-6.2222532!4d106.831722.",
+      "coordinateLocationLabel": "Kementerian Hukum dan Hak Asasi Manusia Republik Indonesia",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-0d5d758d29c5493e72cd94c5",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Belu, NTT",
+      "joinedYear": 2015,
+      "provinceId": "53",
+      "kabKotaId": "53.04",
+      "coordinates": [
+        -9.096254,
+        124.89559419999999
+      ],
+      "address": "WV3W+F6X, Tenukiik, Kec. Kota Atambua, Kabupaten Belu, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah/data=!4m5!3m4!1s0x2cffbe5cd4d83121:0x5fcdaa938642b2eb!8m2!3d-9.096254!4d124.89559419999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Perpustakaan%20Daerah/data=!4m5!3m4!1s0x2cffbe5cd4d83121:0x5fcdaa938642b2eb!8m2!3d-9.096254!4d124.89559419999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:41Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah/data=!4m5!3m4!1s0x2cffbe5cd4d83121:0x5fcdaa938642b2eb!8m2!3d-9.096254!4d124.89559419999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2cffbe5cd4d83121:0x5fcdaa938642b2eb bernama Perpustakaan Daerah; alamat WV3W+F6X, Tenukiik, Kec. Kota Atambua, Kabupaten Belu, Nusa Tenggara Tim.; posisi fitur !3d-9.096254!4d124.89559419999999.",
+      "coordinateLocationLabel": "Perpustakaan Daerah",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-6bc78ad487a541c299ab4b4c",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Karangasem",
+      "joinedYear": 2015,
+      "provinceId": "51",
+      "kabKotaId": "51.07",
+      "coordinates": [
+        -8.4399655,
+        115.6129495
+      ],
+      "address": "Jl. Ngurah Rai No.46, Karangasem, Kec. Karangasem, Kabupaten Karangasem, Bali 80811",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Kabupaten%20Karangasem/data=!4m5!3m4!1s0x2dd20750d1bf1995:0x24b1fe16c1320cc7!8m2!3d-8.4399655!4d115.6129495",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Kabupaten%20Karangasem/data=!4m5!3m4!1s0x2dd20750d1bf1995:0x24b1fe16c1320cc7!8m2!3d-8.4399655!4d115.6129495"
+      ],
+      "capturedAt": "2026-10-23T13:39:42Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Kabupaten%20Karangasem/data=!4m5!3m4!1s0x2dd20750d1bf1995:0x24b1fe16c1320cc7!8m2!3d-8.4399655!4d115.6129495",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dd20750d1bf1995:0x24b1fe16c1320cc7 bernama Dinas Perpustakaan Dan Kearsipan Kabupaten Karangasem; alamat Jl. Ngurah Rai No.46, Karangasem, Kec. Karangasem, Kabupaten Karangasem, Bali 80811; posisi fitur !3d-8.4399655!4d115.6129495.",
+      "coordinateLocationLabel": "Dinas Perpustakaan Dan Kearsipan Kabupaten Karangasem",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-2e54b97dc56832c066fabeba",
+      "name": "Dinas Kominfo Kabupaten Merauke",
+      "joinedYear": 2016,
+      "provinceId": "93",
+      "kabKotaId": "93.01",
+      "coordinates": [
+        -8.4888544,
+        140.3992541
+      ],
+      "address": "Jl. TMP Trikora No.78, Maro, Kec. Merauke, Kabupaten Merauke, Papua Selatan 99614",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Komunikasi%20Dan%20Informatika/data=!4m5!3m4!1s0x69b53e2c29a12387:0x5cd1105b71a344da!8m2!3d-8.4888544!4d140.3992541",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Komunikasi%20Dan%20Informatika/data=!4m5!3m4!1s0x69b53e2c29a12387:0x5cd1105b71a344da!8m2!3d-8.4888544!4d140.3992541"
+      ],
+      "capturedAt": "2026-10-23T13:39:42Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Komunikasi%20Dan%20Informatika/data=!4m5!3m4!1s0x69b53e2c29a12387:0x5cd1105b71a344da!8m2!3d-8.4888544!4d140.3992541",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x69b53e2c29a12387:0x5cd1105b71a344da bernama Dinas Komunikasi Dan Informatika; alamat Jl. TMP Trikora No.78, Maro, Kec. Merauke, Kabupaten Merauke, Papua Selatan 99614; posisi fitur !3d-8.4888544!4d140.3992541.",
+      "coordinateLocationLabel": "Dinas Komunikasi Dan Informatika",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-aa5cbb870225a1d109eb64fc",
+      "name": "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia(di ubah menjadi Kementerian Pendidikan Dasar dan Menengah RI)",
+      "joinedYear": 2016,
+      "provinceId": "31",
+      "kabKotaId": "31.71",
+      "coordinates": [
+        -6.225088599999999,
+        106.80256059999999
+      ],
+      "address": "QRF3+X27, Jalan Jenderal Sudirman Senayan, RT.1/RW.3, Gelora, Kec. Kby. Baru, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 12190",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Gedung%20C%20Kementerian%20Pendidikan%20Dasar%20dan%20Menengah%20Republik%20Indonesia/data=!4m5!3m4!1s0x2e69f14efbe145bf:0x71bd74ae44d7cce3!8m2!3d-6.225088599999999!4d106.80256059999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Gedung%20C%20Kementerian%20Pendidikan%20Dasar%20dan%20Menengah%20Republik%20Indonesia/data=!4m5!3m4!1s0x2e69f14efbe145bf:0x71bd74ae44d7cce3!8m2!3d-6.225088599999999!4d106.80256059999999",
+        "https://bkhm.kemendikdasmen.go.id/hubungi-kami/"
+      ],
+      "capturedAt": "2026-10-23T13:39:42Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Memakai fitur Kementerian Pendidikan Dasar dan Menengah sesuai catatan perubahan nama di Excel, bukan Kementerian Pendidikan Tinggi. Unit kearsipan di kompleks belum ditentukan. Rujukan layanan Gedung C pada alamat resmi biro komunikasi dipilih; fitur Gedung A ditolak karena melewati batas Jakarta Pusat pada geometri referensi. Tidak menentukan posisi ruang arsip.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Gedung%20C%20Kementerian%20Pendidikan%20Dasar%20dan%20Menengah%20Republik%20Indonesia/data=!4m5!3m4!1s0x2e69f14efbe145bf:0x71bd74ae44d7cce3!8m2!3d-6.225088599999999!4d106.80256059999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2e69f14efbe145bf:0x71bd74ae44d7cce3 bernama Gedung C Kementerian Pendidikan Dasar dan Menengah Republik Indonesia; alamat QRF3+X27, Jalan Jenderal Sudirman Senayan, RT.1/RW.3, Gelora, Kec. Kby. Baru, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 12190; posisi fitur !3d-6.225088599999999!4d106.80256059999999.",
+      "coordinateLocationLabel": "Gedung C Kementerian Pendidikan Dasar dan Menengah Republik Indonesia",
+      "publicPlaceOnly": true,
+      "geometryReview": {
+        "reason": "Alamat resmi Biro Komunikasi menempatkan layanan di Gedung C kompleks kementerian, Senayan Jakarta Pusat. Pin fitur Gedung C sedikit di luar garis batas generalisasi Jakarta Pusat; posisi sumber tidak dipindahkan. Ini rujukan layanan publik, bukan ruang arsip yang sudah diukur.",
+        "sourceUrl": "https://bkhm.kemendikdasmen.go.id/hubungi-kami/",
+        "maxDistanceMeters": 100
+      }
+    },
+    {
+      "instansiId": "casefile-4c946f6b89359699238cf184",
+      "name": "Kementerian Pariwisata (Lihat yang bergabung di tahun 2026)",
+      "joinedYear": 2016,
+      "provinceId": "31",
+      "kabKotaId": "31.71",
+      "coordinates": [
+        -6.179234999999999,
+        106.8215896
+      ],
+      "address": "Jl. Medan Merdeka Barat No.17 Lt.9, RT.2/RW.3, Gambir, Jakarta, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10110",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Kementerian%20Pariwisata%20dan%20Ekonomi%20Kreatif/data=!4m5!3m4!1s0x2e69f42bb8f8b9e9:0x29aba5d6404ef12e!8m2!3d-6.179234999999999!4d106.8215896",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Kementerian%20Pariwisata%20dan%20Ekonomi%20Kreatif/data=!4m5!3m4!1s0x2e69f42bb8f8b9e9:0x29aba5d6404ef12e!8m2!3d-6.179234999999999!4d106.8215896"
+      ],
+      "capturedAt": "2026-10-23T13:39:43Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Excel menandai record ini untuk dilihat pada entri tahun 2026. Identitas lokal tahun 2016 dipertahankan terpisah; pin dengan nama Kemenparekraf merupakan rujukan historis/kompleks, bukan konfirmasi identitas penerus oleh SIKN.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Kementerian%20Pariwisata%20dan%20Ekonomi%20Kreatif/data=!4m5!3m4!1s0x2e69f42bb8f8b9e9:0x29aba5d6404ef12e!8m2!3d-6.179234999999999!4d106.8215896",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2e69f42bb8f8b9e9:0x29aba5d6404ef12e bernama Kementerian Pariwisata dan Ekonomi Kreatif; alamat Jl. Medan Merdeka Barat No.17 Lt.9, RT.2/RW.3, Gambir, Jakarta, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10110; posisi fitur !3d-6.179234999999999!4d106.8215896.",
+      "coordinateLocationLabel": "Kementerian Pariwisata dan Ekonomi Kreatif",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-1fd4b142f9e08f91b771f5fd",
+      "name": "Dinas Arsip dan Perpustakaan Kabupaten Buleleng",
+      "joinedYear": 2016,
+      "provinceId": "51",
+      "kabKotaId": "51.08",
+      "coordinates": [
+        -8.1180208,
+        115.09121019999999
+      ],
+      "address": "Jl. Werkudara No.1, Banjar Tegal, Kec. Buleleng, Kabupaten Buleleng, Bali 81113",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Arsip%20dan%20Perpustakaan%20Daerah%20Kabupaten%20Buleleng%20%5B%20%E1%AC%A4%E1%AC%B6%E1%AC%A6%E1%AC%B2%E1%AD%84%20%E1%AC%85%E1%AC%83%E1%AC%B2%E1%AC%B6%E1%AC%A7%E1%AD%84%20%E1%AC%A4%E1%AC%A6%E1%AD%84%20%E1%AC%A7%E1%AD%82%E1%AC%83%E1%AC%A7%E1%AC%B8%E1%AC%B2%E1%AD%84%E1%AC%A2%E1%AC%93%E1%AC%B3%E1%AC%A6%E1%AD%84%20%E1%AC%A4%E1%AC%8F%E1%AC%AD%E1%AC%84%20%E1%AC%93%E1%AC%AA%E1%AC%B9%E1%AC%A7%E1%AC%A2%E1%AC%BE%E1%AC%A6%E1%AD%84%20%E1%AC%A9%E1%AC%B8%E1%AC%AE%E1%AC%BE%E1%AC%AE%E1%AC%BE%E1%AC%82%E1%AD%9F%20%5D/data=!4m5!3m4!1s0x2dd19a75caf042e7:0xda16778aa0ee712c!8m2!3d-8.1180208!4d115.09121019999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Arsip%20dan%20Perpustakaan%20Daerah%20Kabupaten%20Buleleng%20%5B%20%E1%AC%A4%E1%AC%B6%E1%AC%A6%E1%AC%B2%E1%AD%84%20%E1%AC%85%E1%AC%83%E1%AC%B2%E1%AC%B6%E1%AC%A7%E1%AD%84%20%E1%AC%A4%E1%AC%A6%E1%AD%84%20%E1%AC%A7%E1%AD%82%E1%AC%83%E1%AC%A7%E1%AC%B8%E1%AC%B2%E1%AD%84%E1%AC%A2%E1%AC%93%E1%AC%B3%E1%AC%A6%E1%AD%84%20%E1%AC%A4%E1%AC%8F%E1%AC%AD%E1%AC%84%20%E1%AC%93%E1%AC%AA%E1%AC%B9%E1%AC%A7%E1%AC%A2%E1%AC%BE%E1%AC%A6%E1%AD%84%20%E1%AC%A9%E1%AC%B8%E1%AC%AE%E1%AC%BE%E1%AC%AE%E1%AC%BE%E1%AC%82%E1%AD%9F%20%5D/data=!4m5!3m4!1s0x2dd19a75caf042e7:0xda16778aa0ee712c!8m2!3d-8.1180208!4d115.09121019999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:42Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Arsip%20dan%20Perpustakaan%20Daerah%20Kabupaten%20Buleleng%20%5B%20%E1%AC%A4%E1%AC%B6%E1%AC%A6%E1%AC%B2%E1%AD%84%20%E1%AC%85%E1%AC%83%E1%AC%B2%E1%AC%B6%E1%AC%A7%E1%AD%84%20%E1%AC%A4%E1%AC%A6%E1%AD%84%20%E1%AC%A7%E1%AD%82%E1%AC%83%E1%AC%A7%E1%AC%B8%E1%AC%B2%E1%AD%84%E1%AC%A2%E1%AC%93%E1%AC%B3%E1%AC%A6%E1%AD%84%20%E1%AC%A4%E1%AC%8F%E1%AC%AD%E1%AC%84%20%E1%AC%93%E1%AC%AA%E1%AC%B9%E1%AC%A7%E1%AC%A2%E1%AC%BE%E1%AC%A6%E1%AD%84%20%E1%AC%A9%E1%AC%B8%E1%AC%AE%E1%AC%BE%E1%AC%AE%E1%AC%BE%E1%AC%82%E1%AD%9F%20%5D/data=!4m5!3m4!1s0x2dd19a75caf042e7:0xda16778aa0ee712c!8m2!3d-8.1180208!4d115.09121019999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dd19a75caf042e7:0xda16778aa0ee712c bernama Dinas Arsip dan Perpustakaan Daerah Kabupaten Buleleng [ ᬤᬶᬦᬲ᭄ ᬅᬃᬲᬶᬧ᭄ ᬤᬦ᭄ ᬧᭂᬃᬧᬸᬲ᭄ᬢᬓᬳᬦ᭄ ᬤᬏᬭᬄ ᬓᬪᬹᬧᬢᬾᬦ᭄ ᬩᬸᬮᬾᬮᬾᬂ᭟ ]; alamat Jl. Werkudara No.1, Banjar Tegal, Kec. Buleleng, Kabupaten Buleleng, Bali 81113; posisi fitur !3d-8.1180208!4d115.09121019999999.",
+      "coordinateLocationLabel": "Dinas Arsip dan Perpustakaan Daerah Kabupaten Buleleng [ ᬤᬶᬦᬲ᭄ ᬅᬃᬲᬶᬧ᭄ ᬤᬦ᭄ ᬧᭂᬃᬧᬸᬲ᭄ᬢᬓᬳᬦ᭄ ᬤᬏᬭᬄ ᬓᬪᬹᬧᬢᬾᬦ᭄ ᬩᬸᬮᬾᬮᬾᬂ᭟ ]",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-993d79dc92114bf86410bbaa",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Badung",
+      "joinedYear": 2016,
+      "provinceId": "51",
+      "kabKotaId": "51.03",
+      "coordinates": [
+        -8.6054365,
+        115.17798069999999
+      ],
+      "address": "95VH+R5H, Sempidi, Kec. Mengwi, Kabupaten Badung, Bali 80351",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20Dan%20Perpustakaan%20%28Diskerpus%29%20Badung/data=!4m5!3m4!1s0x2dd239961041b0c7:0x4dd9a1e75797750f!8m2!3d-8.6054365!4d115.17798069999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20Dan%20Perpustakaan%20%28Diskerpus%29%20Badung/data=!4m5!3m4!1s0x2dd239961041b0c7:0x4dd9a1e75797750f!8m2!3d-8.6054365!4d115.17798069999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:43Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20Dan%20Perpustakaan%20%28Diskerpus%29%20Badung/data=!4m5!3m4!1s0x2dd239961041b0c7:0x4dd9a1e75797750f!8m2!3d-8.6054365!4d115.17798069999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dd239961041b0c7:0x4dd9a1e75797750f bernama Dinas Kearsipan Dan Perpustakaan (Diskerpus) Badung; alamat 95VH+R5H, Sempidi, Kec. Mengwi, Kabupaten Badung, Bali 80351; posisi fitur !3d-8.6054365!4d115.17798069999999.",
+      "coordinateLocationLabel": "Dinas Kearsipan Dan Perpustakaan (Diskerpus) Badung",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-4b5e367b9060ae451a605139",
+      "name": "Dinas Kearsipan dan Perpustakaan Provinsi Nusa Tenggara Timur",
+      "joinedYear": 2017,
+      "provinceId": "53",
+      "kabKotaId": "53.71",
+      "coordinates": [
+        -10.1633164,
+        123.5822563
+      ],
+      "address": "RHPJ+MWC, Merdeka, Kec. Kota Lama, Kota Kupang, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Prov.NTT/data=!4m5!3m4!1s0x2c569c8da35d06f5:0xb7b1a030bdfe5167!8m2!3d-10.1633164!4d123.5822563",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Prov.NTT/data=!4m5!3m4!1s0x2c569c8da35d06f5:0xb7b1a030bdfe5167!8m2!3d-10.1633164!4d123.5822563"
+      ],
+      "capturedAt": "2026-10-23T13:39:44Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini.  Wilayah fisik pin Kota Kupang diperiksa pada polygon referensi; kepemilikan instansi tingkat provinsi tidak berubah.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Prov.NTT/data=!4m5!3m4!1s0x2c569c8da35d06f5:0xb7b1a030bdfe5167!8m2!3d-10.1633164!4d123.5822563",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2c569c8da35d06f5:0xb7b1a030bdfe5167 bernama Dinas Kearsipan dan Perpustakaan Prov.NTT; alamat RHPJ+MWC, Merdeka, Kec. Kota Lama, Kota Kupang, Nusa Tenggara Tim.; posisi fitur !3d-10.1633164!4d123.5822563.",
+      "coordinateLocationLabel": "Dinas Kearsipan dan Perpustakaan Prov.NTT",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-dce31df2094c6b5c1eb9abd0",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Timor Tengah Selatan",
+      "joinedYear": 2017,
+      "provinceId": "53",
+      "kabKotaId": "53.02",
+      "coordinates": [
+        -9.865254,
+        124.28276249999999
+      ],
+      "address": "47MM+V4R, Taubneno, Kec. Kota Soe, Kabupaten Timor Tengah Selatan, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kab.%20TTS/data=!4m5!3m4!1s0x2c55ef7eedd095d9:0x4ee7a38d10949b03!8m2!3d-9.865254!4d124.28276249999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kab.%20TTS/data=!4m5!3m4!1s0x2c55ef7eedd095d9:0x4ee7a38d10949b03!8m2!3d-9.865254!4d124.28276249999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:43Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kab.%20TTS/data=!4m5!3m4!1s0x2c55ef7eedd095d9:0x4ee7a38d10949b03!8m2!3d-9.865254!4d124.28276249999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2c55ef7eedd095d9:0x4ee7a38d10949b03 bernama Dinas Kearsipan dan Perpustakaan Kab. TTS; alamat 47MM+V4R, Taubneno, Kec. Kota Soe, Kabupaten Timor Tengah Selatan, Nusa Tenggara Tim.; posisi fitur !3d-9.865254!4d124.28276249999999.",
+      "coordinateLocationLabel": "Dinas Kearsipan dan Perpustakaan Kab. TTS",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-24bff37329c766952fcc1cba",
+      "name": "Sekretariat Daerah Provinsi Bali",
+      "joinedYear": 2017,
+      "provinceId": "51",
+      "kabKotaId": "51.71",
+      "coordinates": [
+        -8.6678895,
+        115.23405679999999
+      ],
+      "address": "Jl. Basuki Rahmat No.1, Sumerta Kelod, Kec. Denpasar Tim., Kota Denpasar, Bali 80234",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Kantor%20Gubernur%20Bali/data=!4m5!3m4!1s0x2dd2408ad55089d1:0xa2491868b009f73d!8m2!3d-8.6678895!4d115.23405679999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Kantor%20Gubernur%20Bali/data=!4m5!3m4!1s0x2dd2408ad55089d1:0xa2491868b009f73d!8m2!3d-8.6678895!4d115.23405679999999",
+        "https://birohukum.baliprov.go.id/kedudukan-dan-kontak"
+      ],
+      "capturedAt": "2026-10-23T13:39:44Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Rujukan kompleks Kantor Gubernur Bali tempat biro Sekretariat Daerah berada, sesuai alamat resmi Basuki Rahmat Nomor 1. Bukan pengukuran posisi ruangan arsip. Wilayah fisik pin Kota Denpasar diperiksa pada polygon referensi; kepemilikan instansi tingkat provinsi tidak berubah.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Kantor%20Gubernur%20Bali/data=!4m5!3m4!1s0x2dd2408ad55089d1:0xa2491868b009f73d!8m2!3d-8.6678895!4d115.23405679999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dd2408ad55089d1:0xa2491868b009f73d bernama Kantor Gubernur Bali; alamat Jl. Basuki Rahmat No.1, Sumerta Kelod, Kec. Denpasar Tim., Kota Denpasar, Bali 80234; posisi fitur !3d-8.6678895!4d115.23405679999999.",
+      "coordinateLocationLabel": "Kantor Gubernur Bali",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-5170b9a4e3f2009d9eab6270",
+      "name": "Badan Tenaga Nuklir Nasional (BATAN)",
+      "joinedYear": 2018,
+      "provinceId": "31",
+      "kabKotaId": "31.74",
+      "coordinates": [
+        -6.2363968,
+        106.8226225
+      ],
+      "address": "Jl. Kuningan Barat Raya No.5 10, RT.10/RW.1, Kuningan Bar., Kec. Mampang Prpt., Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12710",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Batan/data=!4m5!3m4!1s0x2e69f3e0c61c11ed:0xc9d1492525765ee7!8m2!3d-6.2363968!4d106.8226225",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Batan/data=!4m5!3m4!1s0x2e69f3e0c61c11ed:0xc9d1492525765ee7!8m2!3d-6.2363968!4d106.8226225"
+      ],
+      "capturedAt": "2026-10-23T13:42:10Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Rujukan publik bernama Batan di Kuningan Barat No.5. Nama BATAN adalah nama historis pada Excel; tidak menyatakan instansi masih berdiri sendiri atau semua lokasi BATAN berada di titik ini.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Batan/data=!4m5!3m4!1s0x2e69f3e0c61c11ed:0xc9d1492525765ee7!8m2!3d-6.2363968!4d106.8226225",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2e69f3e0c61c11ed:0xc9d1492525765ee7 bernama Batan; alamat Jl. Kuningan Barat Raya No.5 10, RT.10/RW.1, Kuningan Bar., Kec. Mampang Prpt., Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12710; posisi fitur !3d-6.2363968!4d106.8226225.",
+      "coordinateLocationLabel": "Batan",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-fc737a02eafde0818e3eb0cd",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Maluku Tenggara",
+      "joinedYear": 2018,
+      "provinceId": "81",
+      "kabKotaId": "81.02",
+      "coordinates": [
+        -5.646238299999999,
+        132.74082199999998
+      ],
+      "address": "9P3R+G84, Unnamed Road, Kel. Ohoijang Watdek, Kec. Kei Kecil, Kabupaten Maluku Tenggara, Maluku",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Daerah%20Kabupeten%20Maluku%20Tenggara/data=!4m5!3m4!1s0x2d301b0f414291b1:0xf7aadd787332cde7!8m2!3d-5.646238299999999!4d132.74082199999998",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Daerah%20Kabupeten%20Maluku%20Tenggara/data=!4m5!3m4!1s0x2d301b0f414291b1:0xf7aadd787332cde7!8m2!3d-5.646238299999999!4d132.74082199999998"
+      ],
+      "capturedAt": "2026-10-23T13:39:44Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Daerah%20Kabupeten%20Maluku%20Tenggara/data=!4m5!3m4!1s0x2d301b0f414291b1:0xf7aadd787332cde7!8m2!3d-5.646238299999999!4d132.74082199999998",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d301b0f414291b1:0xf7aadd787332cde7 bernama Dinas Kearsipan dan Perpustakaan Daerah Kabupeten Maluku Tenggara; alamat 9P3R+G84, Unnamed Road, Kel. Ohoijang Watdek, Kec. Kei Kecil, Kabupaten Maluku Tenggara, Maluku; posisi fitur !3d-5.646238299999999!4d132.74082199999998.",
+      "coordinateLocationLabel": "Dinas Kearsipan dan Perpustakaan Daerah Kabupeten Maluku Tenggara",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-e1f5b885eea8227b6f6bf59c",
+      "name": "Dinas Perpustakaan dan Kearsipan Provinsi Nusa Tenggara Barat",
+      "joinedYear": 2018,
+      "provinceId": "52",
+      "kabKotaId": "52.71",
+      "coordinates": [
+        -8.584265799999999,
+        116.0876322
+      ],
+      "address": "Jl. Majapahit No.9, Dasan Agung Baru, Kec. Selaparang, Kota Mataram, Nusa Tenggara Bar. 83125",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Provinsi%20NTB/data=!4m5!3m4!1s0x2dcdc07e3ded1bdb:0x71cf5f37ba568f7!8m2!3d-8.584265799999999!4d116.0876322",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Provinsi%20NTB/data=!4m5!3m4!1s0x2dcdc07e3ded1bdb:0x71cf5f37ba568f7!8m2!3d-8.584265799999999!4d116.0876322"
+      ],
+      "capturedAt": "2026-10-23T13:39:45Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini.  Wilayah fisik pin Kota Mataram diperiksa pada polygon referensi; kepemilikan instansi tingkat provinsi tidak berubah.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Provinsi%20NTB/data=!4m5!3m4!1s0x2dcdc07e3ded1bdb:0x71cf5f37ba568f7!8m2!3d-8.584265799999999!4d116.0876322",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dcdc07e3ded1bdb:0x71cf5f37ba568f7 bernama Dinas Perpustakaan dan Kearsipan Provinsi NTB; alamat Jl. Majapahit No.9, Dasan Agung Baru, Kec. Selaparang, Kota Mataram, Nusa Tenggara Bar. 83125; posisi fitur !3d-8.584265799999999!4d116.0876322.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Provinsi NTB",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-a8aa7b1fa7cee1534cc4e220",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Manggarai Barat",
+      "joinedYear": 2018,
+      "provinceId": "53",
+      "kabKotaId": "53.15",
+      "coordinates": [
+        -8.4982215,
+        119.896948
+      ],
+      "address": "GV2W+PQ8, Wae Kelambu, Kec. Komodo, Kabupaten Manggarai Barat, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/DINAS%20KEARSIPAN%20DAN%20PERPUSTAKAAN%20MANGGARAI%20BARAT/data=!4m5!3m4!1s0x2db4655b3490f52d:0x820fb5b78bb1f521!8m2!3d-8.4982215!4d119.896948",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/DINAS%20KEARSIPAN%20DAN%20PERPUSTAKAAN%20MANGGARAI%20BARAT/data=!4m5!3m4!1s0x2db4655b3490f52d:0x820fb5b78bb1f521!8m2!3d-8.4982215!4d119.896948"
+      ],
+      "capturedAt": "2026-10-23T13:39:45Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/DINAS%20KEARSIPAN%20DAN%20PERPUSTAKAAN%20MANGGARAI%20BARAT/data=!4m5!3m4!1s0x2db4655b3490f52d:0x820fb5b78bb1f521!8m2!3d-8.4982215!4d119.896948",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2db4655b3490f52d:0x820fb5b78bb1f521 bernama DINAS KEARSIPAN DAN PERPUSTAKAAN MANGGARAI BARAT; alamat GV2W+PQ8, Wae Kelambu, Kec. Komodo, Kabupaten Manggarai Barat, Nusa Tenggara Tim.; posisi fitur !3d-8.4982215!4d119.896948.",
+      "coordinateLocationLabel": "DINAS KEARSIPAN DAN PERPUSTAKAAN MANGGARAI BARAT",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-2a77f3ba6884468603971f48",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Jembrana",
+      "joinedYear": 2018,
+      "provinceId": "51",
+      "kabKotaId": "51.01",
+      "coordinates": [
+        -8.353629999999999,
+        114.6353175
+      ],
+      "address": "JJWP+G4W, Jl. Merak, Dauhwaru, Kec. Jembrana, Kabupaten Jembrana, Bali 82218",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Jembrana/data=!4m5!3m4!1s0x2dd16211b3da4161:0x9f85a5123a315c47!8m2!3d-8.353629999999999!4d114.6353175",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Jembrana/data=!4m5!3m4!1s0x2dd16211b3da4161:0x9f85a5123a315c47!8m2!3d-8.353629999999999!4d114.6353175"
+      ],
+      "capturedAt": "2026-10-23T13:39:45Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Jembrana/data=!4m5!3m4!1s0x2dd16211b3da4161:0x9f85a5123a315c47!8m2!3d-8.353629999999999!4d114.6353175",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dd16211b3da4161:0x9f85a5123a315c47 bernama Dinas Perpustakaan dan Kearsipan Kabupaten Jembrana; alamat JJWP+G4W, Jl. Merak, Dauhwaru, Kec. Jembrana, Kabupaten Jembrana, Bali 82218; posisi fitur !3d-8.353629999999999!4d114.6353175.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Kabupaten Jembrana",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-441c59b91a90a91ec89270a5",
+      "name": "Dinas Kearsipan dan Perpustakaan Kota Kupang",
+      "joinedYear": 2019,
+      "provinceId": "53",
+      "kabKotaId": "53.71",
+      "coordinates": [
+        -10.1527739,
+        123.60675699999999
+      ],
+      "address": "Jl. R. W. Monginsidi No.3, Pasir Panjang, Kec. Kota Lama, Kota Kupang, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20Dan%20Perpustakaan%20Kota%20Kupang/data=!4m5!3m4!1s0x2c569de836b48afd:0x14faa4d8e96d8525!8m2!3d-10.1527739!4d123.60675699999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20Dan%20Perpustakaan%20Kota%20Kupang/data=!4m5!3m4!1s0x2c569de836b48afd:0x14faa4d8e96d8525!8m2!3d-10.1527739!4d123.60675699999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:46Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20Dan%20Perpustakaan%20Kota%20Kupang/data=!4m5!3m4!1s0x2c569de836b48afd:0x14faa4d8e96d8525!8m2!3d-10.1527739!4d123.60675699999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2c569de836b48afd:0x14faa4d8e96d8525 bernama Dinas Kearsipan Dan Perpustakaan Kota Kupang; alamat Jl. R. W. Monginsidi No.3, Pasir Panjang, Kec. Kota Lama, Kota Kupang, Nusa Tenggara Tim.; posisi fitur !3d-10.1527739!4d123.60675699999999.",
+      "coordinateLocationLabel": "Dinas Kearsipan Dan Perpustakaan Kota Kupang",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-b26da2b048cedda60b89a09b",
+      "name": "Dinas Perpsutakaan dan Arsip Kabupaten Tabanan",
+      "joinedYear": 2019,
+      "provinceId": "51",
+      "kabKotaId": "51.02",
+      "coordinates": [
+        -8.540338199999999,
+        115.130781
+      ],
+      "address": "Jl. Pahlawan No.19, Delod Peken, Kec. Tabanan, Kabupaten Tabanan, Bali 82121",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Perpustakaan%20Dinas%20Pendidikan%20Dan%20Arsip%20Kabupaten%20Tabanan/data=!4m5!3m4!1s0x2dd23a513eb76dd5:0x8cc8144f8eacac2b!8m2!3d-8.540338199999999!4d115.130781",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Perpustakaan%20Dinas%20Pendidikan%20Dan%20Arsip%20Kabupaten%20Tabanan/data=!4m5!3m4!1s0x2dd23a513eb76dd5:0x8cc8144f8eacac2b!8m2!3d-8.540338199999999!4d115.130781"
+      ],
+      "capturedAt": "2026-10-23T13:39:46Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Perpustakaan%20Dinas%20Pendidikan%20Dan%20Arsip%20Kabupaten%20Tabanan/data=!4m5!3m4!1s0x2dd23a513eb76dd5:0x8cc8144f8eacac2b!8m2!3d-8.540338199999999!4d115.130781",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dd23a513eb76dd5:0x8cc8144f8eacac2b bernama Perpustakaan Dinas Pendidikan Dan Arsip Kabupaten Tabanan; alamat Jl. Pahlawan No.19, Delod Peken, Kec. Tabanan, Kabupaten Tabanan, Bali 82121; posisi fitur !3d-8.540338199999999!4d115.130781.",
+      "coordinateLocationLabel": "Perpustakaan Dinas Pendidikan Dan Arsip Kabupaten Tabanan",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-721930e1473f55ff1359fdfb",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Rote Ndao",
+      "joinedYear": 2019,
+      "provinceId": "53",
+      "kabKotaId": "53.14",
+      "coordinates": [
+        -10.7589505,
+        123.06313349999999
+      ],
+      "address": "63R7+C76, Mokdale, Kec. Lobalain, Kabupaten Rote Ndao, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Rote%20Ndao/data=!4m5!3m4!1s0x2c512b2787ffe971:0xcf81625768eebb83!8m2!3d-10.7589505!4d123.06313349999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Rote%20Ndao/data=!4m5!3m4!1s0x2c512b2787ffe971:0xcf81625768eebb83!8m2!3d-10.7589505!4d123.06313349999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:46Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Rote%20Ndao/data=!4m5!3m4!1s0x2c512b2787ffe971:0xcf81625768eebb83!8m2!3d-10.7589505!4d123.06313349999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2c512b2787ffe971:0xcf81625768eebb83 bernama Dinas Perpustakaan dan Kearsipan Kabupaten Rote Ndao; alamat 63R7+C76, Mokdale, Kec. Lobalain, Kabupaten Rote Ndao, Nusa Tenggara Tim.; posisi fitur !3d-10.7589505!4d123.06313349999999.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Kabupaten Rote Ndao",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-aa74177b933e77c975581ea1",
+      "name": "Angkasa Pura I",
+      "joinedYear": 2019,
+      "provinceId": "31",
+      "kabKotaId": "31.71",
+      "coordinates": [
+        -6.155492199999999,
+        106.8418322
+      ],
+      "address": "Jl. Kota Baru Bandar Kemayoran No.Kav.2 Blok B12, RT.13/RW.1, Gn. Sahari Utara, Kec. Kemayoran, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10720",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Grha%20Angkasa%20Pura%20l/data=!4m5!3m4!1s0x2e69f5ede62a2337:0x23eda46a096782be!8m2!3d-6.155492199999999!4d106.8418322",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Grha%20Angkasa%20Pura%20l/data=!4m5!3m4!1s0x2e69f5ede62a2337:0x23eda46a096782be!8m2!3d-6.155492199999999!4d106.8418322",
+        "https://ppid.ap1.co.id/jalur-waktu-layanan"
+      ],
+      "capturedAt": "2026-10-23T13:42:09Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Rujukan Grha Angkasa Pura I Kemayoran sesuai alamat layanan publik AP I; bukan Bandara Soekarno-Hatta, AP II, atau AP Supports. Nama historis Excel dipertahankan; penerus organisasi perlu konfirmasi tim.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Grha%20Angkasa%20Pura%20l/data=!4m5!3m4!1s0x2e69f5ede62a2337:0x23eda46a096782be!8m2!3d-6.155492199999999!4d106.8418322",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2e69f5ede62a2337:0x23eda46a096782be bernama Grha Angkasa Pura l; alamat Jl. Kota Baru Bandar Kemayoran No.Kav.2 Blok B12, RT.13/RW.1, Gn. Sahari Utara, Kec. Kemayoran, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10720; posisi fitur !3d-6.155492199999999!4d106.8418322.",
+      "coordinateLocationLabel": "Grha Angkasa Pura l",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-9fdc488653ebe5eabaed607d",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Sumbawa",
+      "joinedYear": 2019,
+      "provinceId": "52",
+      "kabKotaId": "52.04",
+      "coordinates": [
+        -8.4794482,
+        117.40871829999999
+      ],
+      "address": "GCC5+6FG, Jl. Garuda, Lempeh, Kec. Sumbawa, Kabupaten Sumbawa, Nusa Tenggara Bar. 84316",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Sumbawa/data=!4m5!3m4!1s0x2dcbecd809b8d859:0x511d904ef3308d8c!8m2!3d-8.4794482!4d117.40871829999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Sumbawa/data=!4m5!3m4!1s0x2dcbecd809b8d859:0x511d904ef3308d8c!8m2!3d-8.4794482!4d117.40871829999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:47Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Sumbawa/data=!4m5!3m4!1s0x2dcbecd809b8d859:0x511d904ef3308d8c!8m2!3d-8.4794482!4d117.40871829999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dcbecd809b8d859:0x511d904ef3308d8c bernama Dinas Perpustakaan dan Kearsipan Kabupaten Sumbawa; alamat GCC5+6FG, Jl. Garuda, Lempeh, Kec. Sumbawa, Kabupaten Sumbawa, Nusa Tenggara Bar. 84316; posisi fitur !3d-8.4794482!4d117.40871829999999.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Kabupaten Sumbawa",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-8dcbe2039550af7ddde05a2c",
+      "name": "Dinas Kearsipan dan Perpustakaan Kota Mataram",
+      "joinedYear": 2019,
+      "provinceId": "52",
+      "kabKotaId": "52.71",
+      "coordinates": [
+        -8.5814272,
+        116.0985032
+      ],
+      "address": "Jl. Gn. Rinjani No.1, Dasan Agung Baru, Kec. Selaparang, Kota Mataram, Nusa Tenggara Bar. 83125",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kota%20Mataram/data=!4m5!3m4!1s0x2dcdc08490f267b1:0x5308271ecb5b8982!8m2!3d-8.5814272!4d116.0985032",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kota%20Mataram/data=!4m5!3m4!1s0x2dcdc08490f267b1:0x5308271ecb5b8982!8m2!3d-8.5814272!4d116.0985032"
+      ],
+      "capturedAt": "2026-10-23T13:39:47Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kota%20Mataram/data=!4m5!3m4!1s0x2dcdc08490f267b1:0x5308271ecb5b8982!8m2!3d-8.5814272!4d116.0985032",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dcdc08490f267b1:0x5308271ecb5b8982 bernama Dinas Kearsipan dan Perpustakaan Kota Mataram; alamat Jl. Gn. Rinjani No.1, Dasan Agung Baru, Kec. Selaparang, Kota Mataram, Nusa Tenggara Bar. 83125; posisi fitur !3d-8.5814272!4d116.0985032.",
+      "coordinateLocationLabel": "Dinas Kearsipan dan Perpustakaan Kota Mataram",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-056d2c2a48a951139d769f2d",
+      "name": "Dinas Perpustakaan dan Arsip Daerah Kota Bima",
+      "joinedYear": 2019,
+      "provinceId": "52",
+      "kabKotaId": "52.72",
+      "coordinates": [
+        -8.4597341,
+        118.7420738
+      ],
+      "address": "GPRR+4R4, Jl. Soekarno Hatta, Monggonao, Kec. Mpunda, Kab. Bima, Nusa Tenggara Bar. 84116",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah%20Kota%20Bima/data=!4m5!3m4!1s0x2db58bdd05b5ed31:0xd330820862d3d430!8m2!3d-8.4597341!4d118.7420738",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah%20Kota%20Bima/data=!4m5!3m4!1s0x2db58bdd05b5ed31:0xd330820862d3d430!8m2!3d-8.4597341!4d118.7420738"
+      ],
+      "capturedAt": "2026-10-23T13:39:48Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah%20Kota%20Bima/data=!4m5!3m4!1s0x2db58bdd05b5ed31:0xd330820862d3d430!8m2!3d-8.4597341!4d118.7420738",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2db58bdd05b5ed31:0xd330820862d3d430 bernama Dinas Perpustakaan dan Arsip Daerah Kota Bima; alamat GPRR+4R4, Jl. Soekarno Hatta, Monggonao, Kec. Mpunda, Kab. Bima, Nusa Tenggara Bar. 84116; posisi fitur !3d-8.4597341!4d118.7420738.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Arsip Daerah Kota Bima",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-afbfbe23e5dcb3841486c307",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Lombok Barat",
+      "joinedYear": 2020,
+      "provinceId": "52",
+      "kabKotaId": "52.01",
+      "coordinates": [
+        -8.6647537,
+        116.13203499999999
+      ],
+      "address": "84PJ+3RV, Beleke, Kec. Gerung, Kabupaten Lombok Barat, Nusa Tenggara Bar. 83363",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Lombok%20Barat/data=!4m5!3m4!1s0x2dcdbeaa75a86561:0x7009ab9ab1cbdcba!8m2!3d-8.6647537!4d116.13203499999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Lombok%20Barat/data=!4m5!3m4!1s0x2dcdbeaa75a86561:0x7009ab9ab1cbdcba!8m2!3d-8.6647537!4d116.13203499999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:48Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Lombok%20Barat/data=!4m5!3m4!1s0x2dcdbeaa75a86561:0x7009ab9ab1cbdcba!8m2!3d-8.6647537!4d116.13203499999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dcdbeaa75a86561:0x7009ab9ab1cbdcba bernama Perpustakaan Daerah Lombok Barat; alamat 84PJ+3RV, Beleke, Kec. Gerung, Kabupaten Lombok Barat, Nusa Tenggara Bar. 83363; posisi fitur !3d-8.6647537!4d116.13203499999999.",
+      "coordinateLocationLabel": "Perpustakaan Daerah Lombok Barat",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-496514ec35cabe4d1114e37f",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Bangli",
+      "joinedYear": 2020,
+      "provinceId": "51",
+      "kabKotaId": "51.06",
+      "coordinates": [
+        -8.43306,
+        115.36289169999999
+      ],
+      "address": "H987+Q5C, Kubu, Kec. Bangli, Kabupaten Bangli, Bali 80613",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kab.%20Bangli/data=!4m5!3m4!1s0x2dd2197ea85be8d3:0xed81ef090d164d0!8m2!3d-8.43306!4d115.36289169999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kab.%20Bangli/data=!4m5!3m4!1s0x2dd2197ea85be8d3:0xed81ef090d164d0!8m2!3d-8.43306!4d115.36289169999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:48Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kab.%20Bangli/data=!4m5!3m4!1s0x2dd2197ea85be8d3:0xed81ef090d164d0!8m2!3d-8.43306!4d115.36289169999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dd2197ea85be8d3:0xed81ef090d164d0 bernama Dinas Perpustakaan dan Kearsipan Kab. Bangli; alamat H987+Q5C, Kubu, Kec. Bangli, Kabupaten Bangli, Bali 80613; posisi fitur !3d-8.43306!4d115.36289169999999.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Kab. Bangli",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-966185ee877387f4f1f541c7",
+      "name": "Dinas Perpustakaan dan Kearsipan Kota Ternate",
+      "joinedYear": 2020,
+      "provinceId": "82",
+      "kabKotaId": "82.71",
+      "coordinates": [
+        0.7854852,
+        127.38408629999999
+      ],
+      "address": "Q9PM+5JW, Jl. Stadion, Stadion, Kec. Ternate Tengah, Kota Ternate, Maluku Utara 97712",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Ternate/data=!4m5!3m4!1s0x329cb156386e92d7:0x2b841c094c4c799b!8m2!3d0.7854852!4d127.38408629999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Ternate/data=!4m5!3m4!1s0x329cb156386e92d7:0x2b841c094c4c799b!8m2!3d0.7854852!4d127.38408629999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:49Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Ternate/data=!4m5!3m4!1s0x329cb156386e92d7:0x2b841c094c4c799b!8m2!3d0.7854852!4d127.38408629999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x329cb156386e92d7:0x2b841c094c4c799b bernama Dinas Perpustakaan dan Arsip Ternate; alamat Q9PM+5JW, Jl. Stadion, Stadion, Kec. Ternate Tengah, Kota Ternate, Maluku Utara 97712; posisi fitur !3d0.7854852!4d127.38408629999999.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Arsip Ternate",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-10f0b3ae0f6986bc6e9af632",
+      "name": "Kementerian Kehutanan RI",
+      "joinedYear": 2021,
+      "provinceId": "31",
+      "kabKotaId": "31.71",
+      "coordinates": [
+        -6.2066335,
+        106.80018679999999
+      ],
+      "address": "Jl. Pejompongan Raya No.1, RT.1/RW.3, Bend. Hilir, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10270",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Kementerian%20Lingkungan%20Hidup%20dan%20Kehutanan%20Republik%20Indonesia/data=!4m5!3m4!1s0x2e69f6b9f40b4d3b:0x9fd2f74f3153f703!8m2!3d-6.2066335!4d106.80018679999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Kementerian%20Lingkungan%20Hidup%20dan%20Kehutanan%20Republik%20Indonesia/data=!4m5!3m4!1s0x2e69f6b9f40b4d3b:0x9fd2f74f3153f703!8m2!3d-6.2066335!4d106.80018679999999",
+        "https://pesats.ksdae.kehutanan.go.id/contact/"
+      ],
+      "capturedAt": "2026-10-23T13:42:09Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Rujukan kompleks Manggala Wanabakti dari fitur kementerian pada Google Maps dan alamat resmi unit kehutanan. Nama fitur LHK belum mengikuti pemisahan organisasi; tidak mengganti nama Excel.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Kementerian%20Lingkungan%20Hidup%20dan%20Kehutanan%20Republik%20Indonesia/data=!4m5!3m4!1s0x2e69f6b9f40b4d3b:0x9fd2f74f3153f703!8m2!3d-6.2066335!4d106.80018679999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2e69f6b9f40b4d3b:0x9fd2f74f3153f703 bernama Kementerian Lingkungan Hidup dan Kehutanan Republik Indonesia; alamat Jl. Pejompongan Raya No.1, RT.1/RW.3, Bend. Hilir, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10270; posisi fitur !3d-6.2066335!4d106.80018679999999.",
+      "coordinateLocationLabel": "Kementerian Lingkungan Hidup dan Kehutanan Republik Indonesia",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-0bcf96b3070c6514db8cebb3",
+      "name": "Kementerian Koordinator bidang Kemaritiman dan Investasi Republik Indonesia (Perbaharui menjadi Kementerian Koordinator Bidang Infrastruktur dan Pembangunan Kewilayahan Republik Indonesia)",
+      "joinedYear": 2021,
+      "provinceId": "31",
+      "kabKotaId": "31.71",
+      "coordinates": [
+        -6.184868,
+        106.822756
+      ],
+      "address": "Jl. M.H. Thamrin No.8, RT.10/RW.10, Kb. Sirih, Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10340",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Kementerian%20Koordinator%20Bidang%20Infrastruktur%20dan%20Pembangunan%20Kewilayahan/data=!4m5!3m4!1s0x2e69f5004e8fd8ff:0x99a5f117b438c44c!8m2!3d-6.184868!4d106.822756",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Kementerian%20Koordinator%20Bidang%20Infrastruktur%20dan%20Pembangunan%20Kewilayahan/data=!4m5!3m4!1s0x2e69f5004e8fd8ff:0x99a5f117b438c44c!8m2!3d-6.184868!4d106.822756"
+      ],
+      "capturedAt": "2026-10-23T13:39:49Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Fitur Kemenko Infrastruktur dan Pembangunan Kewilayahan dipilih sesuai catatan perubahan nama pada Excel. Unit/ruangan di gedung BPPT belum ditentukan.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Kementerian%20Koordinator%20Bidang%20Infrastruktur%20dan%20Pembangunan%20Kewilayahan/data=!4m5!3m4!1s0x2e69f5004e8fd8ff:0x99a5f117b438c44c!8m2!3d-6.184868!4d106.822756",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2e69f5004e8fd8ff:0x99a5f117b438c44c bernama Kementerian Koordinator Bidang Infrastruktur dan Pembangunan Kewilayahan; alamat Jl. M.H. Thamrin No.8, RT.10/RW.10, Kb. Sirih, Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10340; posisi fitur !3d-6.184868!4d106.822756.",
+      "coordinateLocationLabel": "Kementerian Koordinator Bidang Infrastruktur dan Pembangunan Kewilayahan",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-1e25b7f2528298ebbe5d5015",
+      "name": "Dinas Perpustakaan dan Kearsipan Provinsi Maluku",
+      "joinedYear": 2022,
+      "provinceId": "81",
+      "kabKotaId": "81.71",
+      "coordinates": [
+        -3.6949736,
+        128.18070749999998
+      ],
+      "address": "Jl. A. Y. Patty No.02, Wayame, Kec. Sirimau, Kota Ambon, Maluku",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Arsip%20Daerah%20Provinsi%20Maluku/data=!4m5!3m4!1s0x2d6ce951f72e9e4d:0xe1f59afe260eae9d!8m2!3d-3.6949736!4d128.18070749999998",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Arsip%20Daerah%20Provinsi%20Maluku/data=!4m5!3m4!1s0x2d6ce951f72e9e4d:0xe1f59afe260eae9d!8m2!3d-3.6949736!4d128.18070749999998"
+      ],
+      "capturedAt": "2026-10-23T13:39:49Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini.  Wilayah fisik pin Kota Ambon diperiksa pada polygon referensi; kepemilikan instansi tingkat provinsi tidak berubah.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Arsip%20Daerah%20Provinsi%20Maluku/data=!4m5!3m4!1s0x2d6ce951f72e9e4d:0xe1f59afe260eae9d!8m2!3d-3.6949736!4d128.18070749999998",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d6ce951f72e9e4d:0xe1f59afe260eae9d bernama Dinas Perpustakaan Dan Arsip Daerah Provinsi Maluku; alamat Jl. A. Y. Patty No.02, Wayame, Kec. Sirimau, Kota Ambon, Maluku; posisi fitur !3d-3.6949736!4d128.18070749999998.",
+      "coordinateLocationLabel": "Dinas Perpustakaan Dan Arsip Daerah Provinsi Maluku",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-ca48a8f8e036732b2d8b1fc1",
+      "name": "Dinas Perpustakaan dan Kearsipan Kota Sorong",
+      "joinedYear": 2022,
+      "provinceId": "96",
+      "kabKotaId": "96.71",
+      "coordinates": [
+        -0.8895185,
+        131.2760505
+      ],
+      "address": "Jl. Jend. Sudirman, Malawei, Kecamatan Sorong Manoi, Kota Sorong, Papua Barat Daya 98412",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kota%20Sorong/data=!4m5!3m4!1s0x2d5eabdec060e5cb:0xa708c3e4333c5199!8m2!3d-0.8895185!4d131.2760505",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kota%20Sorong/data=!4m5!3m4!1s0x2d5eabdec060e5cb:0xa708c3e4333c5199!8m2!3d-0.8895185!4d131.2760505"
+      ],
+      "capturedAt": "2026-10-23T13:39:50Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kota%20Sorong/data=!4m5!3m4!1s0x2d5eabdec060e5cb:0xa708c3e4333c5199!8m2!3d-0.8895185!4d131.2760505",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d5eabdec060e5cb:0xa708c3e4333c5199 bernama Perpustakaan Daerah Kota Sorong; alamat Jl. Jend. Sudirman, Malawei, Kecamatan Sorong Manoi, Kota Sorong, Papua Barat Daya 98412; posisi fitur !3d-0.8895185!4d131.2760505.",
+      "coordinateLocationLabel": "Perpustakaan Daerah Kota Sorong",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-075503041d47911e44a81f3a",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Ende",
+      "joinedYear": 2022,
+      "provinceId": "53",
+      "kabKotaId": "53.08",
+      "coordinates": [
+        -8.841695399999999,
+        121.6513087
+      ],
+      "address": "5M52+8GF, Kel. Onekore, Kec. Ende Tengah, Kabupaten Ende, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/DINAS%20PERPUSTAKAAN%20DAN%20KEARSIPAN%20KABUPATEN%20ENDE/data=!4m5!3m4!1s0x2dad595d66e2ced7:0xa2659a59ffd16687!8m2!3d-8.841695399999999!4d121.6513087",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/DINAS%20PERPUSTAKAAN%20DAN%20KEARSIPAN%20KABUPATEN%20ENDE/data=!4m5!3m4!1s0x2dad595d66e2ced7:0xa2659a59ffd16687!8m2!3d-8.841695399999999!4d121.6513087"
+      ],
+      "capturedAt": "2026-10-23T13:39:50Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/DINAS%20PERPUSTAKAAN%20DAN%20KEARSIPAN%20KABUPATEN%20ENDE/data=!4m5!3m4!1s0x2dad595d66e2ced7:0xa2659a59ffd16687!8m2!3d-8.841695399999999!4d121.6513087",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dad595d66e2ced7:0xa2659a59ffd16687 bernama DINAS PERPUSTAKAAN DAN KEARSIPAN KABUPATEN ENDE; alamat 5M52+8GF, Kel. Onekore, Kec. Ende Tengah, Kabupaten Ende, Nusa Tenggara Tim.; posisi fitur !3d-8.841695399999999!4d121.6513087.",
+      "coordinateLocationLabel": "DINAS PERPUSTAKAAN DAN KEARSIPAN KABUPATEN ENDE",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-c9d04379575afd7acfd89f66",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Lembata",
+      "joinedYear": 2022,
+      "provinceId": "53",
+      "kabKotaId": "53.13",
+      "coordinates": [
+        -8.3719593,
+        123.41864
+      ],
+      "address": "JCH9+6F6, Lewoleba Tengah, Kec. Nubatukan, Kabupaten Lembata, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kab.%20Lembata/data=!4m5!3m4!1s0x2dab73fdfbbc984b:0x22432328474b8db0!8m2!3d-8.3719593!4d123.41864",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kab.%20Lembata/data=!4m5!3m4!1s0x2dab73fdfbbc984b:0x22432328474b8db0!8m2!3d-8.3719593!4d123.41864"
+      ],
+      "capturedAt": "2026-10-23T13:39:50Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kab.%20Lembata/data=!4m5!3m4!1s0x2dab73fdfbbc984b:0x22432328474b8db0!8m2!3d-8.3719593!4d123.41864",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dab73fdfbbc984b:0x22432328474b8db0 bernama Perpustakaan Daerah Kab. Lembata; alamat JCH9+6F6, Lewoleba Tengah, Kec. Nubatukan, Kabupaten Lembata, Nusa Tenggara Tim.; posisi fitur !3d-8.3719593!4d123.41864.",
+      "coordinateLocationLabel": "Perpustakaan Daerah Kab. Lembata",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-19f9fea14acfc1ab0e8b7bce",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Sorong",
+      "joinedYear": 2022,
+      "provinceId": "96",
+      "kabKotaId": "96.01",
+      "coordinates": null,
+      "address": null,
+      "googleMapsPlaceUrl": null,
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kab.Sorong/data=!4m5!3m4!1s0x2d5bfb2323105ccf:0x4bf744a3c1380582!8m2!3d-0.9876545999999999!4d131.36375139999998"
+      ],
+      "capturedAt": "2026-10-23T13:39:50Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "needs-review",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini.  Kandidat Dinas Kabupaten Sorong di Klamasen/Mariat berada sekitar 3,01 km di luar polygon Kabupaten Sorong pada referensi. Perlu konfirmasi geometri dan kantor; tidak mengalihkan kepemilikan ke Kota Sorong atau memindahkan pin."
+    },
+    {
+      "instansiId": "casefile-f9402e91eab11b72ce3bb5d5",
+      "name": "Badan Pengusahaan Kawasan Perdagangan Bebas dan Pelabuhan Bebas Sabang",
+      "joinedYear": 2022,
+      "provinceId": "11",
+      "kabKotaId": "11.72",
+      "coordinates": null,
+      "address": null,
+      "googleMapsPlaceUrl": null,
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Badan%20Pengusahaan%20Kawasan%20Sabang/data=!4m5!3m4!1s0x3041c60a6e029f07:0x7ed379c97490ada8!8m2!3d5.8911266!4d95.31138609999999"
+      ],
+      "capturedAt": "2026-10-23T13:42:10Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "needs-review",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Memilih fitur Badan Pengusahaan Kawasan Sabang di Jl. T. Panglima Polem, bukan centroid Kota Sabang yang muncul pada pencarian pertama. Nama/alamat kandidat BPKS sejalan dengan kontak resmi, tetapi pin publik berada 230 m di luar polygon Kota Sabang. Perlu pemeriksaan; tidak memakai centroid atau menggeser pin."
+    },
+    {
+      "instansiId": "casefile-0df33756e442bf149c2e0aa7",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Nagekeo",
+      "joinedYear": 2022,
+      "provinceId": "53",
+      "kabKotaId": "53.16",
+      "coordinates": [
+        -8.568656599999999,
+        121.27528559999999
+      ],
+      "address": "C7JG+G4M, Danga, Kec. Aesesa, Kabupaten Nagekeo, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan/data=!4m5!3m4!1s0x2db28d9c6d427453:0x1ee9de4fd57bf361!8m2!3d-8.568656599999999!4d121.27528559999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan/data=!4m5!3m4!1s0x2db28d9c6d427453:0x1ee9de4fd57bf361!8m2!3d-8.568656599999999!4d121.27528559999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:51Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan/data=!4m5!3m4!1s0x2db28d9c6d427453:0x1ee9de4fd57bf361!8m2!3d-8.568656599999999!4d121.27528559999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2db28d9c6d427453:0x1ee9de4fd57bf361 bernama Dinas Perpustakaan dan Kearsipan; alamat C7JG+G4M, Danga, Kec. Aesesa, Kabupaten Nagekeo, Nusa Tenggara Tim.; posisi fitur !3d-8.568656599999999!4d121.27528559999999.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-3d0c17ee49d7c7aa23fb58fa",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Siķka",
+      "joinedYear": 2022,
+      "provinceId": "53",
+      "kabKotaId": "53.07",
+      "coordinates": [
+        -8.6224679,
+        122.20784979999999
+      ],
+      "address": "96G5+X4V, Kota Uneng, Kec. Alok, Kabupaten Sikka, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kab.Silka/data=!4m5!3m4!1s0x2dad1b002f7f3241:0x3d406b4bdf36250e!8m2!3d-8.6224679!4d122.20784979999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kab.Silka/data=!4m5!3m4!1s0x2dad1b002f7f3241:0x3d406b4bdf36250e!8m2!3d-8.6224679!4d122.20784979999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:51Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Huruf beraksen pada Siķka dinormalisasi untuk pencocokan Kabupaten Sikka; nama asli Excel tetap dipertahankan.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kab.Silka/data=!4m5!3m4!1s0x2dad1b002f7f3241:0x3d406b4bdf36250e!8m2!3d-8.6224679!4d122.20784979999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dad1b002f7f3241:0x3d406b4bdf36250e bernama Dinas Kearsipan dan Perpustakaan Kab.Silka; alamat 96G5+X4V, Kota Uneng, Kec. Alok, Kabupaten Sikka, Nusa Tenggara Tim.; posisi fitur !3d-8.6224679!4d122.20784979999999.",
+      "coordinateLocationLabel": "Dinas Kearsipan dan Perpustakaan Kab.Silka",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-fb69ed017c09482b4174021a",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Ngada",
+      "joinedYear": 2022,
+      "provinceId": "53",
+      "kabKotaId": "53.09",
+      "coordinates": [
+        -8.7867996,
+        120.9760687
+      ],
+      "address": "6X7G+7CP, Jl. Soekarno-Hatta, Ngedukelu, Bajawa, Kabupaten Ngada, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan/data=!4m5!3m4!1s0x2db2e1ffc41f1f03:0xc3b40e877daa849e!8m2!3d-8.7867996!4d120.9760687",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan/data=!4m5!3m4!1s0x2db2e1ffc41f1f03:0xc3b40e877daa849e!8m2!3d-8.7867996!4d120.9760687"
+      ],
+      "capturedAt": "2026-10-23T13:39:51Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan/data=!4m5!3m4!1s0x2db2e1ffc41f1f03:0xc3b40e877daa849e!8m2!3d-8.7867996!4d120.9760687",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2db2e1ffc41f1f03:0xc3b40e877daa849e bernama Dinas Kearsipan dan Perpustakaan; alamat 6X7G+7CP, Jl. Soekarno-Hatta, Ngedukelu, Bajawa, Kabupaten Ngada, Nusa Tenggara Tim.; posisi fitur !3d-8.7867996!4d120.9760687.",
+      "coordinateLocationLabel": "Dinas Kearsipan dan Perpustakaan",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-9b7f36d53503b54956724931",
+      "name": "Dinas Kearsipan dan Perpustakaan Provinsi Maluku Utara",
+      "joinedYear": 2022,
+      "provinceId": "82",
+      "kabKotaId": "82.72",
+      "coordinates": [
+        0.7432137999999999,
+        127.57491979999999
+      ],
+      "address": "PHVF+7XM, Galala, Oba Utara, Kota Tidore Kepulauan, Maluku Utara",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Prov.%20Maluku%20Utara/data=!4m5!3m4!1s0x329cbf2b7ccae7f1:0xeb4722393862294!8m2!3d0.7432137999999999!4d127.57491979999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Prov.%20Maluku%20Utara/data=!4m5!3m4!1s0x329cbf2b7ccae7f1:0xeb4722393862294!8m2!3d0.7432137999999999!4d127.57491979999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:52Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini.  Wilayah fisik pin Kota Tidore Kepulauan diperiksa pada polygon referensi; kepemilikan instansi tingkat provinsi tidak berubah.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Prov.%20Maluku%20Utara/data=!4m5!3m4!1s0x329cbf2b7ccae7f1:0xeb4722393862294!8m2!3d0.7432137999999999!4d127.57491979999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x329cbf2b7ccae7f1:0xeb4722393862294 bernama Dinas Kearsipan dan Perpustakaan Prov. Maluku Utara; alamat PHVF+7XM, Galala, Oba Utara, Kota Tidore Kepulauan, Maluku Utara; posisi fitur !3d0.7432137999999999!4d127.57491979999999.",
+      "coordinateLocationLabel": "Dinas Kearsipan dan Perpustakaan Prov. Maluku Utara",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-1acae5682f69eabc1b543b6b",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Seram Bagian Timur",
+      "joinedYear": 2022,
+      "provinceId": "81",
+      "kabKotaId": "81.05",
+      "coordinates": [
+        -3.0761068999999996,
+        130.46733039999998
+      ],
+      "address": "WFF8+HW4, Bula, pantai gemumae, Kabupaten Seram Bagian Timur, Maluku",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/DINAS%20PERPUSTAKAAN%20DAN%20KEARSIPAN%20KABUPATEN%20SERAM%20BAGIAN%20TIMUR/data=!4m5!3m4!1s0x2d419781669a4679:0x780d14b7e2d20b6d!8m2!3d-3.0761068999999996!4d130.46733039999998",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/DINAS%20PERPUSTAKAAN%20DAN%20KEARSIPAN%20KABUPATEN%20SERAM%20BAGIAN%20TIMUR/data=!4m5!3m4!1s0x2d419781669a4679:0x780d14b7e2d20b6d!8m2!3d-3.0761068999999996!4d130.46733039999998"
+      ],
+      "capturedAt": "2026-10-23T13:39:52Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/DINAS%20PERPUSTAKAAN%20DAN%20KEARSIPAN%20KABUPATEN%20SERAM%20BAGIAN%20TIMUR/data=!4m5!3m4!1s0x2d419781669a4679:0x780d14b7e2d20b6d!8m2!3d-3.0761068999999996!4d130.46733039999998",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d419781669a4679:0x780d14b7e2d20b6d bernama DINAS PERPUSTAKAAN DAN KEARSIPAN KABUPATEN SERAM BAGIAN TIMUR; alamat WFF8+HW4, Bula, pantai gemumae, Kabupaten Seram Bagian Timur, Maluku; posisi fitur !3d-3.0761068999999996!4d130.46733039999998.",
+      "coordinateLocationLabel": "DINAS PERPUSTAKAAN DAN KEARSIPAN KABUPATEN SERAM BAGIAN TIMUR",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-1242bf2ca182938a2d54e762",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Gianyar",
+      "joinedYear": 2023,
+      "provinceId": "51",
+      "kabKotaId": "51.04",
+      "coordinates": [
+        -8.5396971,
+        115.3223738
+      ],
+      "address": "F86C+4WH, Gianyar, Kec. Gianyar, Kabupaten Gianyar, Bali 80511",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Gianyar/data=!4m5!3m4!1s0x2dd2173aa31bf89b:0x9ae3878bc8e8df43!8m2!3d-8.5396971!4d115.3223738",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Gianyar/data=!4m5!3m4!1s0x2dd2173aa31bf89b:0x9ae3878bc8e8df43!8m2!3d-8.5396971!4d115.3223738"
+      ],
+      "capturedAt": "2026-10-23T13:39:52Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Gianyar/data=!4m5!3m4!1s0x2dd2173aa31bf89b:0x9ae3878bc8e8df43!8m2!3d-8.5396971!4d115.3223738",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dd2173aa31bf89b:0x9ae3878bc8e8df43 bernama Dinas Perpustakaan dan Kearsipan Gianyar; alamat F86C+4WH, Gianyar, Kec. Gianyar, Kabupaten Gianyar, Bali 80511; posisi fitur !3d-8.5396971!4d115.3223738.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Gianyar",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-542f85aa1b0ba9b20e13a344",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Timor Tengah Utara",
+      "joinedYear": 2023,
+      "provinceId": "53",
+      "kabKotaId": "53.03",
+      "coordinates": [
+        -9.4633129,
+        124.5172305
+      ],
+      "address": "GGP8+MVH, Tubuhue, GFRH+V6VBenpasiKota Kefamenanu, Kabupaten Timor Tengah Utara, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Timor%20Tengah%20Utara/data=!4m5!3m4!1s0x2cff7d3a18300ae5:0x7d004b8d90018fe9!8m2!3d-9.4633129!4d124.5172305",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Timor%20Tengah%20Utara/data=!4m5!3m4!1s0x2cff7d3a18300ae5:0x7d004b8d90018fe9!8m2!3d-9.4633129!4d124.5172305"
+      ],
+      "capturedAt": "2026-10-23T13:39:54Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Ada beberapa fitur dinas dan layanan TTU pada peta; rujukan dipilih berdasarkan nama instansi dan alamat yang dicantumkan sumber. Kantor operasional terbaru perlu konfirmasi.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Timor%20Tengah%20Utara/data=!4m5!3m4!1s0x2cff7d3a18300ae5:0x7d004b8d90018fe9!8m2!3d-9.4633129!4d124.5172305",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2cff7d3a18300ae5:0x7d004b8d90018fe9 bernama Dinas Perpustakaan dan Kearsipan Kabupaten Timor Tengah Utara; alamat GGP8+MVH, Tubuhue, GFRH+V6VBenpasiKota Kefamenanu, Kabupaten Timor Tengah Utara, Nusa Tenggara Tim.; posisi fitur !3d-9.4633129!4d124.5172305.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Kabupaten Timor Tengah Utara",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-b11fb2e092177b04ee10341e",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Malaka",
+      "joinedYear": 2023,
+      "provinceId": "53",
+      "kabKotaId": "53.21",
+      "coordinates": [
+        -9.567198,
+        124.90552149999999
+      ],
+      "address": "CWM4+46C, Wehali, Kec. Malaka Tengah, Kab. Malaka, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kab.%20Malaka/data=!4m5!3m4!1s0x2cff13005dad66c7:0xe5bbda0b9c4bca1e!8m2!3d-9.567198!4d124.90552149999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kab.%20Malaka/data=!4m5!3m4!1s0x2cff13005dad66c7:0xe5bbda0b9c4bca1e!8m2!3d-9.567198!4d124.90552149999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:53Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kab.%20Malaka/data=!4m5!3m4!1s0x2cff13005dad66c7:0xe5bbda0b9c4bca1e!8m2!3d-9.567198!4d124.90552149999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2cff13005dad66c7:0xe5bbda0b9c4bca1e bernama Perpustakaan Daerah Kab. Malaka; alamat CWM4+46C, Wehali, Kec. Malaka Tengah, Kab. Malaka, Nusa Tenggara Tim.; posisi fitur !3d-9.567198!4d124.90552149999999.",
+      "coordinateLocationLabel": "Perpustakaan Daerah Kab. Malaka",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-0ad6738cb22de11d7b729a9e",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Klungkung",
+      "joinedYear": 2023,
+      "provinceId": "51",
+      "kabKotaId": "51.05",
+      "coordinates": [
+        -8.527203799999999,
+        115.398938
+      ],
+      "address": "F9FX+4H8, Jl. Ngurah Rai, Semarapura Kaja, Kec. Klungkung, Kabupaten Klungkung, Bali 80711",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kabupaten%20Klungkung/data=!4m5!3m4!1s0x2dd21111c3245f97:0xe1abcbff06350ddb!8m2!3d-8.527203799999999!4d115.398938",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kabupaten%20Klungkung/data=!4m5!3m4!1s0x2dd21111c3245f97:0xe1abcbff06350ddb!8m2!3d-8.527203799999999!4d115.398938"
+      ],
+      "capturedAt": "2026-10-23T13:39:53Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kabupaten%20Klungkung/data=!4m5!3m4!1s0x2dd21111c3245f97:0xe1abcbff06350ddb!8m2!3d-8.527203799999999!4d115.398938",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dd21111c3245f97:0xe1abcbff06350ddb bernama Dinas Kearsipan dan Perpustakaan Kabupaten Klungkung; alamat F9FX+4H8, Jl. Ngurah Rai, Semarapura Kaja, Kec. Klungkung, Kabupaten Klungkung, Bali 80711; posisi fitur !3d-8.527203799999999!4d115.398938.",
+      "coordinateLocationLabel": "Dinas Kearsipan dan Perpustakaan Kabupaten Klungkung",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-1d87282d900a36fa6226ab93",
+      "name": "Dinas Perpustakaan dan Kearsipan Kota Tidore Kepulauan",
+      "joinedYear": 2023,
+      "provinceId": "82",
+      "kabKotaId": "82.72",
+      "coordinates": [
+        0.6775728,
+        127.4497574
+      ],
+      "address": "MCHX+2WC, Indonesiana, Tidore, Kota Tidore Kepulauan, Maluku Utara",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Kota%20Tidore%20Kepulauan/data=!4m5!3m4!1s0x329cc89386b55d2f:0xd326077c59874ab!8m2!3d0.6775728!4d127.4497574",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Kota%20Tidore%20Kepulauan/data=!4m5!3m4!1s0x329cc89386b55d2f:0xd326077c59874ab!8m2!3d0.6775728!4d127.4497574"
+      ],
+      "capturedAt": "2026-10-23T13:39:54Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Kota%20Tidore%20Kepulauan/data=!4m5!3m4!1s0x329cc89386b55d2f:0xd326077c59874ab!8m2!3d0.6775728!4d127.4497574",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x329cc89386b55d2f:0xd326077c59874ab bernama Dinas Perpustakaan Dan Kearsipan Kota Tidore Kepulauan; alamat MCHX+2WC, Indonesiana, Tidore, Kota Tidore Kepulauan, Maluku Utara; posisi fitur !3d0.6775728!4d127.4497574.",
+      "coordinateLocationLabel": "Dinas Perpustakaan Dan Kearsipan Kota Tidore Kepulauan",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-f3d7b178df9439d89b3197b5",
+      "name": "Dinas Kearsipan dan Perpustakaan Daerah Kabupaten Manokwari",
+      "joinedYear": 2023,
+      "provinceId": "92",
+      "kabKotaId": "92.02",
+      "coordinates": [
+        -0.862111,
+        134.05948999999998
+      ],
+      "address": "43Q5+4RM, Manokwari Bar., Kec. Manokwari Bar., Kabupaten Manokwari, Papua Bar. 98312",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Manokwari/data=!4m5!3m4!1s0x2d540b1fbcfbe1ed:0x81cef726e70b679d!8m2!3d-0.862111!4d134.05948999999998",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Manokwari/data=!4m5!3m4!1s0x2d540b1fbcfbe1ed:0x81cef726e70b679d!8m2!3d-0.862111!4d134.05948999999998"
+      ],
+      "capturedAt": "2026-10-23T13:39:54Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Manokwari/data=!4m5!3m4!1s0x2d540b1fbcfbe1ed:0x81cef726e70b679d!8m2!3d-0.862111!4d134.05948999999998",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d540b1fbcfbe1ed:0x81cef726e70b679d bernama Dinas Perpustakaan dan Kearsipan Kabupaten Manokwari; alamat 43Q5+4RM, Manokwari Bar., Kec. Manokwari Bar., Kabupaten Manokwari, Papua Bar. 98312; posisi fitur !3d-0.862111!4d134.05948999999998.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Kabupaten Manokwari",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-cc7bffa7b27028d02467449d",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Teluk Bintuni",
+      "joinedYear": 2023,
+      "provinceId": "92",
+      "kabKotaId": "92.06",
+      "coordinates": [
+        -2.1296041,
+        133.5562253
+      ],
+      "address": "VHC4+5F5, Bintuni Tim., Distrik Bintuni, Kabupaten Teluk Bintuni, Papua Bar. 98364",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/KANTOR%20DINAS%20PERPUSTAKAAN%20DAN%20KEARSIPAN%20TELUK%20BINTUNI/data=!4m5!3m4!1s0x2d4e690040146e2b:0xce3dab8cf9ad9008!8m2!3d-2.1296041!4d133.5562253",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/KANTOR%20DINAS%20PERPUSTAKAAN%20DAN%20KEARSIPAN%20TELUK%20BINTUNI/data=!4m5!3m4!1s0x2d4e690040146e2b:0xce3dab8cf9ad9008!8m2!3d-2.1296041!4d133.5562253"
+      ],
+      "capturedAt": "2026-10-23T13:39:54Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/KANTOR%20DINAS%20PERPUSTAKAAN%20DAN%20KEARSIPAN%20TELUK%20BINTUNI/data=!4m5!3m4!1s0x2d4e690040146e2b:0xce3dab8cf9ad9008!8m2!3d-2.1296041!4d133.5562253",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d4e690040146e2b:0xce3dab8cf9ad9008 bernama KANTOR DINAS PERPUSTAKAAN DAN KEARSIPAN TELUK BINTUNI; alamat VHC4+5F5, Bintuni Tim., Distrik Bintuni, Kabupaten Teluk Bintuni, Papua Bar. 98364; posisi fitur !3d-2.1296041!4d133.5562253.",
+      "coordinateLocationLabel": "KANTOR DINAS PERPUSTAKAAN DAN KEARSIPAN TELUK BINTUNI",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-c5f528db57a6947c84f585e8",
+      "name": "Badan Pengusahaan Kawasan Perdagangan Bebas dan Pelabuhan Bebas Batam",
+      "joinedYear": 2023,
+      "provinceId": "21",
+      "kabKotaId": "21.71",
+      "coordinates": [
+        1.1307156,
+        104.05229369999999
+      ],
+      "address": "Jl. Jend. Ibnu Sutowo No.1, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29400",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/BP%20BATAM/data=!4m5!3m4!1s0x31d98902eb3fd05b:0xff6505264b340a7a!8m2!3d1.1307156!4d104.05229369999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/BP%20BATAM/data=!4m5!3m4!1s0x31d98902eb3fd05b:0xff6505264b340a7a!8m2!3d1.1307156!4d104.05229369999999"
+      ],
+      "capturedAt": "2026-10-23T13:42:10Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Pin kantor BP Batam di Jl. Jend. Ibnu Sutowo, bukan unit layanan di Sekupang.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/BP%20BATAM/data=!4m5!3m4!1s0x31d98902eb3fd05b:0xff6505264b340a7a!8m2!3d1.1307156!4d104.05229369999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x31d98902eb3fd05b:0xff6505264b340a7a bernama BP BATAM; alamat Jl. Jend. Ibnu Sutowo No.1, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29400; posisi fitur !3d1.1307156!4d104.05229369999999.",
+      "coordinateLocationLabel": "BP BATAM",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-34539766b81eb813b87ca437",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Halmahera Tengah",
+      "joinedYear": 2023,
+      "provinceId": "82",
+      "kabKotaId": "82.02",
+      "coordinates": [
+        0.32940559999999997,
+        127.85742339999999
+      ],
+      "address": "8VH4+QX7, Jl. Trans Halmahera, Nurweda, Kec. Weda Tengah, Kabupaten Halmahera Tengah, Maluku Utara",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perustakaan%20dan%20Kearsipan%20Daerah/data=!4m5!3m4!1s0x329d0f409be00a43:0x5b6a3c1ed3a86d43!8m2!3d0.32940559999999997!4d127.85742339999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perustakaan%20dan%20Kearsipan%20Daerah/data=!4m5!3m4!1s0x329d0f409be00a43:0x5b6a3c1ed3a86d43!8m2!3d0.32940559999999997!4d127.85742339999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:55Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perustakaan%20dan%20Kearsipan%20Daerah/data=!4m5!3m4!1s0x329d0f409be00a43:0x5b6a3c1ed3a86d43!8m2!3d0.32940559999999997!4d127.85742339999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x329d0f409be00a43:0x5b6a3c1ed3a86d43 bernama Dinas Perustakaan dan Kearsipan Daerah; alamat 8VH4+QX7, Jl. Trans Halmahera, Nurweda, Kec. Weda Tengah, Kabupaten Halmahera Tengah, Maluku Utara; posisi fitur !3d0.32940559999999997!4d127.85742339999999.",
+      "coordinateLocationLabel": "Dinas Perustakaan dan Kearsipan Daerah",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-21d684fbc5a91d821ba1defc",
+      "name": "Dinas Arsip dan Perpustakaan Provinsi Papua",
+      "joinedYear": 2023,
+      "provinceId": "91",
+      "kabKotaId": "91.71",
+      "coordinates": [
+        -2.6060686,
+        140.6715994
+      ],
+      "address": "9MVC+HJH, Jl. Baru Ps. Lama Abepura, Wai Mhorock, Kec. Abepura, Kota Jayapura, Papua 99225",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Arsip%20dan%20Perpustakaan%20Provinsi%20Papua/data=!4m5!3m4!1s0x686cf5006938e16d:0x22cfee108e1de2dd!8m2!3d-2.6060686!4d140.6715994",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Arsip%20dan%20Perpustakaan%20Provinsi%20Papua/data=!4m5!3m4!1s0x686cf5006938e16d:0x22cfee108e1de2dd!8m2!3d-2.6060686!4d140.6715994"
+      ],
+      "capturedAt": "2026-10-23T13:39:55Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini.  Wilayah fisik pin Kota Jayapura diperiksa pada polygon referensi; kepemilikan instansi tingkat provinsi tidak berubah.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Arsip%20dan%20Perpustakaan%20Provinsi%20Papua/data=!4m5!3m4!1s0x686cf5006938e16d:0x22cfee108e1de2dd!8m2!3d-2.6060686!4d140.6715994",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x686cf5006938e16d:0x22cfee108e1de2dd bernama Dinas Arsip dan Perpustakaan Provinsi Papua; alamat 9MVC+HJH, Jl. Baru Ps. Lama Abepura, Wai Mhorock, Kec. Abepura, Kota Jayapura, Papua 99225; posisi fitur !3d-2.6060686!4d140.6715994.",
+      "coordinateLocationLabel": "Dinas Arsip dan Perpustakaan Provinsi Papua",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-8aabb748b8a8341a1c48348c",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Maluku Barat Daya",
+      "joinedYear": 2024,
+      "provinceId": "81",
+      "kabKotaId": "81.08",
+      "coordinates": [
+        -8.1529619,
+        127.7950726
+      ],
+      "address": "RQWW+R28, Wakarleli, Kec. Moa Lakor, Kabupaten Maluku Barat Daya, Maluku",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Perpustakaan%20Dan%20Kearsipan%20Tiakur/data=!4m5!3m4!1s0x2d1d6d447ce777f5:0x80a9f8f0556dc892!8m2!3d-8.1529619!4d127.7950726",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Perpustakaan%20Dan%20Kearsipan%20Tiakur/data=!4m5!3m4!1s0x2d1d6d447ce777f5:0x80a9f8f0556dc892!8m2!3d-8.1529619!4d127.7950726"
+      ],
+      "capturedAt": "2026-10-23T13:42:10Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Perpustakaan%20Dan%20Kearsipan%20Tiakur/data=!4m5!3m4!1s0x2d1d6d447ce777f5:0x80a9f8f0556dc892!8m2!3d-8.1529619!4d127.7950726",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d1d6d447ce777f5:0x80a9f8f0556dc892 bernama Perpustakaan Dan Kearsipan Tiakur; alamat RQWW+R28, Wakarleli, Kec. Moa Lakor, Kabupaten Maluku Barat Daya, Maluku; posisi fitur !3d-8.1529619!4d127.7950726.",
+      "coordinateLocationLabel": "Perpustakaan Dan Kearsipan Tiakur",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-977c951b0f00120698592cd4",
+      "name": "Dinas Perpustakaan dan Kearsipan Kota Ambon",
+      "joinedYear": 2024,
+      "provinceId": "81",
+      "kabKotaId": "81.71",
+      "coordinates": [
+        -3.6879896,
+        128.1959367
+      ],
+      "address": "856W+R93, Jl. Ina Tuni, Kel Amantelu, Kec. Sirimau, Kota Ambon, Maluku",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20kota%20ambon/data=!4m5!3m4!1s0x2d6ce9002d3229ef:0x6b8f701c5f4874e8!8m2!3d-3.6879896!4d128.1959367",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20kota%20ambon/data=!4m5!3m4!1s0x2d6ce9002d3229ef:0x6b8f701c5f4874e8!8m2!3d-3.6879896!4d128.1959367"
+      ],
+      "capturedAt": "2026-10-23T13:39:56Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20kota%20ambon/data=!4m5!3m4!1s0x2d6ce9002d3229ef:0x6b8f701c5f4874e8!8m2!3d-3.6879896!4d128.1959367",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d6ce9002d3229ef:0x6b8f701c5f4874e8 bernama Dinas Perpustakaan dan Kearsipan kota ambon; alamat 856W+R93, Jl. Ina Tuni, Kel Amantelu, Kec. Sirimau, Kota Ambon, Maluku; posisi fitur !3d-3.6879896!4d128.1959367.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan kota ambon",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-3d0cef02238bc8361aada01e",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Halmahera Barat",
+      "joinedYear": 2024,
+      "provinceId": "82",
+      "kabKotaId": "82.01",
+      "coordinates": null,
+      "address": null,
+      "googleMapsPlaceUrl": null,
+      "sourceUrls": [
+        "https://github.com/cahyadsn/wilayah/blob/5d450ccbc94cc487f54bf2a262300efe97aa58af/db/wilayah_level_1_2.sql",
+        "https://www.google.com/maps/search/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Halmahera%20Barat?hl=id"
+      ],
+      "capturedAt": "2026-10-23T13:39:56Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "needs-review",
+      "notes": "Hasil Maps mengarah ke Halmahera Utara atau perpustakaan desa Jailolo, bukan Dinas Kabupaten Halmahera Barat. Alamat kantor perlu konfirmasi."
+    },
+    {
+      "instansiId": "casefile-ada8029570327090e4a03d5c",
+      "name": "Sekretariat Daerah Kabupaten Halmahera Timur",
+      "joinedYear": 2024,
+      "provinceId": "82",
+      "kabKotaId": "82.06",
+      "coordinates": [
+        0.6774254,
+        128.2840859
+      ],
+      "address": "M7GM+XJG, Soa Gimalaha, Kec. Kota Maba, Kabupaten Halmahera Timur, Maluku Utara",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Kantor%20Bupati%20Halmahera%20Timur/data=!4m5!3m4!1s0x329c40f9f6c86079:0xf193e8e486159ff1!8m2!3d0.6774254!4d128.2840859",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Kantor%20Bupati%20Halmahera%20Timur/data=!4m5!3m4!1s0x329c40f9f6c86079:0xf193e8e486159ff1!8m2!3d0.6774254!4d128.2840859"
+      ],
+      "capturedAt": "2026-10-23T13:39:56Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Pin kompleks Kantor Bupati Halmahera Timur sebagai rujukan Sekretariat Daerah; posisi ruang arsip tidak ditentukan.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Kantor%20Bupati%20Halmahera%20Timur/data=!4m5!3m4!1s0x329c40f9f6c86079:0xf193e8e486159ff1!8m2!3d0.6774254!4d128.2840859",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x329c40f9f6c86079:0xf193e8e486159ff1 bernama Kantor Bupati Halmahera Timur; alamat M7GM+XJG, Soa Gimalaha, Kec. Kota Maba, Kabupaten Halmahera Timur, Maluku Utara; posisi fitur !3d0.6774254!4d128.2840859.",
+      "coordinateLocationLabel": "Kantor Bupati Halmahera Timur",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-7666e02290640ff0f744c92b",
+      "name": "Dinas Kearsipan dan Perpustakaan Daerah Kabupaten Halmahera Selatan",
+      "joinedYear": 2024,
+      "provinceId": "82",
+      "kabKotaId": "82.04",
+      "coordinates": null,
+      "address": null,
+      "googleMapsPlaceUrl": null,
+      "sourceUrls": [
+        "https://github.com/cahyadsn/wilayah/blob/5d450ccbc94cc487f54bf2a262300efe97aa58af/db/wilayah_level_1_2.sql",
+        "https://www.google.com/maps/search/Dinas%20Kearsipan%20dan%20Perpustakaan%20Daerah%20Kabupaten%20Halmahera%20Selatan?hl=id"
+      ],
+      "capturedAt": "2026-10-23T13:39:56Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "needs-review",
+      "notes": "Hasil Maps berisi Dinas kabupaten lain dan perpustakaan komunitas Gerilia. Belum ada bukti titik kantor Dinas Halmahera Selatan."
+    },
+    {
+      "instansiId": "casefile-b03a1b57390361b2ae7e2386",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Bima",
+      "joinedYear": 2024,
+      "provinceId": "52",
+      "kabKotaId": "52.06",
+      "coordinates": [
+        -8.5077525,
+        118.706831
+      ],
+      "address": "FPR4+VPW Taman Panda, Jl. Sultan Muhamad Salahuddin, Panda, Kec. Palibelo, Kabupaten Bima, Nusa Tenggara Bar. 84111",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kabupaten%20Bima/data=!4m5!3m4!1s0x2db589e166e65b7d:0xc71acaeb397291fe!8m2!3d-8.5077525!4d118.706831",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kabupaten%20Bima/data=!4m5!3m4!1s0x2db589e166e65b7d:0xc71acaeb397291fe!8m2!3d-8.5077525!4d118.706831"
+      ],
+      "capturedAt": "2026-10-23T13:42:11Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kabupaten%20Bima/data=!4m5!3m4!1s0x2db589e166e65b7d:0xc71acaeb397291fe!8m2!3d-8.5077525!4d118.706831",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2db589e166e65b7d:0xc71acaeb397291fe bernama Perpustakaan Daerah Kabupaten Bima; alamat FPR4+VPW Taman Panda, Jl. Sultan Muhamad Salahuddin, Panda, Kec. Palibelo, Kabupaten Bima, Nusa Tenggara Bar. 84111; posisi fitur !3d-8.5077525!4d118.706831.",
+      "coordinateLocationLabel": "Perpustakaan Daerah Kabupaten Bima",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-425c4996f8ee4c580a2d12cd",
+      "name": "Dinas Perpustakaan dan Arsip Daerah Kabupaten Buru",
+      "joinedYear": 2024,
+      "provinceId": "81",
+      "kabKotaId": "81.04",
+      "coordinates": [
+        -3.2713343,
+        127.1021497
+      ],
+      "address": "P4H2+FV6, Namlea, Kec. Namlea, Kabupaten Buru, Maluku",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah/data=!4m5!3m4!1s0x2d726dab7dd41535:0x3704f29a22a6f002!8m2!3d-3.2713343!4d127.1021497",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah/data=!4m5!3m4!1s0x2d726dab7dd41535:0x3704f29a22a6f002!8m2!3d-3.2713343!4d127.1021497"
+      ],
+      "capturedAt": "2026-10-23T13:39:57Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah/data=!4m5!3m4!1s0x2d726dab7dd41535:0x3704f29a22a6f002!8m2!3d-3.2713343!4d127.1021497",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d726dab7dd41535:0x3704f29a22a6f002 bernama Dinas Perpustakaan dan Arsip Daerah; alamat P4H2+FV6, Namlea, Kec. Namlea, Kabupaten Buru, Maluku; posisi fitur !3d-3.2713343!4d127.1021497.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Arsip Daerah",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-aecc43e1012828b7360bb9f9",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Alor",
+      "joinedYear": 2024,
+      "provinceId": "53",
+      "kabKotaId": "53.05",
+      "coordinates": [
+        -8.2117784,
+        124.5633675
+      ],
+      "address": "QHQ7+78Q, Jl. Soekarno Hatta, Welai Tim., Kec. Tlk. Mutiara, Kabupaten Alor, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kab.%20Alor/data=!4m5!3m4!1s0x2d007f861a0ac5dd:0xbf3ad13ed707cd73!8m2!3d-8.2117784!4d124.5633675",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kab.%20Alor/data=!4m5!3m4!1s0x2d007f861a0ac5dd:0xbf3ad13ed707cd73!8m2!3d-8.2117784!4d124.5633675"
+      ],
+      "capturedAt": "2026-10-23T13:42:12Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Kab.%20Alor/data=!4m5!3m4!1s0x2d007f861a0ac5dd:0xbf3ad13ed707cd73!8m2!3d-8.2117784!4d124.5633675",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d007f861a0ac5dd:0xbf3ad13ed707cd73 bernama Perpustakaan Daerah Kab. Alor; alamat QHQ7+78Q, Jl. Soekarno Hatta, Welai Tim., Kec. Tlk. Mutiara, Kabupaten Alor, Nusa Tenggara Tim.; posisi fitur !3d-8.2117784!4d124.5633675.",
+      "coordinateLocationLabel": "Perpustakaan Daerah Kab. Alor",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-3686fe8b638f80bd4b391e48",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Pulau Morotai",
+      "joinedYear": 2024,
+      "provinceId": "82",
+      "kabKotaId": "82.07",
+      "coordinates": [
+        2.0479072,
+        128.2957247
+      ],
+      "address": "27XW+579, Darame, Kec. Morotai Sel., Kabupaten Pulau Morotai, Maluku Utara",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah/data=!4m5!3m4!1s0x32909980d4001d9b:0xd55b4ee20c2c11fd!8m2!3d2.0479072!4d128.2957247",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah/data=!4m5!3m4!1s0x32909980d4001d9b:0xd55b4ee20c2c11fd!8m2!3d2.0479072!4d128.2957247"
+      ],
+      "capturedAt": "2026-10-23T13:39:58Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah/data=!4m5!3m4!1s0x32909980d4001d9b:0xd55b4ee20c2c11fd!8m2!3d2.0479072!4d128.2957247",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x32909980d4001d9b:0xd55b4ee20c2c11fd bernama Dinas Perpustakaan dan Arsip Daerah; alamat 27XW+579, Darame, Kec. Morotai Sel., Kabupaten Pulau Morotai, Maluku Utara; posisi fitur !3d2.0479072!4d128.2957247.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Arsip Daerah",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-ab404ad6e3e29f20a174500a",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten lombok Timur",
+      "joinedYear": 2024,
+      "provinceId": "52",
+      "kabKotaId": "52.03",
+      "coordinates": [
+        -8.6534458,
+        116.52845669999999
+      ],
+      "address": "Jl. DR. Cipto Mangun Kusumo No.5, Khusus Kota Selong, Kec. Selong, Kabupaten Lombok Timur, Nusa Tenggara Bar. 83612",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Lombok%20Timur/data=!4m5!3m4!1s0x2dcc4f31329c9939:0xeefc9f29c2b94e31!8m2!3d-8.6534458!4d116.52845669999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Lombok%20Timur/data=!4m5!3m4!1s0x2dcc4f31329c9939:0xeefc9f29c2b94e31!8m2!3d-8.6534458!4d116.52845669999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:58Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Lombok%20Timur/data=!4m5!3m4!1s0x2dcc4f31329c9939:0xeefc9f29c2b94e31!8m2!3d-8.6534458!4d116.52845669999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dcc4f31329c9939:0xeefc9f29c2b94e31 bernama Dinas Perpustakaan dan Kearsipan Lombok Timur; alamat Jl. DR. Cipto Mangun Kusumo No.5, Khusus Kota Selong, Kec. Selong, Kabupaten Lombok Timur, Nusa Tenggara Bar. 83612; posisi fitur !3d-8.6534458!4d116.52845669999999.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Lombok Timur",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-ac502e577a83844609b82e9f",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Sumba Barat Daya",
+      "joinedYear": 2024,
+      "provinceId": "53",
+      "kabKotaId": "53.18",
+      "coordinates": null,
+      "address": null,
+      "googleMapsPlaceUrl": null,
+      "sourceUrls": [
+        "https://github.com/cahyadsn/wilayah/blob/5d450ccbc94cc487f54bf2a262300efe97aa58af/db/wilayah_level_1_2.sql",
+        "https://www.google.com/maps/search/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Sumba%20Barat%20Daya?hl=id"
+      ],
+      "capturedAt": "2026-10-23T13:39:58Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "needs-review",
+      "notes": "Fitur bernama Dinas Perpustakaan dan Kearsipan Kabupaten SBD ditemukan tetapi tidak memuat alamat yang dapat dicocokkan. Kandidat Dinas Sumba Barat ditolak; perlu tinjauan tim."
+    },
+    {
+      "instansiId": "casefile-d0ea5cdfbbd9099a59472d67",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Sumbawa Barat",
+      "joinedYear": 2024,
+      "provinceId": "52",
+      "kabKotaId": "52.07",
+      "coordinates": [
+        -8.7554698,
+        116.85074859999999
+      ],
+      "address": "6VV2+R79, Komplek KTCTaliwang, Kuang, Kec. Taliwang, Kabupaten Sumbawa Barat, Nusa Tenggara Bar. 84455",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Sumbawa%20Barat/data=!4m5!3m4!1s0x2dcc66dc3b584b81:0x55bf8228bb0c5ec3!8m2!3d-8.7554698!4d116.85074859999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Sumbawa%20Barat/data=!4m5!3m4!1s0x2dcc66dc3b584b81:0x55bf8228bb0c5ec3!8m2!3d-8.7554698!4d116.85074859999999"
+      ],
+      "capturedAt": "2026-10-23T13:39:59Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Sumbawa%20Barat/data=!4m5!3m4!1s0x2dcc66dc3b584b81:0x55bf8228bb0c5ec3!8m2!3d-8.7554698!4d116.85074859999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dcc66dc3b584b81:0x55bf8228bb0c5ec3 bernama Dinas Kearsipan dan Perpustakaan Sumbawa Barat; alamat 6VV2+R79, Komplek KTCTaliwang, Kuang, Kec. Taliwang, Kabupaten Sumbawa Barat, Nusa Tenggara Bar. 84455; posisi fitur !3d-8.7554698!4d116.85074859999999.",
+      "coordinateLocationLabel": "Dinas Kearsipan dan Perpustakaan Sumbawa Barat",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-df11ce8e0a5000714b9ab8f9",
+      "name": "Dinas Perpustakaan dan Arsip Daerah Kabupaten Mimika",
+      "joinedYear": 2024,
+      "provinceId": "94",
+      "kabKotaId": "94.04",
+      "coordinates": [
+        -4.5660568,
+        136.87651069999998
+      ],
+      "address": "Jl. Hasanudin No.65, Nawaripi, Kec. Mimika Baru, Kabupaten Mimika, Papua Tengah 99971",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah%20Kabupaten%20Mimika/data=!4m5!3m4!1s0x6823799190633929:0xe454e5caa3e562ff!8m2!3d-4.5660568!4d136.87651069999998",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah%20Kabupaten%20Mimika/data=!4m5!3m4!1s0x6823799190633929:0xe454e5caa3e562ff!8m2!3d-4.5660568!4d136.87651069999998"
+      ],
+      "capturedAt": "2026-10-23T13:39:59Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah%20Kabupaten%20Mimika/data=!4m5!3m4!1s0x6823799190633929:0xe454e5caa3e562ff!8m2!3d-4.5660568!4d136.87651069999998",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x6823799190633929:0xe454e5caa3e562ff bernama Dinas Perpustakaan dan Arsip Daerah Kabupaten Mimika; alamat Jl. Hasanudin No.65, Nawaripi, Kec. Mimika Baru, Kabupaten Mimika, Papua Tengah 99971; posisi fitur !3d-4.5660568!4d136.87651069999998.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Arsip Daerah Kabupaten Mimika",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-5954962d1f86ca901be3d05a",
+      "name": "Dinas Perpustakaan dan Kearsipan Daerah Kabupaten Boven Digoel",
+      "joinedYear": 2024,
+      "provinceId": "93",
+      "kabKotaId": "93.02",
+      "coordinates": [
+        -6.080007,
+        140.27614699999998
+      ],
+      "address": "Jln. Trans Papua Arah Asiki KM 7, Persatuan, Kec. Mandobo, Kabupaten Boven Digoel, Papua Selatan 99663",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Daerah%20Boven%20Digoel/data=!4m5!3m4!1s0x68480d000081f235:0x194a4e2943b0edc4!8m2!3d-6.080007!4d140.27614699999998",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Daerah%20Boven%20Digoel/data=!4m5!3m4!1s0x68480d000081f235:0x194a4e2943b0edc4!8m2!3d-6.080007!4d140.27614699999998"
+      ],
+      "capturedAt": "2026-10-23T13:39:59Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Daerah%20Boven%20Digoel/data=!4m5!3m4!1s0x68480d000081f235:0x194a4e2943b0edc4!8m2!3d-6.080007!4d140.27614699999998",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x68480d000081f235:0x194a4e2943b0edc4 bernama Dinas Perpustakaan Dan Kearsipan Daerah Boven Digoel; alamat Jln. Trans Papua Arah Asiki KM 7, Persatuan, Kec. Mandobo, Kabupaten Boven Digoel, Papua Selatan 99663; posisi fitur !3d-6.080007!4d140.27614699999998.",
+      "coordinateLocationLabel": "Dinas Perpustakaan Dan Kearsipan Daerah Boven Digoel",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-21041d5e70066c929bedc97f",
+      "name": "Dinas Kearsipan dan Perpustakaan Daerah Kabupaten Pegunungan Bintang",
+      "joinedYear": 2024,
+      "provinceId": "95",
+      "kabKotaId": "95.02",
+      "coordinates": null,
+      "address": null,
+      "googleMapsPlaceUrl": null,
+      "sourceUrls": [
+        "https://github.com/cahyadsn/wilayah/blob/5d450ccbc94cc487f54bf2a262300efe97aa58af/db/wilayah_level_1_2.sql",
+        "https://www.google.com/maps/search/Dinas%20Kearsipan%20dan%20Perpustakaan%20Daerah%20Kabupaten%20Pegunungan%20Bintang?hl=id"
+      ],
+      "capturedAt": "2026-10-23T13:39:59Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "needs-review",
+      "notes": "Hasil pencarian hanya pusat wilayah Oksibil, Kantor Bupati dan Dinas Pendidikan. Tidak memakai titik kantor instansi lain untuk Dinas Perpustakaan Pegunungan Bintang."
+    },
+    {
+      "instansiId": "casefile-19ea02ccae868fdf50b1fcfe",
+      "name": "Dinas Kearsipan dan Perpustakaan Provinsi Papua Barat",
+      "joinedYear": 2024,
+      "provinceId": "92",
+      "kabKotaId": "92.02",
+      "coordinates": [
+        -0.9205428,
+        134.0282483
+      ],
+      "address": "32HH+Q7Q, Katebu, Distrik Manokwari, Kabupaten Manokwari, Papua Bar. 98315",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20Dan%20Perpustakaan%20Provinsi%20Papua%20Barat/data=!4m5!3m4!1s0x2d53f40547802b55:0x4e081c82d3a5dbee!8m2!3d-0.9205428!4d134.0282483",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20Dan%20Perpustakaan%20Provinsi%20Papua%20Barat/data=!4m5!3m4!1s0x2d53f40547802b55:0x4e081c82d3a5dbee!8m2!3d-0.9205428!4d134.0282483"
+      ],
+      "capturedAt": "2026-10-23T13:40:00Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini.  Wilayah fisik pin Kabupaten Manokwari diperiksa pada polygon referensi; kepemilikan instansi tingkat provinsi tidak berubah.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20Dan%20Perpustakaan%20Provinsi%20Papua%20Barat/data=!4m5!3m4!1s0x2d53f40547802b55:0x4e081c82d3a5dbee!8m2!3d-0.9205428!4d134.0282483",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d53f40547802b55:0x4e081c82d3a5dbee bernama Dinas Kearsipan Dan Perpustakaan Provinsi Papua Barat; alamat 32HH+Q7Q, Katebu, Distrik Manokwari, Kabupaten Manokwari, Papua Bar. 98315; posisi fitur !3d-0.9205428!4d134.0282483.",
+      "coordinateLocationLabel": "Dinas Kearsipan Dan Perpustakaan Provinsi Papua Barat",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-a23fa92695af7586e7667659",
+      "name": "Dinas Perpustakaan dan Kearsipan Daerah Kabupaten Mammberamo Tengah",
+      "joinedYear": 2024,
+      "provinceId": "95",
+      "kabKotaId": "95.05",
+      "coordinates": null,
+      "address": null,
+      "googleMapsPlaceUrl": null,
+      "sourceUrls": [
+        "https://github.com/cahyadsn/wilayah/blob/5d450ccbc94cc487f54bf2a262300efe97aa58af/db/wilayah_level_1_2.sql",
+        "https://www.google.com/maps/search/Dinas%20Perpustakaan%20dan%20Kearsipan%20Daerah%20Kabupaten%20Mammberamo%20Tengah?hl=id"
+      ],
+      "capturedAt": "2026-10-23T13:40:00Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "needs-review",
+      "notes": "Variasi Mammberamo pada Excel dicocokkan ke Kabupaten Mamberamo Tengah, Papua Pegunungan. Hasil Maps mengarah ke instansi lain dan Mamberamo Raya; belum ditemukan titik kantor yang cocok."
+    },
+    {
+      "instansiId": "casefile-944668cc66a1db8e74a4fd44",
+      "name": "Dinas Perpustakaan dan Arsip Daerah Kabupaten Jayawijaya",
+      "joinedYear": 2024,
+      "provinceId": "95",
+      "kabKotaId": "95.01",
+      "coordinates": null,
+      "address": null,
+      "googleMapsPlaceUrl": null,
+      "sourceUrls": [
+        "https://github.com/cahyadsn/wilayah/blob/5d450ccbc94cc487f54bf2a262300efe97aa58af/db/wilayah_level_1_2.sql",
+        "https://www.google.com/maps/search/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah%20Kabupaten%20Jayawijaya?hl=id"
+      ],
+      "capturedAt": "2026-10-23T13:40:00Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "needs-review",
+      "notes": "Belum ditemukan fitur tempat yang cocok dengan Dinas Perpustakaan Jayawijaya. Hasil Raja Ampat, Papua dan Dinas lain ditolak."
+    },
+    {
+      "instansiId": "casefile-7163f1a1a3e6a3e4b5cf1938",
+      "name": "Dinas Perpustakaan dan Kearsipan Daerah Kabupaten Yahukimo",
+      "joinedYear": 2024,
+      "provinceId": "95",
+      "kabKotaId": "95.03",
+      "coordinates": [
+        -4.8651586,
+        139.4978502
+      ],
+      "address": "4FMX+W4Q, Kuaserama, Kec. Dekai, Kabupaten Yahukimo, Papua Pegunungan 99571",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/PERPUSTAKAAN%20KAB.%20YAHUKIMO/data=!4m5!3m4!1s0x683f2d0050d49c27:0x25f6d8375e7ae375!8m2!3d-4.8651586!4d139.4978502",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/PERPUSTAKAAN%20KAB.%20YAHUKIMO/data=!4m5!3m4!1s0x683f2d0050d49c27:0x25f6d8375e7ae375!8m2!3d-4.8651586!4d139.4978502"
+      ],
+      "capturedAt": "2026-10-23T13:42:13Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/PERPUSTAKAAN%20KAB.%20YAHUKIMO/data=!4m5!3m4!1s0x683f2d0050d49c27:0x25f6d8375e7ae375!8m2!3d-4.8651586!4d139.4978502",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x683f2d0050d49c27:0x25f6d8375e7ae375 bernama PERPUSTAKAAN KAB. YAHUKIMO; alamat 4FMX+W4Q, Kuaserama, Kec. Dekai, Kabupaten Yahukimo, Papua Pegunungan 99571; posisi fitur !3d-4.8651586!4d139.4978502.",
+      "coordinateLocationLabel": "PERPUSTAKAAN KAB. YAHUKIMO",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-c76352efec0af0fc933412fd",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Puncak Jaya",
+      "joinedYear": 2024,
+      "provinceId": "94",
+      "kabKotaId": "94.02",
+      "coordinates": null,
+      "address": null,
+      "googleMapsPlaceUrl": null,
+      "sourceUrls": [
+        "https://github.com/cahyadsn/wilayah/blob/5d450ccbc94cc487f54bf2a262300efe97aa58af/db/wilayah_level_1_2.sql",
+        "https://www.google.com/maps/search/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kabupaten%20Puncak%20Jaya?hl=id"
+      ],
+      "capturedAt": "2026-10-23T13:40:01Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "needs-review",
+      "notes": "Hasil publik menunjukkan kantor Dukcapil/Bupati/BPBD dan instansi lain. Belum ditemukan titik kantor Perpustakaan Puncak Jaya yang dapat dipastikan."
+    },
+    {
+      "instansiId": "casefile-16c9c0e2239c2821f949bbf3",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Manggarai",
+      "joinedYear": 2025,
+      "provinceId": "53",
+      "kabKotaId": "53.10",
+      "coordinates": [
+        -8.6118622,
+        120.4650547
+      ],
+      "address": "9FQ8+723, Unnamed Road, Watu, Kec. Langke Rembong, Kabupaten Manggarai, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kabupaten%20Manggarai/data=!4m5!3m4!1s0x2db375bd3ac49929:0xe4442ccfe7cdbac9!8m2!3d-8.6118622!4d120.4650547",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kabupaten%20Manggarai/data=!4m5!3m4!1s0x2db375bd3ac49929:0xe4442ccfe7cdbac9!8m2!3d-8.6118622!4d120.4650547"
+      ],
+      "capturedAt": "2026-10-23T13:40:01Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kabupaten%20Manggarai/data=!4m5!3m4!1s0x2db375bd3ac49929:0xe4442ccfe7cdbac9!8m2!3d-8.6118622!4d120.4650547",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2db375bd3ac49929:0xe4442ccfe7cdbac9 bernama Dinas Kearsipan dan Perpustakaan Kabupaten Manggarai; alamat 9FQ8+723, Unnamed Road, Watu, Kec. Langke Rembong, Kabupaten Manggarai, Nusa Tenggara Tim.; posisi fitur !3d-8.6118622!4d120.4650547.",
+      "coordinateLocationLabel": "Dinas Kearsipan dan Perpustakaan Kabupaten Manggarai",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-4bf3781af47dedd83b024323",
+      "name": "Dinas Perpustakaan dan Kearsipan Daerah Kabupaten Dompu",
+      "joinedYear": 2025,
+      "provinceId": "52",
+      "kabKotaId": "52.05",
+      "coordinates": [
+        -8.539189799999999,
+        118.46516899999999
+      ],
+      "address": "FF68+83F, Bada, Kec. Dompu, Kabupaten Dompu, Nusa Tenggara Bar. 84213",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Daerah/data=!4m5!3m4!1s0x2dca6fc7a7b7a6af:0xfb2f8d9808abfd43!8m2!3d-8.539189799999999!4d118.46516899999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Daerah/data=!4m5!3m4!1s0x2dca6fc7a7b7a6af:0xfb2f8d9808abfd43!8m2!3d-8.539189799999999!4d118.46516899999999"
+      ],
+      "capturedAt": "2026-10-23T13:40:01Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Daerah/data=!4m5!3m4!1s0x2dca6fc7a7b7a6af:0xfb2f8d9808abfd43!8m2!3d-8.539189799999999!4d118.46516899999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dca6fc7a7b7a6af:0xfb2f8d9808abfd43 bernama Dinas Perpustakaan Dan Kearsipan Daerah; alamat FF68+83F, Bada, Kec. Dompu, Kabupaten Dompu, Nusa Tenggara Bar. 84213; posisi fitur !3d-8.539189799999999!4d118.46516899999999.",
+      "coordinateLocationLabel": "Dinas Perpustakaan Dan Kearsipan Daerah",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-4f29df929b7fd57e07a889fc",
+      "name": "Dinas Perpustakaan dan Arsip Daerah Kabupaten Keerom",
+      "joinedYear": 2025,
+      "provinceId": "91",
+      "kabKotaId": "91.11",
+      "coordinates": [
+        -2.9054783,
+        140.7513434
+      ],
+      "address": "3QV2+RG4, Yuwanaim, Kec. Arso, Kabupaten Keerom, Papua 99468",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah%20Kabupaten%20Keerom/data=!4m5!3m4!1s0x686b80a5ed724989:0x604d2464211527e7!8m2!3d-2.9054783!4d140.7513434",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah%20Kabupaten%20Keerom/data=!4m5!3m4!1s0x686b80a5ed724989:0x604d2464211527e7!8m2!3d-2.9054783!4d140.7513434"
+      ],
+      "capturedAt": "2026-10-23T13:40:01Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Arsip%20Daerah%20Kabupaten%20Keerom/data=!4m5!3m4!1s0x686b80a5ed724989:0x604d2464211527e7!8m2!3d-2.9054783!4d140.7513434",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x686b80a5ed724989:0x604d2464211527e7 bernama Dinas Perpustakaan dan Arsip Daerah Kabupaten Keerom; alamat 3QV2+RG4, Yuwanaim, Kec. Arso, Kabupaten Keerom, Papua 99468; posisi fitur !3d-2.9054783!4d140.7513434.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Arsip Daerah Kabupaten Keerom",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-8b0a9769b0cc80eea5b376b5",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Sumba Timur",
+      "joinedYear": 2025,
+      "provinceId": "53",
+      "kabKotaId": "53.11",
+      "coordinates": [
+        -9.6520421,
+        120.26230849999999
+      ],
+      "address": "87X6+5WM, Matawai, Kec. Kota Waingapu, Kabupaten Sumba Timur, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20%26%20Kearsipan/data=!4m5!3m4!1s0x2c4c9bcbc9b4b489:0xaf2258765e2cc822!8m2!3d-9.6520421!4d120.26230849999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20%26%20Kearsipan/data=!4m5!3m4!1s0x2c4c9bcbc9b4b489:0xaf2258765e2cc822!8m2!3d-9.6520421!4d120.26230849999999"
+      ],
+      "capturedAt": "2026-10-23T13:40:02Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20%26%20Kearsipan/data=!4m5!3m4!1s0x2c4c9bcbc9b4b489:0xaf2258765e2cc822!8m2!3d-9.6520421!4d120.26230849999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2c4c9bcbc9b4b489:0xaf2258765e2cc822 bernama Dinas Perpustakaan & Kearsipan; alamat 87X6+5WM, Matawai, Kec. Kota Waingapu, Kabupaten Sumba Timur, Nusa Tenggara Tim.; posisi fitur !3d-9.6520421!4d120.26230849999999.",
+      "coordinateLocationLabel": "Dinas Perpustakaan & Kearsipan",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-b308cd03dbad90c2b3b3b0ae",
+      "name": "Dinas Perpustakaan dan Kearsipan Daerah Kota Tual",
+      "joinedYear": 2025,
+      "provinceId": "81",
+      "kabKotaId": "81.72",
+      "coordinates": [
+        -5.6364529,
+        132.7518153
+      ],
+      "address": "9Q72+CP8, Kel. Lodar El, Pulau Dullah Sel., Kota Tual, Maluku",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kota%20Tual/data=!4m5!3m4!1s0x2d301baf47b44e55:0x28529eb9cb07b739!8m2!3d-5.6364529!4d132.7518153",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kota%20Tual/data=!4m5!3m4!1s0x2d301baf47b44e55:0x28529eb9cb07b739!8m2!3d-5.6364529!4d132.7518153"
+      ],
+      "capturedAt": "2026-10-23T13:40:02Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kota%20Tual/data=!4m5!3m4!1s0x2d301baf47b44e55:0x28529eb9cb07b739!8m2!3d-5.6364529!4d132.7518153",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d301baf47b44e55:0x28529eb9cb07b739 bernama Dinas Perpustakaan dan Kearsipan Kota Tual; alamat 9Q72+CP8, Kel. Lodar El, Pulau Dullah Sel., Kota Tual, Maluku; posisi fitur !3d-5.6364529!4d132.7518153.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Kota Tual",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-94aaba4b8ae36867598419f0",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Manggarai Timur",
+      "joinedYear": 2025,
+      "provinceId": "53",
+      "kabKotaId": "53.19",
+      "coordinates": [
+        -8.7485153,
+        120.60744589999999
+      ],
+      "address": "7J24+HXW, Lehong, Gurung Liwut, Kec. Borong, Kabupaten Manggarai Timur, Nusa Tenggara Tim. 85671",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Manggarai%20Timur/data=!4m5!3m4!1s0x2db313929d38df15:0x81c4bf857844107!8m2!3d-8.7485153!4d120.60744589999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Manggarai%20Timur/data=!4m5!3m4!1s0x2db313929d38df15:0x81c4bf857844107!8m2!3d-8.7485153!4d120.60744589999999"
+      ],
+      "capturedAt": "2026-10-23T13:40:02Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20Dan%20Kearsipan%20Manggarai%20Timur/data=!4m5!3m4!1s0x2db313929d38df15:0x81c4bf857844107!8m2!3d-8.7485153!4d120.60744589999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2db313929d38df15:0x81c4bf857844107 bernama Dinas Perpustakaan Dan Kearsipan Manggarai Timur; alamat 7J24+HXW, Lehong, Gurung Liwut, Kec. Borong, Kabupaten Manggarai Timur, Nusa Tenggara Tim. 85671; posisi fitur !3d-8.7485153!4d120.60744589999999.",
+      "coordinateLocationLabel": "Dinas Perpustakaan Dan Kearsipan Manggarai Timur",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-a189061db487788b8dc3f42b",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Kepulauan Sula",
+      "joinedYear": 2025,
+      "provinceId": "82",
+      "kabKotaId": "82.05",
+      "coordinates": null,
+      "address": null,
+      "googleMapsPlaceUrl": null,
+      "sourceUrls": [
+        "https://github.com/cahyadsn/wilayah/blob/5d450ccbc94cc487f54bf2a262300efe97aa58af/db/wilayah_level_1_2.sql",
+        "https://www.google.com/maps/search/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kabupaten%20Kepulauan%20Sula?hl=id"
+      ],
+      "capturedAt": "2026-10-23T13:40:03Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "needs-review",
+      "notes": "Hasil publik menunjukkan pelabuhan, Dukcapil, Kantor Bupati atau Kabupaten Kepulauan Selayar. Tidak menggantikan kantor Dinas Perpustakaan Kepulauan Sula."
+    },
+    {
+      "instansiId": "casefile-acc372e2420fde9d9f0f843b",
+      "name": "Dinas Perpustakaan Dan Kearsipan Kabupaten Flores Timur",
+      "joinedYear": 2025,
+      "provinceId": "53",
+      "kabKotaId": "53.06",
+      "coordinates": [
+        -8.326426999999999,
+        123.00309329999999
+      ],
+      "address": "M2F3+C6G, Jl. Basuki Rahmat, Puken Tobi Wangi Bao, Kec. Larantuka, Kabupaten Flores Timur, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Flores%20Timur/data=!4m5!3m4!1s0x2dac7ff5e8363c2d:0x3b9c5f3f0a12807a!8m2!3d-8.326426999999999!4d123.00309329999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Flores%20Timur/data=!4m5!3m4!1s0x2dac7ff5e8363c2d:0x3b9c5f3f0a12807a!8m2!3d-8.326426999999999!4d123.00309329999999"
+      ],
+      "capturedAt": "2026-10-23T13:40:03Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Flores%20Timur/data=!4m5!3m4!1s0x2dac7ff5e8363c2d:0x3b9c5f3f0a12807a!8m2!3d-8.326426999999999!4d123.00309329999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dac7ff5e8363c2d:0x3b9c5f3f0a12807a bernama Dinas Perpustakaan dan Kearsipan Kabupaten Flores Timur; alamat M2F3+C6G, Jl. Basuki Rahmat, Puken Tobi Wangi Bao, Kec. Larantuka, Kabupaten Flores Timur, Nusa Tenggara Tim.; posisi fitur !3d-8.326426999999999!4d123.00309329999999.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Kabupaten Flores Timur",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-8d6edcd9faa814835b449ecd",
+      "name": "Dinas Perpustakaan dan Kersipan Kabupaten Sabu Raijua",
+      "joinedYear": 2025,
+      "provinceId": "53",
+      "kabKotaId": "53.20",
+      "coordinates": [
+        -10.4548367,
+        121.87776679999999
+      ],
+      "address": "GVWH+346, Unnamed Road, Menia, Kec. Sabu Bar., Kabupaten Sabu Raijua, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kab.%20Sabu%20Raijua/data=!4m5!3m4!1s0x2c51ef60d77c3d25:0xaa1db1bc81dfae9c!8m2!3d-10.4548367!4d121.87776679999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kab.%20Sabu%20Raijua/data=!4m5!3m4!1s0x2c51ef60d77c3d25:0xaa1db1bc81dfae9c!8m2!3d-10.4548367!4d121.87776679999999"
+      ],
+      "capturedAt": "2026-10-23T13:40:03Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kab.%20Sabu%20Raijua/data=!4m5!3m4!1s0x2c51ef60d77c3d25:0xaa1db1bc81dfae9c!8m2!3d-10.4548367!4d121.87776679999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2c51ef60d77c3d25:0xaa1db1bc81dfae9c bernama Dinas Perpustakaan dan Kearsipan Kab. Sabu Raijua; alamat GVWH+346, Unnamed Road, Menia, Kec. Sabu Bar., Kabupaten Sabu Raijua, Nusa Tenggara Tim.; posisi fitur !3d-10.4548367!4d121.87776679999999.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Kab. Sabu Raijua",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-6d098328de787e9122267552",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Lombok Utara",
+      "joinedYear": 2025,
+      "provinceId": "52",
+      "kabKotaId": "52.08",
+      "coordinates": [
+        -8.3329787,
+        116.1928981
+      ],
+      "address": "M58V+R52, Jl. Raya Gondang, Gondang, Kec. Gangga, Kabupaten Lombok Utara, Nusa Tenggara Bar. 83353",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Lombok%20Utara/data=!4m5!3m4!1s0x2dcdd9b56412db33:0xe30b7d9b40f9892d!8m2!3d-8.3329787!4d116.1928981",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Lombok%20Utara/data=!4m5!3m4!1s0x2dcdd9b56412db33:0xe30b7d9b40f9892d!8m2!3d-8.3329787!4d116.1928981"
+      ],
+      "capturedAt": "2026-10-23T13:40:04Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Lombok%20Utara/data=!4m5!3m4!1s0x2dcdd9b56412db33:0xe30b7d9b40f9892d!8m2!3d-8.3329787!4d116.1928981",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dcdd9b56412db33:0xe30b7d9b40f9892d bernama Perpustakaan Daerah Lombok Utara; alamat M58V+R52, Jl. Raya Gondang, Gondang, Kec. Gangga, Kabupaten Lombok Utara, Nusa Tenggara Bar. 83353; posisi fitur !3d-8.3329787!4d116.1928981.",
+      "coordinateLocationLabel": "Perpustakaan Daerah Lombok Utara",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-41e92f6f97c9865d267447c7",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Lombok Tengah",
+      "joinedYear": 2025,
+      "provinceId": "52",
+      "kabKotaId": "52.02",
+      "coordinates": [
+        -8.7069494,
+        116.2705774
+      ],
+      "address": "Jl. Ahmad Yani No.2, Praya, Kec. Praya, Kabupaten Lombok Tengah, Nusa Tenggara Bar. 83511",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Lombok%20Tengah/data=!4m5!3m4!1s0x2dcdb04e6e4174c7:0xcd72ae2a09e90ae9!8m2!3d-8.7069494!4d116.2705774",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Lombok%20Tengah/data=!4m5!3m4!1s0x2dcdb04e6e4174c7:0xcd72ae2a09e90ae9!8m2!3d-8.7069494!4d116.2705774"
+      ],
+      "capturedAt": "2026-10-23T13:40:04Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Lombok%20Tengah/data=!4m5!3m4!1s0x2dcdb04e6e4174c7:0xcd72ae2a09e90ae9!8m2!3d-8.7069494!4d116.2705774",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dcdb04e6e4174c7:0xcd72ae2a09e90ae9 bernama Dinas Perpustakaan dan Kearsipan Kabupaten Lombok Tengah; alamat Jl. Ahmad Yani No.2, Praya, Kec. Praya, Kabupaten Lombok Tengah, Nusa Tenggara Bar. 83511; posisi fitur !3d-8.7069494!4d116.2705774.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Kabupaten Lombok Tengah",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-a05bf06ed3e07dbd106fc9d7",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Sumba Tengah",
+      "joinedYear": 2025,
+      "provinceId": "53",
+      "kabKotaId": "53.17",
+      "coordinates": [
+        -9.6250517,
+        119.5998589
+      ],
+      "address": "9HFX+WQV, Konda Maloba, Kec. Katikutana Sel., Kabupaten Sumba Tengah, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/PERPUSTAKAAN%20SUMBA%20TENGAH/data=!4m5!3m4!1s0x2c4b19ef319eb009:0xb7d528573e918c64!8m2!3d-9.6250517!4d119.5998589",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/PERPUSTAKAAN%20SUMBA%20TENGAH/data=!4m5!3m4!1s0x2c4b19ef319eb009:0xb7d528573e918c64!8m2!3d-9.6250517!4d119.5998589"
+      ],
+      "capturedAt": "2026-10-23T13:42:14Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/PERPUSTAKAAN%20SUMBA%20TENGAH/data=!4m5!3m4!1s0x2c4b19ef319eb009:0xb7d528573e918c64!8m2!3d-9.6250517!4d119.5998589",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2c4b19ef319eb009:0xb7d528573e918c64 bernama PERPUSTAKAAN SUMBA TENGAH; alamat 9HFX+WQV, Konda Maloba, Kec. Katikutana Sel., Kabupaten Sumba Tengah, Nusa Tenggara Tim.; posisi fitur !3d-9.6250517!4d119.5998589.",
+      "coordinateLocationLabel": "PERPUSTAKAAN SUMBA TENGAH",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-e5bb250b0485ad7ec32face9",
+      "name": "Universitas Pendidikan Ganesha",
+      "joinedYear": 2025,
+      "provinceId": "51",
+      "kabKotaId": "51.08",
+      "coordinates": [
+        -8.116532,
+        115.0877326
+      ],
+      "address": "Jl. Udayana No.11, Banjar Tegal, Singaraja, Kabupaten Buleleng, Bali 81116",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Universitas%20Pendidikan%20Ganesha/data=!4m5!3m4!1s0x2dd21665cef49255:0x1abe2912c8d6af5a!8m2!3d-8.116532!4d115.0877326",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Universitas%20Pendidikan%20Ganesha/data=!4m5!3m4!1s0x2dd21665cef49255:0x1abe2912c8d6af5a!8m2!3d-8.116532!4d115.0877326"
+      ],
+      "capturedAt": "2026-10-23T13:40:05Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Pin kampus Universitas Pendidikan Ganesha di Singaraja, bukan Universitas Graha Ganesha di Tangerang Selatan. Tidak menentukan lokasi unit arsip di dalam kampus.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Universitas%20Pendidikan%20Ganesha/data=!4m5!3m4!1s0x2dd21665cef49255:0x1abe2912c8d6af5a!8m2!3d-8.116532!4d115.0877326",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dd21665cef49255:0x1abe2912c8d6af5a bernama Universitas Pendidikan Ganesha; alamat Jl. Udayana No.11, Banjar Tegal, Singaraja, Kabupaten Buleleng, Bali 81116; posisi fitur !3d-8.116532!4d115.0877326.",
+      "coordinateLocationLabel": "Universitas Pendidikan Ganesha",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-9bbb7baab68f873aaf45d88e",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Sumba Barat",
+      "joinedYear": 2026,
+      "provinceId": "53",
+      "kabKotaId": "53.12",
+      "coordinates": [
+        -9.6361793,
+        119.4199623
+      ],
+      "address": "jln.teratai No.3, Kp. Sawah, Kec. Kota Waikabubak, Kabupaten Sumba Barat, Nusa Tenggara Tim.",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Sumba%20Barat/data=!4m5!3m4!1s0x2c4ae1d48add2c8d:0xc0074da5d5225e8!8m2!3d-9.6361793!4d119.4199623",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Sumba%20Barat/data=!4m5!3m4!1s0x2c4ae1d48add2c8d:0xc0074da5d5225e8!8m2!3d-9.6361793!4d119.4199623"
+      ],
+      "capturedAt": "2026-10-23T13:40:05Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Sumba%20Barat/data=!4m5!3m4!1s0x2c4ae1d48add2c8d:0xc0074da5d5225e8!8m2!3d-9.6361793!4d119.4199623",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2c4ae1d48add2c8d:0xc0074da5d5225e8 bernama Dinas Perpustakaan dan Kearsipan Kabupaten Sumba Barat; alamat jln.teratai No.3, Kp. Sawah, Kec. Kota Waikabubak, Kabupaten Sumba Barat, Nusa Tenggara Tim.; posisi fitur !3d-9.6361793!4d119.4199623.",
+      "coordinateLocationLabel": "Dinas Perpustakaan dan Kearsipan Kabupaten Sumba Barat",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-28b9aadbfa8dd4a94bc72bfc",
+      "name": "Pemerintah Provinsi Papua Tengah",
+      "joinedYear": 2026,
+      "provinceId": "94",
+      "kabKotaId": "94.01",
+      "coordinates": [
+        -3.3665217999999997,
+        135.5059075
+      ],
+      "address": "JGM4+99V, Karang Mulia, Distrik Nabire, Kabupaten Nabire, Papua Tengah 98811",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Kantor%20Gubernur%20Pemprov.%20Papua%20Tengah%20%28Sementara%29/data=!4m5!3m4!1s0x681fa357f1e3da23:0xd93a94e320d96d23!8m2!3d-3.3665217999999997!4d135.5059075",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Kantor%20Gubernur%20Pemprov.%20Papua%20Tengah%20%28Sementara%29/data=!4m5!3m4!1s0x681fa357f1e3da23:0xd93a94e320d96d23!8m2!3d-3.3665217999999997!4d135.5059075"
+      ],
+      "capturedAt": "2026-10-23T13:40:05Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Pin kantor sementara Pemerintah Provinsi Papua Tengah di Nabire sesuai label tempat publik. Status dan alamat gedung operasional terbaru perlu dikonfirmasi; tidak menebak lokasi kantor permanen. Wilayah fisik pin Kabupaten Nabire diperiksa pada polygon referensi; kepemilikan instansi tingkat provinsi tidak berubah.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Kantor%20Gubernur%20Pemprov.%20Papua%20Tengah%20%28Sementara%29/data=!4m5!3m4!1s0x681fa357f1e3da23:0xd93a94e320d96d23!8m2!3d-3.3665217999999997!4d135.5059075",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x681fa357f1e3da23:0xd93a94e320d96d23 bernama Kantor Gubernur Pemprov. Papua Tengah (Sementara); alamat JGM4+99V, Karang Mulia, Distrik Nabire, Kabupaten Nabire, Papua Tengah 98811; posisi fitur !3d-3.3665217999999997!4d135.5059075.",
+      "coordinateLocationLabel": "Kantor Gubernur Pemprov. Papua Tengah (Sementara)",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-6538a40a9307bf3cc2b48fea",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Teluk Wondama",
+      "joinedYear": 2026,
+      "provinceId": "92",
+      "kabKotaId": "92.07",
+      "coordinates": [
+        -2.7623203999999997,
+        134.5132267
+      ],
+      "address": "6GQ7+37H, Iriati, Distrik Wasior, Kabupaten Teluk Wondama, Papua Bar. 98362",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Teluk%20Wondama/data=!4m5!3m4!1s0x2d4b7b95e600d12b:0xa6610ea4422ee293!8m2!3d-2.7623203999999997!4d134.5132267",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Teluk%20Wondama/data=!4m5!3m4!1s0x2d4b7b95e600d12b:0xa6610ea4422ee293!8m2!3d-2.7623203999999997!4d134.5132267"
+      ],
+      "capturedAt": "2026-10-23T13:40:06Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. ",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Perpustakaan%20Daerah%20Teluk%20Wondama/data=!4m5!3m4!1s0x2d4b7b95e600d12b:0xa6610ea4422ee293!8m2!3d-2.7623203999999997!4d134.5132267",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2d4b7b95e600d12b:0xa6610ea4422ee293 bernama Perpustakaan Daerah Teluk Wondama; alamat 6GQ7+37H, Iriati, Distrik Wasior, Kabupaten Teluk Wondama, Papua Bar. 98362; posisi fitur !3d-2.7623203999999997!4d134.5132267.",
+      "coordinateLocationLabel": "Perpustakaan Daerah Teluk Wondama",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-0684dd9fb4f64064905595aa",
+      "name": "Universitas Udayana",
+      "joinedYear": 2026,
+      "provinceId": "51",
+      "kabKotaId": "51.03",
+      "coordinates": [
+        -8.798404699999999,
+        115.17245179999999
+      ],
+      "address": "Jl. Raya Kampus Unud, Jimbaran, Kec. Kuta Sel., Kabupaten Badung, Bali 80361",
+      "googleMapsPlaceUrl": "https://www.google.com/maps/place/Rektorat%20Universitas%20Udayana/data=!4m5!3m4!1s0x2dd244bc39fb3da7:0x6cae8cb2a990cae5!8m2!3d-8.798404699999999!4d115.17245179999999",
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Rektorat%20Universitas%20Udayana/data=!4m5!3m4!1s0x2dd244bc39fb3da7:0x6cae8cb2a990cae5!8m2!3d-8.798404699999999!4d115.17245179999999"
+      ],
+      "capturedAt": "2026-10-23T13:40:06Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "verified",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini. Pin Gedung Rektorat Universitas Udayana Jimbaran, bukan Kampus Sudirman Denpasar atau Jalan Udayana di Jakarta. Lokasi ruang kearsipan belum ditentukan.",
+      "coordinateSourceUrl": "https://www.google.com/maps/place/Rektorat%20Universitas%20Udayana/data=!4m5!3m4!1s0x2dd244bc39fb3da7:0x6cae8cb2a990cae5!8m2!3d-8.798404699999999!4d115.17245179999999",
+      "coordinateMethod": "google-maps-place",
+      "coordinateEvidence": "Fitur publik 0x2dd244bc39fb3da7:0x6cae8cb2a990cae5 bernama Rektorat Universitas Udayana; alamat Jl. Raya Kampus Unud, Jimbaran, Kec. Kuta Sel., Kabupaten Badung, Bali 80361; posisi fitur !3d-8.798404699999999!4d115.17245179999999.",
+      "coordinateLocationLabel": "Rektorat Universitas Udayana",
+      "publicPlaceOnly": true
+    },
+    {
+      "instansiId": "casefile-6f6c21b465cbe699e7c6e6c3",
+      "name": "Dinas Kearsipan dan Perpustakaan Kabupaten Kupang",
+      "joinedYear": 2026,
+      "provinceId": "53",
+      "kabKotaId": "53.01",
+      "coordinates": null,
+      "address": null,
+      "googleMapsPlaceUrl": null,
+      "sourceUrls": [
+        "https://github.com/cahyadsn/wilayah/blob/5d450ccbc94cc487f54bf2a262300efe97aa58af/db/wilayah_level_1_2.sql",
+        "https://www.google.com/maps/search/Dinas%20Kearsipan%20dan%20Perpustakaan%20Kabupaten%20Kupang?hl=id"
+      ],
+      "capturedAt": "2026-10-23T13:40:06Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "needs-review",
+      "notes": "Hasil publik masih menunjuk Dinas Kota Kupang atau Provinsi NTT, bukan Dinas Kabupaten Kupang. Perlu koordinat kantor Kabupaten Kupang yang benar."
+    },
+    {
+      "instansiId": "casefile-73ece091bc2cb474bb139b9a",
+      "name": "Dinas Perpustakaan dan Kearsipan Kabupaten Kaimana",
+      "joinedYear": 2026,
+      "provinceId": "92",
+      "kabKotaId": "92.08",
+      "coordinates": null,
+      "address": null,
+      "googleMapsPlaceUrl": null,
+      "sourceUrls": [
+        "https://www.google.com/maps/place/Dinas%20Perpustakaan%20dan%20Kearsipan%20Kabupaten%20Kaimana/data=!4m5!3m4!1s0x2d49ffab44a6bd47:0x3c97603cebe1665e!8m2!3d-3.6471145!4d133.7405241"
+      ],
+      "capturedAt": "2026-10-23T13:40:06Z",
+      "administrativeVerified": true,
+      "locationVerificationStatus": "needs-review",
+      "notes": "Nama dan alamat kandidat fitur tempat publik Google Maps ditinjau terhadap identitas Excel serta referensi administratif. Koordinat fitur dipertahankan; pusat kamera dan centroid wilayah tidak digunakan. Pin publik bukan pengesahan lapangan ANRI atau konfirmasi kantor operasional terkini.  Kandidat Dinas Kaimana berada 14,68 m di luar polygon referensi. Titik publik saja belum memenuhi tinjauan batas 10 m; perlu konfirmasi koordinat/alamat kantor yang lebih kuat."
+    }
+  ]
+}

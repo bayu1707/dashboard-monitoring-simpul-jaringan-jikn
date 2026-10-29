@@ -1,3 +1,5 @@
+> Pembaruan 23 Oktober 2026: default **pilot Indonesia 643 instansi/627 pin, 38 provinsi/514 kabupaten-kota**, dengan 16 pengecualian tanpa pin. Baca [panduan Indonesia](pilot-indonesia.md). Angka pada bagian riwayat mengacu tahap sebelumnya. Frontend aktif Nuxt + Laravel; perintah Vite root tetap menjalankan React legacy.
+
 # Dataset kolaborasi JIKN
 
 Perluasan 19 Oktober 2026: lihat [pilot Sumatra](pilot-sumatra.md). Angka pengujian 249 di bagian riwayat bawah merupakan hasil rilis Jawa sebelumnya; default kini 418 record dengan 417 pin. Sumatra mempunyai 168/169 pin; satu konflik listing Ogan Komering Ilir masih menunggu konfirmasi.
@@ -6,32 +8,26 @@ Paket dirilis setelah pengguna mengonfirmasi telah memperoleh izin berbagi selur
 
 ## Menjalankan pada macOS dan Windows
 
-Gunakan Node 24.19.0 (engine >=24.15.0 <25), Git, dan npm. Dari root hasil clone:
+Gunakan Node 24.19.0 (engine >=24.15.0 <25), PHP 8.4, Composer 2, Git dan npm. Ikuti dua terminal Laravel/Nuxt di [README](../README.md) atau [panduan migrasi](migrasi-laravel-nuxt.md). Buka `http://127.0.0.1:3000/simpul-jaringan`. Dependency dan validasi data root tetap dapat dijalankan dengan `npm ci` dan `npm run validate:shared`.
 
-```sh
-npm ci
-npm run validate:shared
-npm run dev -- --port 5175
-```
-
-Buka alamat yang dicetak Vite:
+Mode pada URL frontend aktif:
 
 | URL | Sumber |
 | --- | --- |
-| `/simpul-jaringan` | Pilot Jawa + Sumatra: 418 instansi, 417 pin, 418 tahun, satu Landing Page ANRI |
+| `/simpul-jaringan` | Pilot Indonesia: 643 instansi, 627 pin, 643 tahun, satu Landing Page ANRI |
 | `/simpul-jaringan?data=excel` | Excel penuh: 643 instansi, 643 tahun, 0 pin; statistik belum tersedia |
 | `/simpul-jaringan?demo=1` | Tujuh instansi sintetis, enam pin; DATA DEMO |
 
-Tidak perlu workbook, Python, `.local`, `.env.local`, kredensial atau backend untuk menjalankan clone. Flag VITE_LOCAL_PILOT/VITE_LOCAL_CASEFILE lama tidak mengendalikan App lagi. `.env.example` hanya untuk pengaturan tile opsional. `npm run build` dan `npm run preview` memakai paket yang sama dengan dev. Aplikasi belum terhubung ke API resmi SIKN/JIKN; tile tetap dapat memerlukan internet. Tombol Landing Page yang belum memiliki mapping tetap disabled; satu mapping ANRI berasal dari konfirmasi pengguna, bukan bukti halaman dapat diakses tanpa login.
+Tidak perlu workbook, Python atau `.local` untuk menjalankan dataset clone. Nuxt menggunakan Laravel baca snapshot lokal; pemasangan environment aplikasi mengikuti panduan migrasi, tanpa menyalin file environment/kredensial pribadi MacBook. React legacy pada root tetap bisa berjalan mandiri melalui Vite 5175 sebagai pembanding dan membaca paket JSON yang sama. Flag VITE_LOCAL_PILOT/VITE_LOCAL_CASEFILE lama tidak mengendalikan App React lagi. Aplikasi belum terhubung ke API resmi SIKN/JIKN; tile tetap dapat memerlukan internet. Tombol Landing Page yang belum memiliki mapping tetap disabled; satu mapping ANRI berasal dari konfirmasi pengguna, bukan bukti halaman dapat diakses tanpa login.
 
 ## Isi paket runtime
 
 - `public/data/datasets/manifest.json`: versi, konfirmasi izin, jumlah, path dan SHA-256 dependensi.
-- `public/data/datasets/pilot/snapshot.json`: 418 identitas/tahun, 417 pin bersumber, 1 titik null, mapping dan statistik **DATA SIMULASI**.
-- `public/data/datasets/pilot/references.json`: 16 provinsi, 273 kab/kota, taksonomi pilot.
+- `public/data/datasets/pilot/snapshot.json`: 643 identitas/tahun, 627 pin bersumber, 16 titik null, mapping dan statistik **DATA SIMULASI**.
+- `public/data/datasets/pilot/references.json`: 38 provinsi, 514 kab/kota, taksonomi pilot.
 - `public/data/datasets/excel/snapshot.json`: 643 record hasil normalisasi sheet `pengelolaan casefile`, tanpa statistik simulasi dan tanpa memaksakan pin.
 - `public/data/references.json`: referensi nasional 38 provinsi/514 kab/kota.
-- `public/data/geometry/`: geometri kab/kota lazy, provenance dan lisensi MIT Cahya DSN. Pilot memakai kode 31–36; mode Excel memerlukan seluruh referensi.
+- `public/data/geometry/`: geometri kab/kota lazy, provenance dan lisensi MIT Cahya DSN. Pilot dan mode Excel memakai referensi 38 provinsi; kab/kota dimuat per provinsi.
 - Aset ANRI dan demo yang sudah ada tetap digunakan; tidak ada logo instansi baru.
 
 `SnapshotData` tetap berisi metadata/instansi/statistics; `ReferenceData` berisi provinces/kabKota/jenisInstansi/archiveCategories/metadata. Komponen tidak membaca Excel. `createSharedRepository` memakai path dari `src/data/sharedDatasets.ts` yang dicocokkan dengan manifest oleh validator dan memeriksa datasetKind. Adapter lama tetap tersedia bagi pengujian dan pemeliharaan; App tidak meminta `/local-data/` lagi.

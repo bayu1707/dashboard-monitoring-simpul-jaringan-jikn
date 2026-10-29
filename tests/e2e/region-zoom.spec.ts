@@ -1,4 +1,5 @@
 import { useFixtureTiles } from './tileFixture';
+import { activateRegionBadge } from './regionBadge';
 import { expect, test, type Page } from '@playwright/test';
 test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { existsSync, readFileSync } from 'node:fs';
@@ -40,7 +41,7 @@ async function zoomOut(page: Page) {
   }
   await settled(page);
 }
-async function assertPositions(page: Page, separate = true, maxShift = 57) {
+async function assertPositions(page: Page) {
   const view = await session(page);
   const map = (await page.locator('.map-canvas').boundingBox())!;
   // Ukur posisi yang tampak terhadap proyeksi sumber WGS84/Web Mercator.
@@ -50,7 +51,6 @@ async function assertPositions(page: Page, separate = true, maxShift = 57) {
     return [scale * (lng! + 180) / 360, scale * (0.5 - Math.log((1 + sin) / (1 - sin)) / (4 * Math.PI))];
   };
   const center = project(view.center);
-  const positions: { x: number; y: number }[] = [];
   for (const badge of await page.locator('[data-region-count-id]').all()) {
     const id = await badge.getAttribute('data-region-count-id');
     const source = [...references!.provinces, ...references!.kabKota].find((region) => region.id === id)!;
@@ -59,11 +59,8 @@ async function assertPositions(page: Page, separate = true, maxShift = 57) {
     const visible = { x: box.x + box.width / 2, y: box.y + box.height / 2 };
     const shift = Math.hypot(visible.x - (map.x + map.width / 2 + point[0]! - center[0]!),
       visible.y - (map.y + map.height / 2 + point[1]! - center[1]!));
-    expect(shift, `${source.name} tidak boleh bergeser jauh dari posisi sumber`).toBeLessThanOrEqual(maxShift);
+    expect(shift, `${source.name} tidak boleh bergeser jauh dari posisi sumber`).toBeLessThan(1.6);
     expect(box.width).toBeGreaterThanOrEqual(44);
-    if (separate) for (const other of positions)
-      expect(Math.hypot(visible.x - other.x, visible.y - other.y), `${source.name}: lingkaran tetap dapat diklik terpisah`).toBeGreaterThanOrEqual(48);
-    positions.push(visible);
   }
 }
 
@@ -98,7 +95,7 @@ for (const width of [1440, 390]) {
       await page.mouse.move(10, 10);
       await page.screenshot({ path: `.local/qa/zoomout-after-${province}-${width}.png` });
       const city = province === '36' ? '36.71' : '31.74';
-      await page.locator(`[data-region-count-id="${city}"]`).click();
+      await activateRegionBadge(page, city);
       await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'instansi');
       expect(new URL(page.url()).searchParams.get('kabKota')).toBe(city);
       await expect(page.locator('[data-region-count-id]')).toHaveCount(0);
@@ -140,9 +137,8 @@ test('sesi Banten dengan zoom lama terlalu kecil diperbaiki; resize dan kembali 
   await expect(page.locator('[data-region-count-id]')).toHaveCount(overviewCount);
   await zoomOut(page);
   expect((await session(page)).zoom).toBe(overview.zoom - 0.5);
-  // Enam provinsi Jawa boleh berdekatan pada overview luas, dengan offset
-  // tetap mengikuti sumber; tes di atas memeriksa keterpisahan tingkat provinsi.
-  await assertPositions(page, false);
+  // Overview boleh overlap, tetapi semua pusat badge tetap pada anchor sumber.
+  await assertPositions(page);
 });
 
 for (const width of [1440, 390]) {
@@ -158,8 +154,10 @@ for (const width of [1440, 390]) {
     const steps = Math.min(4, Math.round((initial.zoom - 3) / 0.5));
     for (let attempt = 0; attempt < steps; attempt++) await zoomOut(page);
     const zoomed = await session(page);
-    expect(zoomed.zoom).toBe(initial.zoom - steps * 0.5);
-    expect(zoomed.zoom).toBeLessThan(initial.zoom);
+    // Zoom awal mobile dapat fraksional (misalnya 3,25); langkah terakhir
+    // berhenti pada minZoom lama 3, bukan melampauinya menjadi 2,75.
+    expect(zoomed.zoom).toBe(Math.max(3, initial.zoom - steps * 0.5));
+    if (initial.zoom > 3) expect(zoomed.zoom).toBeLessThan(initial.zoom);
     await expect(page.getByTitle('Perkecil peta', { exact: true })).toHaveAttribute('aria-disabled', zoomed.zoom === 3 ? 'true' : 'false');
     await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'nasional');
     expect(new URL(page.url()).search).toBe('');
@@ -169,20 +167,14 @@ for (const width of [1440, 390]) {
     const restored = await session(page);
     expect(restored.zoom).toBe(zoomed.zoom);
     restored.center.forEach((value, index) => expect(value).toBeCloseTo(zoomed.center[index]!, 6));
-    await assertPositions(page, false);
+    await assertPositions(page);
     for (let zoom = restored.zoom; zoom > 3; zoom -= 0.5) await zoomOut(page);
     expect((await session(page)).zoom).toBe(3);
     await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'nasional');
     await expect(page.locator('[data-region-count-id]')).toHaveCount(overviewCount);
-    await assertPositions(page, false);
-    // Badge tetap dibatasi 56 px dari sumber dan pusatnya dapat disentuh,
-    // termasuk Jateng/DIY yang tadinya saling menutupi pada layar kecil.
-    const blocked = await page.locator('[data-region-count-id]').evaluateAll((elements) => elements.flatMap((element) => {
-      const box = element.getBoundingClientRect();
-      const target = document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2);
-      return target?.closest('[data-region-count-id]') === element ? [] : [element.getAttribute('data-region-count-id')];
-    }));
-    expect(blocked).toEqual([]);
+    await assertPositions(page);
+    // Overlap pada zoom dunia diperbolehkan. Keyboard dan dropdown tetap
+    // menyediakan pemilihan ID wilayah tanpa menggeser posisi badge.
     await page.screenshot({ path: `.local/qa/overview-free-zoom-${width}.png` });
     // Keyboard menyediakan pilihan ID yang tepat juga saat dua provinsi sangat dekat.
     await page.locator('[data-region-count-id="36"]').focus();

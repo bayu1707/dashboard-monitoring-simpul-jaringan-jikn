@@ -1,3 +1,30 @@
+# Arsitektur Nuxt + Laravel
+
+Versi migrasi ada di **frontend/** (Nuxt/Vue/Leaflet) dan **backend/** (Laravel REST API baca snapshot). Buka **http://127.0.0.1:3000/simpul-jaringan** setelah kedua server berjalan. Frontend React pada root masih dipertahankan sebagai pembanding; perintah Vite root menjalankan versi lama.
+
+Panduan pemasangan macOS/Windows, API, struktur dan data: [Migrasi Laravel + Nuxt](docs/migrasi-laravel-nuxt.md). Hasil pemeriksaan aktual: [QA migrasi](docs/hasil-qa-migrasi.md).
+
+**Clone tanpa database SSD:** gunakan [panduan menjalankan dan menyiapkan push tanpa database](docs/kolaborasi-tanpa-database.md). Default Nuxt → Laravel → snapshot JSON yang sudah dibagikan. Tidak perlu database 22 GB, PostgreSQL, XAMPP, Adminer, DBeaver, `.local`, atau kredensial SIKN untuk mode pilot/Excel/demo. Instalasi baru tetap memerlukan PHP 8.4+, Composer 2, Node 24 yang kompatibel, serta dependency dari kedua lockfile.
+
+```sh
+# Terminal 1, dari root clone (PHP 8.4 + Composer 2)
+cd backend
+composer install
+# Salin .env.example ke .env hanya bila belum ada, lalu php artisan key:generate
+php artisan serve --host=127.0.0.1 --port=8000
+```
+
+```sh
+# Terminal 2, dari root clone (Node 24 >=24.15)
+cd frontend
+npm ci
+npm run dev -- --port 3000
+```
+
+Dataset pilot kini mencakup **seluruh 643 identitas snapshot Excel, 627 pin, 38 provinsi dan 514 kabupaten/kota**. Sebanyak **16 record masih tanpa pin** dan tetap tersedia melalui pencarian serta Daftar. Ini kelengkapan katalog sumber, bukan jaminan seluruh kantor terverifikasi lapangan. Baca [cakupan Indonesia dan pengecualian](docs/pilot-indonesia.md). Mode Excel penuh tetap 643 record tanpa pin, demo sintetis terpisah. Statistik pilot tetap DATA SIMULASI; API resmi SIKN/JIKN belum terhubung. Tidak diperlukan XAMPP/database server untuk API baca snapshot ini.
+
+---
+
 ## Kolaborasi Tim
 
 Proyek Dashboard Monitoring Simpul Jaringan JIKN
@@ -7,17 +34,21 @@ dikembangkan secara kolaboratif menggunakan GitHub.
 
 Frontend untuk mempelajari dan mengembangkan halaman Simpul Jaringan ANRI. Aplikasi menyediakan peta nasional di `/simpul-jaringan` dan detail instansi di `/simpul-jaringan/:id`, dengan antarmuka bahasa Indonesia. Data dibaca melalui repository asinkron sehingga sumber lokal dapat diganti dengan REST API resmi pada tahap berikutnya.
 
-Dataset kolaborasi tersedia tanpa `.local` atau `.env.local`, pada development maupun build/preview. Default sekarang **pilot Jawa + Sumatra: 418 instansi, 417 pin, 16 provinsi dan 273 kabupaten/kota**. Jawa tetap 249 instansi/249 pin; tambahan Sumatra 169 instansi dengan **168 pin dan 1 tanpa pin**. Semua instansi tanpa pin tetap dapat dibuka dari **Daftar**. Nama/kode/ID/tahun berasal dari snapshot Excel; statistik dan grafik tetap **DATA SIMULASI**. Jumlah ini adalah katalog percontohan terpilih, bukan klaim seluruh 643 instansi nasional atau seluruh kantor sudah terpetakan. Mode `?data=excel` tetap 643 record tanpa pin/statistik simulasi.
+Dataset kolaborasi tersedia tanpa `.local` atau `.env.local`, pada development maupun build/preview. Default **pilot Indonesia: 643 instansi, 627 pin, 38 provinsi dan 514 kabupaten/kota**. Seluruh ID/nama/kode/kategori/tahun sama dengan snapshot Excel, termasuk kode referensi duplikat yang tetap menjadi record terpisah. **16 record belum memiliki koordinat yang layak dipasang**; semuanya tetap dapat dicari dan dibuka melalui Daftar. Statistik/grafik tetap **DATA SIMULASI**. Pin merupakan rujukan publik yang perlu dikonfirmasi tim; kelengkapan katalog bukan klaim seluruh instansi aktif nasional. Mode `?data=excel` tetap 643 record tanpa pin/statistik simulasi.
+
+Panduan terbaru: [Indonesia](docs/pilot-indonesia.md). Jalankan `npm run build:indonesia` untuk review lokal; tambahkan `-- --publish` untuk memperbarui dua JSON pilot dan manifest lokal. Perintah tersebut tidak melakukan Git push. Panduan Jawa, Sumatra dan Kalimantan–Sulawesi mencatat riwayat tahap sebelumnya.
 
 Baca [cakupan, sumber dan cara memperbarui Sumatra](docs/pilot-sumatra.md), [panduan koordinat](docs/koordinat-kantor.md), [riwayat Jawa](docs/pilot-jawa.md), dan [paket kolaborasi](docs/dataset-kolaborasi.md). Pin publik belum merupakan pengesahan koordinat lapangan ANRI. Satu Landing Page ANRI dipertahankan; tautan Sumatra yang belum diverifikasi tetap disabled.
 
-Tampilan awal dapat diperkecil hingga skala dunia, tanpa batas tambahan berdasarkan cakupan percontohan. Saat kab/kota suatu provinsi ditampilkan, batas zoom out mengikuti cakupannya agar lingkaran tidak menyebar keluar daerah. Gunakan **Kembali ke Nasional** atau **Reset** untuk kembali ke tampilan awal. Zoom pada lapisan instansi tetap tersedia untuk clustering. Tombol dan keyboard kini berubah 0,5 level dengan transisi 320 ms; scroll dibatasi 0,25–0,5 level per burst. Preferensi reduced motion tetap dihormati. Satu sampel Landing Page **Arsip Nasional RI** sudah aktif pada pilot kolaborasi berdasarkan hyperlink dari pengguna; lihat [panduan mapping](docs/landing-pages.md).
+Tampilan awal dapat diperkecil hingga skala dunia, tanpa batas tambahan berdasarkan cakupan percontohan. Badge jumlah wilayah sekarang berpusat tepat pada labelPosition sumber dan boleh bertumpuk saat zoom rendah; gunakan dropdown untuk memilih wilayah yang tertutup. Saat kab/kota suatu provinsi ditampilkan, batas zoom out lama tetap mengikuti cakupannya; perbaikan badge tidak menambah batas zoom baru. Lihat [audit anchor badge](docs/perbaikan-anchor-badge-wilayah.md). Gunakan **Kembali ke Nasional** atau **Reset** untuk kembali ke tampilan awal. Zoom pada lapisan instansi tetap tersedia untuk clustering. Tombol dan keyboard kini berubah 0,5 level dengan transisi 320 ms; scroll dibatasi 0,25–0,5 level per burst. Preferensi reduced motion tetap dihormati. Satu sampel Landing Page **Arsip Nasional RI** sudah aktif pada pilot kolaborasi berdasarkan hyperlink dari pengguna; lihat [panduan mapping](docs/landing-pages.md).
 
 Snapshot Excel penuh **643 instansi dan 0 pin** tersedia terpisah di `public/data/datasets/excel/snapshot.json`, dibuka melalui `?data=excel`. Workbook asli dan bahan impor tetap lokal. Paket pilot dan Excel memiliki manifest versi serta checksum; baca [panduan dataset bersama](docs/dataset-kolaborasi.md). Mode **DATA DEMO** sintetis lama tetap terpisah melalui `demo=1`. Koordinat, kontak, dan hyperlink yang belum diketahui tetap null; statistik simulasi tidak ditambahkan ke snapshot Excel penuh. Cadangan sebelum penyederhanaan berada di `.local/backups/`.
 
-Data instansi resmi belum terintegrasi dengan SIKN/JIKN. Proyek saat ini hanya frontend dengan JSON lokal; tidak membutuhkan backend atau database untuk dijalankan tim.
+API resmi SIKN/JIKN belum terintegrasi. Aplikasi aktif Nuxt menggunakan backend Laravel untuk membaca JSON bersama; PostgreSQL/SSD hanya diperlukan jika sengaja memilih mode SIKN lokal (`?data=sikn`). Form DATA UJI (`?data=dev`) memerlukan PostgreSQL Development terpisah. React/Vite legacy dapat membaca JSON langsung tanpa backend.
 
-## Persiapan laptop Windows dan macOS
+## Persiapan laptop Windows dan macOS untuk React/Vite legacy
+
+Bagian selanjutnya mencatat frontend React lama. Untuk aplikasi aktif Nuxt + Laravel dan langkah clone tim terbaru, ikuti [panduan tanpa database](docs/kolaborasi-tanpa-database.md). Root `npm run dev` menjalankan React; Nuxt dijalankan dari `frontend/`.
 
 Siapkan Git, Node.js **24.19.0**, npm, browser modern, dan akses internet untuk clone, pemasangan dependensi, serta tile peta. Akun GitHub anggota perlu diberi akses ke repositori **PRIVATE** oleh pemilik; dashboard lokal sendiri tidak memerlukan login. Folder proyek boleh berada di lokasi pilihan masing-masing anggota dan tidak memerlukan konfigurasi khusus laptop pengembang awal.
 
@@ -38,7 +69,7 @@ Gunakan `v24.19.0` sesuai `.nvmrc`; rentang engine yang diterima proyek adalah `
 
 Pemeriksaan perubahan casefile memakai **Node 24.19.0 dan npm 11.17.0 pada macOS**. Importer Excel memakai Python 3.10+ dan pustaka standar tanpa dependency baru. Seluruh dependency frontend tercatat dalam `package.json` dan lockfile. Pengujian pada laptop Windows belum dilakukan.
 
-## Clone dan menjalankan secara lokal
+## Clone dan menjalankan React/Vite legacy secara lokal
 
 Repositori PRIVATE tim: [bayu1707/dashboard-monitoring-simpul-jaringan-jikn](https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn). Sebelum clone, terima undangan collaborator dan autentikasikan GitHub pada laptop sendiri melalui Git Credential Manager atau GitHub CLI; lihat [panduan autentikasi tim](docs/kolaborasi-tim.md#akses-dan-autentikasi).
 

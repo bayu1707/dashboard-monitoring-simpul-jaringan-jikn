@@ -56,13 +56,13 @@ describe('Perluasan Sumatra memakai identitas snapshot yang sama', () => {
     expect(() => buildPilotSnapshot(excel, references, [{ ...withPin, coordinates: [0, 0], coordinateEvidence: '0, 0' }], [],
       { provinceIds: SUMATRA_PROVINCES, label: 'Sumatra' })).toThrow(/bounds|!3d/);
   });
-  it('Jawa tetap 249 ID/pin; merge berulang stabil dan metrik satu snapshot', () => {
+  it('ID/pin Jawa yang sudah ada tetap dipertahankan; merge berulang stabil dan metrik satu snapshot', () => {
     const before = pilot.instansi.filter((row) => row.provinceId && PILOT_PROVINCES.has(row.provinceId));
     const merged = mergeIslandPilots(pilot, sumatra.snapshot, references);
-    expect(before).toHaveLength(249);
+    expect(before.length).toBeGreaterThanOrEqual(249);
     expect(before.every((row) => row.coordinates !== null)).toBe(true);
     expect(merged.snapshot.instansi.filter((row) => row.provinceId && PILOT_PROVINCES.has(row.provinceId))).toEqual(before);
-    expect(merged.snapshot.instansi).toHaveLength(418);
+    expect(merged.snapshot.instansi).toHaveLength(before.length + 169);
     expect(mergeIslandPilots(merged.snapshot, sumatra.snapshot, references)).toEqual(merged);
     expect(merged.snapshot.metadata.nationalTotal).toBeNull();
     expect(merged.snapshot.metadata.sampleTotal?.value).toBe(merged.snapshot.statistics.reduce((total, row) => total + row.statistik.jumlahArsip.value!, 0));

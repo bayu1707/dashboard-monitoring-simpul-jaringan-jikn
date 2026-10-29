@@ -34,6 +34,17 @@ Thumbs.db
 *.sql
 *.sqlite
 *.sqlite3
+# Salinan/penyimpanan database dan image SSD tidak menjadi paket kolaborasi.
+*.sql.gz
+*.sql.bz2
+*.sql.xz
+*.dump
+*.backup
+*.shadow
+*.sparseimage
+*.sparsebundle/
+pgdata/
+pgdata18/
 
 # Snapshot Excel dan laporan berisi data pengguna: review lokal dahulu.
 .local/
@@ -42,5 +53,5 @@ Thumbs.db
 __pycache__/
 
 # Handoff tetap privat pada seluruh clone tim.
-/PROJECT_HANDOFF_BRIEF.md
-/PROJECT_HANDOFF_FULL.md
+PROJECT_HANDOFF_BRIEF.md
+PROJECT_HANDOFF_FULL.md

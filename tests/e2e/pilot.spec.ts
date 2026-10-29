@@ -1,4 +1,5 @@
 import { useFixtureTiles } from './tileFixture';
+import { activateRegionBadge } from './regionBadge';
 import { expect, test, type Page } from '@playwright/test';
 test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { existsSync, readFileSync } from 'node:fs';
@@ -70,7 +71,8 @@ async function chooseRegion(page: Page, id: string, keyboard = false) {
   if (keyboard) {
     await region.focus();
     await page.keyboard.press('Enter');
-  } else await region.click();
+  } else if (await badge.count()) await activateRegionBadge(page, id);
+  else await region.click();
   await waitForMap(page);
 }
 async function expectCompactRegions(page: Page, expected: Record<string, number>) {
