@@ -1,6 +1,6 @@
 # Kolaborasi Nuxt + Laravel tanpa database SSD
 
-Panduan 29 Oktober 2026 untuk aplikasi aktif pada `frontend/` dan `backend/`. Source React pada root `src/` tetap tersedia sebagai legacy.
+Panduan untuk aplikasi aktif pada `frontend/` dan `backend/`, diperbarui 4 November 2026 setelah migrasi digabung ke `main`. Source React pada root `src/` tetap tersedia sebagai legacy.
 
 ## Apa yang didapat anggota tim?
 
@@ -36,7 +36,7 @@ PDF belajar dan folder output lokal tidak dibutuhkan untuk menjalankan dashboard
 
 ## Prasyarat laptop tim
 
-- Git dan izin akses repository GitHub.
+- Git. Repository Public dapat di-clone tanpa login; akses collaborator diperlukan untuk push.
 - Node **24.19.0** sesuai versi proyek; engine frontend menerima `>=24.15.0 <25`. npm mengikuti instalasi Node.
 - PHP **8.4+** yang memenuhi Composer lock, Composer 2, dan extension yang diminta Composer/Laravel, termasuk `fileinfo`. Pada Windows, pastikan extension tersebut aktif di PHP CLI yang dipakai terminal; `php --ri fileinfo` harus menampilkan informasi extension sebelum menjalankan `composer install`. Jangan memakai `--ignore-platform-reqs`.
 - Internet untuk clone, dependency dan tile peta OpenStreetMap. Ini belum aplikasi offline penuh.
@@ -53,16 +53,16 @@ php --version
 composer --version
 ```
 
-## Clone branch yang memuat migrasi
+## Clone versi aktif dari main
 
-Selama migrasi belum digabung ke main, clone branch fitur ini agar Nuxt/Laravel ikut terbawa:
+Nuxt/Laravel dan snapshot nasional sudah berada di branch default `main`. Clone biasa langsung mengambil versi aktif:
 
 ```sh
-git clone --branch codex/migrasi-laravel-nuxt https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn.git
+git clone https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn.git
 cd dashboard-monitoring-simpul-jaringan-jikn
 ```
 
-Branch ini sudah tersedia di GitHub melalui [PR #4](https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn/pull/4). `git clone` biasa mengambil branch default GitHub; sebelum merge, branch itu belum tentu memuat migrasi ini. Setelah PR digabung ke main dengan persetujuan pemilik, anggota dapat memakai clone biasa.
+[PR #4](https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn/pull/4) telah digabung pada 4 November 2026 setelah empat pemeriksaan CI Ubuntu/Windows lulus. Repository bersifat Public; tidak perlu memilih branch migrasi atau menunggu undangan untuk clone.
 
 ## Pemasangan pertama: backend
 
@@ -139,7 +139,13 @@ git branch --show-current
 git status --short
 ```
 
-Branch yang disiapkan ialah `codex/migrasi-laravel-nuxt`. Jika hasil berbeda, jangan lanjutkan blok berikutnya sebelum memastikan branch tujuan. Hindari memindahkan branch saat ada perubahan yang belum dipahami.
+Migrasi sudah berada di `main`. Untuk perubahan berikutnya, mulai dari working tree bersih dan buat branch tugas baru. Simpan pekerjaan lokal terlebih dahulu jika `git status` masih menampilkan perubahan.
+
+```sh
+git switch main
+git pull --ff-only origin main
+git switch -c codex/perubahan-tim
+```
 
 Validasi paket JSON yang dibagikan (memakai dependency root legacy yang sudah terpasang pada laptop pengembang):
 
@@ -161,8 +167,8 @@ Pastikan daftar hanya file yang ingin dibagikan. Jangan lanjut jika ada `.local`
 Setelah review, jalankan:
 
 ```sh
-git commit -m "feat: siapkan dashboard Nuxt Laravel dan snapshot nasional tanpa database SSD"
-git push -u origin codex/migrasi-laravel-nuxt
+git commit -m "feat: jelaskan perubahan dashboard Anda"
+git push -u origin codex/perubahan-tim
 ```
 
 Jika push ditolak karena branch remote lebih maju atau aturan repository, hentikan dan periksa penyebabnya; jangan gunakan `--force`. Push branch fitur belum mengubah main. Buat PR untuk review; merge merupakan langkah terpisah setelah persetujuan dan CI lulus.

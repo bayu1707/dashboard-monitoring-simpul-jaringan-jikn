@@ -1,12 +1,12 @@
 # Panduan kolaborasi tim Dashboard Monitoring JIKN
 
-Panduan ini dipakai empat anggota untuk mengembangkan frontend yang sama melalui repositori **PRIVATE**. Setiap anggota mempunyai clone dan instalasi dependency sendiri. Menjalankan aplikasi tidak memerlukan folder, environment rahasia, ataupun runtime dari laptop pengembang awal.
+Panduan ini dipakai empat anggota untuk mengembangkan dashboard yang sama melalui repositori **Public**. Versi aktif Nuxt/Laravel berada di `main`; setiap anggota mempunyai clone dan instalasi dependency sendiri. Pilot berjalan dari snapshot bersama tanpa folder privat, environment rahasia, atau database SSD pengembang awal.
 
 Repositori tim: [bayu1707/dashboard-monitoring-simpul-jaringan-jikn](https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn). Gunakan riwayat commit pada branch `main` untuk memeriksa versi yang sudah di-push.
 
 ## Akses dan autentikasi
 
-Pemilik memberi akses setelah mendapatkan username GitHub yang benar untuk setiap anggota. Belum ada daftar username atau undangan otomatis dalam proyek. Anggota menerima undangan melalui akun GitHub miliknya sebelum clone. Repositori PRIVATE dapat terlihat sebagai `Repository not found` bagi akun yang belum mempunyai akses.
+Semua orang dapat melihat dan clone repository Public tanpa undangan. Untuk mengirim perubahan melalui push, pemilik memberi akses collaborator setelah mendapatkan username GitHub yang benar. Belum ada daftar username atau undangan otomatis dalam proyek. Anggota menerima undangan melalui akun GitHub miliknya sebelum push.
 
 Untuk autentikasi HTTPS, gunakan Git Credential Manager atau GitHub CLI dengan login melalui browser, sesuai [panduan autentikasi resmi GitHub](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github). Password akun GitHub tidak digunakan sebagai password Git. Token, password, session, dan cookie tidak disimpan dalam source, URL remote, ataupun dokumen proyek.
 
@@ -22,16 +22,14 @@ Ikuti login yang dibuka di browser. Tidak perlu mengirimkan token kepada anggota
 
 ## Clone dan mulai bekerja
 
-Pasang Git dan Node 24.19.0 sesuai [README](../README.md#persiapan-laptop-windows-dan-macos), lalu jalankan dari folder pilihan Anda:
+Pasang Git, Node 24.19.0, PHP 8.4+ dan Composer 2 sesuai [panduan Nuxt/Laravel tanpa database](kolaborasi-tanpa-database.md#prasyarat-laptop-tim), lalu jalankan dari folder pilihan Anda:
 
 ```sh
 git clone https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn.git
 cd dashboard-monitoring-simpul-jaringan-jikn
-npm ci
-npm run dev
 ```
 
-Buka URL **Local** yang dicetak Vite dan tambahkan `/simpul-jaringan`. Untuk latihan, buka `/simpul-jaringan?demo=1` pada host/port yang sama. Data instansi resmi belum terintegrasi dengan SIKN/JIKN; mode demo berisi data sintetis yang diberi label.
+Ikuti [penyiapan backend](kolaborasi-tanpa-database.md#pemasangan-pertama-backend) dan [frontend](kolaborasi-tanpa-database.md#pemasangan-pertama-frontend) pada dua terminal. Buka `http://127.0.0.1:3000/simpul-jaringan` setelah keduanya aktif. Root `npm run dev` tetap menjalankan React legacy; aplikasi Nuxt dijalankan dari `frontend/`. API resmi vendor SIKN/JIKN belum diintegrasikan dan statistik pilot tetap berlabel DATA SIMULASI.
 
 Jika Git meminta identitas saat commit, atur `user.name` dan `user.email` **pada repositori lokal** menggunakan nama Anda dan email yang terkait dengan akun GitHub atau alamat noreply GitHub Anda. Identitas commit bukan kredensial login.
 
@@ -136,10 +134,10 @@ Untuk konflik dependency, tinjau perubahan `package.json` bersama pengelola terl
 
 ## Mengundang empat anggota sebagai collaborator
 
-Pemilik membuka repositori PRIVATE pada GitHub, lalu **Settings → Collaborators → Add people** di bagian **Access**. Cari username yang sudah dikonfirmasi, pilih akun yang tepat, dan kirim undangan. Setiap anggota menerima undangannya pada akun GitHub sendiri sebelum clone. Jangan mengubah visibility menjadi public. Langkah ini mengikuti [panduan resmi undangan collaborator](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository).
+Pemilik membuka repository Public pada GitHub, lalu **Settings → Collaborators → Add people** di bagian **Access**. Cari username yang sudah dikonfirmasi, pilih akun yang tepat, dan kirim undangan untuk hak push. Setiap anggota menerima undangannya pada akun GitHub sendiri sebelum push; clone tidak memerlukan undangan. Visibility Public sudah disetujui pemilik. Langkah ini mengikuti [panduan resmi undangan collaborator](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository).
 
 Undangan dilakukan pemilik setelah username diberikan; panduan ini tidak mengirim undangan atau menetapkan akun siapa pun. Empat peran dalam tabel adalah pembagian pekerjaan, bukan identitas akun GitHub.
 
 ## Batas pemeriksaan lintas sistem
 
-Perintah utama `git clone`, `cd`, `npm ci`, `npm run dev`, build, lint, typecheck, dan tes tidak memerlukan path macOS khusus. Contoh environment untuk Playwright dan penyalinan `.env.example` dibedakan antara macOS/Git Bash dan PowerShell pada README. Pemeriksaan frontend yang sudah dicatat sebelumnya dilakukan pada macOS. Anggota Windows perlu menjalankan checklist lokal yang sama; belum ada klaim bahwa Windows atau perangkat sentuh fisik telah diuji.
+Perintah utama `git clone`, `cd`, `composer install`, `npm ci`, `npm run dev`, build, lint, typecheck, dan tes tidak memerlukan path macOS khusus. Ikuti penyiapan dua terminal pada panduan Nuxt/Laravel. Empat job CI validasi clone/dataset dan Nuxt/Laravel pada Ubuntu serta Windows lulus sebelum PR #4 digabung. Anggota Windows tetap perlu menjalankan checklist lokal; runner CI berbeda dari laptop Windows dan perangkat sentuh fisik.

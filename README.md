@@ -6,14 +6,14 @@ Panduan pemasangan macOS/Windows, API, struktur dan data: [Migrasi Laravel + Nux
 
 **Clone tanpa database SSD:** gunakan [panduan menjalankan dan menyiapkan push tanpa database](docs/kolaborasi-tanpa-database.md). Default Nuxt → Laravel → snapshot JSON yang sudah dibagikan. Tidak perlu database 22 GB, PostgreSQL, XAMPP, Adminer, DBeaver, `.local`, atau kredensial SIKN untuk mode pilot/Excel/demo. Instalasi baru tetap memerlukan PHP 8.4+, Composer 2, Node 24 yang kompatibel, serta dependency dari kedua lockfile.
 
-**Ambil versi aktif Nuxt + Laravel:** migrasi tersedia pada branch `codex/migrasi-laravel-nuxt` dan [PR #4](https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn/pull/4). Selama PR belum digabung ke `main`, anggota tim perlu memilih branch ini:
+**Versi aktif Nuxt + Laravel sudah berada di `main`** setelah [PR #4](https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn/pull/4) digabung pada 4 November 2026. Clone biasa langsung mengambil versi ini:
 
 ```sh
-git clone --branch codex/migrasi-laravel-nuxt https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn.git
+git clone https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn.git
 cd dashboard-monitoring-simpul-jaringan-jikn
 ```
 
-Terima undangan collaborator jika repository meminta akses. Untuk clone baru, ikuti dua terminal di bawah; langkah penyiapan `.env` dan key dijelaskan lengkap di [panduan tim](docs/kolaborasi-tanpa-database.md#pemasangan-pertama-backend). File HTML mentor merupakan demo terpisah; pengembangan bersama memakai folder `frontend/` dan `backend/` di repository ini.
+Repository **Public** dapat dilihat dan di-clone tanpa undangan. Hak push memerlukan akses pemilik/collaborator. Untuk clone baru, ikuti dua terminal di bawah; langkah penyiapan `.env` dan key dijelaskan lengkap di [panduan tim](docs/kolaborasi-tanpa-database.md#pemasangan-pertama-backend). File HTML mentor merupakan demo terpisah; pengembangan bersama memakai folder `frontend/` dan `backend/` di repository ini.
 
 ```sh
 # Terminal 1, dari root clone (PHP 8.4 + Composer 2)
@@ -59,7 +59,7 @@ API resmi SIKN/JIKN belum terintegrasi. Aplikasi aktif Nuxt menggunakan backend 
 
 Bagian selanjutnya mencatat frontend React lama. Untuk aplikasi aktif Nuxt + Laravel dan langkah clone tim terbaru, ikuti [panduan tanpa database](docs/kolaborasi-tanpa-database.md). Root `npm run dev` menjalankan React; Nuxt dijalankan dari `frontend/`.
 
-Siapkan Git, Node.js **24.19.0**, npm, browser modern, dan akses internet untuk clone, pemasangan dependensi, serta tile peta. Akun GitHub anggota perlu diberi akses ke repositori **PRIVATE** oleh pemilik; dashboard lokal sendiri tidak memerlukan login. Folder proyek boleh berada di lokasi pilihan masing-masing anggota dan tidak memerlukan konfigurasi khusus laptop pengembang awal.
+Siapkan Git, Node.js **24.19.0**, npm, browser modern, dan akses internet untuk clone, pemasangan dependensi, serta tile peta. Repositori **Public** dapat di-clone tanpa login GitHub; akses collaborator diperlukan untuk push. Dashboard pilot lokal tidak memerlukan login. Folder proyek boleh berada di lokasi pilihan masing-masing anggota dan tidak memerlukan konfigurasi khusus laptop pengembang awal.
 
 | Sistem | Memasang Git | Memasang Node.js |
 | --- | --- | --- |
@@ -80,7 +80,7 @@ Pemeriksaan perubahan casefile memakai **Node 24.19.0 dan npm 11.17.0 pada macOS
 
 ## Clone dan menjalankan React/Vite legacy secara lokal
 
-Repositori PRIVATE tim: [bayu1707/dashboard-monitoring-simpul-jaringan-jikn](https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn). Sebelum clone, terima undangan collaborator dan autentikasikan GitHub pada laptop sendiri melalui Git Credential Manager atau GitHub CLI; lihat [panduan autentikasi tim](docs/kolaborasi-tim.md#akses-dan-autentikasi).
+Repositori Public tim: [bayu1707/dashboard-monitoring-simpul-jaringan-jikn](https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn). Clone dapat dilakukan tanpa undangan. Untuk push sebagai collaborator, autentikasikan GitHub pada laptop sendiri melalui Git Credential Manager atau GitHub CLI; lihat [panduan autentikasi tim](docs/kolaborasi-tim.md#akses-dan-autentikasi).
 
 Jalankan dari folder tempat Anda ingin menyimpan proyek:
 
@@ -298,7 +298,7 @@ Screenshot demo berada di `tmp/qa/`, screenshot review Excel di `.local/qa/`, da
 | Kendala | Langkah pemeriksaan |
 | --- | --- |
 | `git`, `node`, atau `npm` tidak dikenali | Pasang dari sumber resmi di atas, buka ulang terminal, lalu ulangi pemeriksaan versi. Pastikan terminal memakai instalasi Node 24.19.0 yang dimaksud. |
-| Clone menghasilkan `Repository not found` atau gagal autentikasi | Periksa URL, akun GitHub yang sedang aktif, dan undangan collaborator yang sudah diterima. Repositori PRIVATE tidak dapat di-clone tanpa akses. Ikuti autentikasi dalam panduan tim; jangan menempelkan token pada URL. |
+| Clone menghasilkan `Repository not found` atau push gagal autentikasi | Periksa URL dan koneksi; repository ini Public sehingga clone tidak memerlukan undangan. Untuk push, periksa akun GitHub dan akses collaborator. Ikuti autentikasi dalam panduan tim; jangan menempelkan token pada URL. |
 | `EBADENGINE` atau pesan versi Node tidak kompatibel | Jalankan `node --version`; gunakan Node 24.19.0 dalam rentang `>=24.15.0 <25`, kemudian ulangi `npm ci`. |
 | `npm.ps1 cannot be loaded` pada PowerShell | Gunakan Command Prompt/Git Bash, atau panggil `npm.cmd ci` dan `npm.cmd run dev` dari PowerShell. Tidak perlu mengubah kebijakan keamanan PowerShell sistem. |
 | `npm ci`/`npm install` gagal membaca `package.json` | Pastikan terminal sudah berada di folder `dashboard-monitoring-simpul-jaringan-jikn` hasil clone, bukan folder induknya. |
