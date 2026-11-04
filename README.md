@@ -6,6 +6,15 @@ Panduan pemasangan macOS/Windows, API, struktur dan data: [Migrasi Laravel + Nux
 
 **Clone tanpa database SSD:** gunakan [panduan menjalankan dan menyiapkan push tanpa database](docs/kolaborasi-tanpa-database.md). Default Nuxt → Laravel → snapshot JSON yang sudah dibagikan. Tidak perlu database 22 GB, PostgreSQL, XAMPP, Adminer, DBeaver, `.local`, atau kredensial SIKN untuk mode pilot/Excel/demo. Instalasi baru tetap memerlukan PHP 8.4+, Composer 2, Node 24 yang kompatibel, serta dependency dari kedua lockfile.
 
+**Ambil versi aktif Nuxt + Laravel:** migrasi tersedia pada branch `codex/migrasi-laravel-nuxt` dan [PR #4](https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn/pull/4). Selama PR belum digabung ke `main`, anggota tim perlu memilih branch ini:
+
+```sh
+git clone --branch codex/migrasi-laravel-nuxt https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn.git
+cd dashboard-monitoring-simpul-jaringan-jikn
+```
+
+Terima undangan collaborator jika repository meminta akses. Untuk clone baru, ikuti dua terminal di bawah; langkah penyiapan `.env` dan key dijelaskan lengkap di [panduan tim](docs/kolaborasi-tanpa-database.md#pemasangan-pertama-backend). File HTML mentor merupakan demo terpisah; pengembangan bersama memakai folder `frontend/` dan `backend/` di repository ini.
+
 ```sh
 # Terminal 1, dari root clone (PHP 8.4 + Composer 2)
 cd backend

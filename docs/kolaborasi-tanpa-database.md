@@ -38,7 +38,7 @@ PDF belajar dan folder output lokal tidak dibutuhkan untuk menjalankan dashboard
 
 - Git dan izin akses repository GitHub.
 - Node **24.19.0** sesuai versi proyek; engine frontend menerima `>=24.15.0 <25`. npm mengikuti instalasi Node.
-- PHP **8.4+** yang memenuhi Composer lock, Composer 2, dan extension yang diminta Composer/Laravel. Jangan memakai `--ignore-platform-reqs`.
+- PHP **8.4+** yang memenuhi Composer lock, Composer 2, dan extension yang diminta Composer/Laravel, termasuk `fileinfo`. Pada Windows, pastikan extension tersebut aktif di PHP CLI yang dipakai terminal; `php --ri fileinfo` harus menampilkan informasi extension sebelum menjalankan `composer install`. Jangan memakai `--ignore-platform-reqs`.
 - Internet untuk clone, dependency dan tile peta OpenStreetMap. Ini belum aplikasi offline penuh.
 
 Tidak perlu PostgreSQL/MySQL, XAMPP, Adminer atau DBeaver untuk pilot. Pemeriksaan backend tertentu menggunakan SQLite fixture untuk tes; extension `pdo_sqlite` dibutuhkan untuk suite tersebut, bukan database SSD.
@@ -62,7 +62,7 @@ git clone --branch codex/migrasi-laravel-nuxt https://github.com/bayu1707/dashbo
 cd dashboard-monitoring-simpul-jaringan-jikn
 ```
 
-Perintah ini baru tersedia di laptop lain setelah branch tersebut benar-benar dipush. `git clone` biasa mengambil branch default GitHub; sebelum merge, branch itu belum tentu memuat migrasi ini. Setelah PR digabung ke main dengan persetujuan pemilik, anggota dapat memakai clone biasa.
+Branch ini sudah tersedia di GitHub melalui [PR #4](https://github.com/bayu1707/dashboard-monitoring-simpul-jaringan-jikn/pull/4). `git clone` biasa mengambil branch default GitHub; sebelum merge, branch itu belum tentu memuat migrasi ini. Setelah PR digabung ke main dengan persetujuan pemilik, anggota dapat memakai clone biasa.
 
 ## Pemasangan pertama: backend
 

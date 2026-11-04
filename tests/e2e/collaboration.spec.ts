@@ -32,12 +32,12 @@ async function mapSettled(page: Page) {
   }).toBe(true);
 }
 
-test('clone: default Jawa → Jepara → hover → detail → kembali; Excel tetap 643 tanpa pin', async ({ page }) => {
+test('clone: default Indonesia → Jepara → hover → detail → kembali; Excel tetap 643 tanpa pin', async ({ page }) => {
   const privateRequests: string[] = [];
   page.on('request', (request) => { if (request.url().includes('/local-data/')) privateRequests.push(request.url()); });
   await page.goto('/simpul-jaringan');
   await expect(page.locator('.snapshot-note')).toContainText('643 instansi percontohan');
-  await expect(page.locator('.region-count-marker')).toHaveCount(16);
+  await expect(page.locator('.region-count-marker')).toHaveCount(38);
   await activateRegionBadge(page, '33');
   await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'provinsi');
   await expect(page.locator('#desktop-province')).toHaveValue('33');

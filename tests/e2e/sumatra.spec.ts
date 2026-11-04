@@ -51,7 +51,7 @@ for (const provinceId of ['11', '12', '16', '19']) {
   test(`Sumatra ${provinceId}: klik provinsi → kab/kota → hover → detail → kembali`, async ({ page }) => {
     const record = sumatra.find((row) => row.provinceId === provinceId && row.coordinates)!;
     await page.goto('/simpul-jaringan');
-    await expect(page.locator('.region-count-marker')).toHaveCount(16);
+    await expect(page.locator('.region-count-marker')).toHaveCount(38);
     await settled(page);
     await activateRegionBadge(page, provinceId);
     await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'provinsi');
@@ -88,7 +88,7 @@ for (const provinceId of ['11', '12', '16', '19']) {
 }
 test('10 provinsi Sumatra dapat dipilih; tanpa pin tetap dapat dibuka dan reset menutup popup', async ({ page }) => {
   await page.goto('/simpul-jaringan');
-  await expect(page.locator('#desktop-province option')).toHaveCount(17);
+  await expect(page.locator('#desktop-province option')).toHaveCount(39);
   for (const id of ['11', '12', '13', '14', '15', '16', '17', '18', '19', '21']) {
     await page.locator('#desktop-province').selectOption(id);
     await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'provinsi');

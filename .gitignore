@@ -21,6 +21,10 @@ coverage/
 *.tsbuildinfo
 .DS_Store
 Thumbs.db
+# Artefak belajar dan pemeriksaan lokal tidak diperlukan untuk clone aplikasi.
+/output/
+/docs/qa/migrasi/
+/Panduan_Belajar_Dashboard_SIKN_JIKN_ANRI.pdf
 
 # Referensi desain milik pengguna tetap di laptop, tidak diperlukan saat clone.
 /A_Spesifikasi_UI_UX_JIKN.docx
