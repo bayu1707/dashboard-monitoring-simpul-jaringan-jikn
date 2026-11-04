@@ -471,8 +471,6 @@
 .map-canvas .region-count-marker.leaflet-interactive { background: none; border: 0; pointer-events: none; }
 .region-count-marker > div { position: relative; width: 48px; height: 48px; }
 .region-count-label { position: absolute; inset: 0; pointer-events: none; }
-.region-count-leader { position: absolute; inset: 0; width: 48px; height: 48px; overflow: visible; pointer-events: none; }
-.region-count-leader line { stroke: #4d7392; stroke-width: 1.5; }
 .region-count-circle {
   /* Hit area mengikuti lingkaran; sudut transparan tidak menutup tombol tetangga. */
   pointer-events: auto;

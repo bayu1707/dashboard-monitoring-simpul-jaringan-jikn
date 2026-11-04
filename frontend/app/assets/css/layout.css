@@ -1,0 +1,216 @@
+:root {
+  --site-header-height: 152px;
+}
+.site-header {
+  position: relative;
+  z-index: 1100;
+  background: #fff;
+  border-bottom: 1px solid #e4e9f1;
+  --header-brand: #4c5d9e;
+}
+.identity-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: auto;
+  min-height: 95px;
+  padding: 14px 52px;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 44px;
+  min-width: 0;
+  color: var(--header-brand);
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+}
+.brand:hover {
+  text-decoration: none;
+}
+.brand-name {
+  min-width: 0;
+}
+.anri-logo {
+  width: 72px;
+  height: 66px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.anri-text {
+  font-size: 24px;
+  color: var(--ink);
+}
+.mobile-break {
+  display: none;
+}
+.header-utility {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  white-space: nowrap;
+  color: var(--header-brand);
+}
+.header-utility a,
+.language {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.header-utility a {
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--header-brand);
+}
+.header-utility a svg {
+  opacity: 0.6;
+}
+.language {
+  color: #5e6776;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid #e3e5e9;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 14px;
+  cursor: default;
+}
+.country-flag {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #ed2939 0 50%, #fff 50% 100%);
+  box-shadow: 0 0 0 1px #edf0f3;
+  flex-shrink: 0;
+}
+.public-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  max-width: 1600px;
+  margin: auto;
+  padding: 0 62px;
+  min-height: 56px;
+  align-items: stretch;
+  color: #6b76a1;
+  font-size: 16px;
+  font-weight: 500;
+}
+.public-nav > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 12px;
+  white-space: nowrap;
+}
+.public-nav span {
+  cursor: default;
+}
+.public-nav .active {
+  color: var(--header-brand);
+  font-weight: 500;
+  border-bottom: 2px solid var(--header-brand);
+}
+.site-header .demo-badge {
+  font-size: 10px;
+  letter-spacing: 0.035em;
+}
+@media (max-width: 1199px) {
+  .identity-row {
+    padding-right: 32px;
+    padding-left: 32px;
+    gap: 18px;
+  }
+  .brand {
+    font-size: 16px;
+    gap: 16px;
+  }
+  .header-utility {
+    gap: 14px;
+    font-size: 13px;
+  }
+  .public-nav {
+    gap: 12px;
+    padding: 0 32px;
+    font-size: 15px;
+  }
+  .public-nav > * {
+    padding: 0 8px;
+  }
+}
+@media (max-width: 1023px) {
+  .identity-row {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .brand {
+    font-size: 15px;
+    gap: 12px;
+  }
+  .header-utility .language {
+    display: none;
+  }
+  .public-nav {
+    gap: 10px;
+    padding: 0 24px;
+    font-size: 13px;
+  }
+  .public-nav > * {
+    padding: 0 4px;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --site-header-height: 115px;
+  }
+  .identity-row {
+    min-height: 70px;
+    padding: 10px 16px;
+    gap: 0;
+  }
+  .brand {
+    font-size: 12px;
+    gap: 10px;
+    letter-spacing: 0.015em;
+  }
+  .mobile-break {
+    display: block;
+  }
+  .anri-logo {
+    width: 56px;
+    height: 50px;
+  }
+  .header-utility {
+    gap: 0;
+  }
+  .header-utility a {
+    display: none;
+  }
+  .site-header .demo-badge {
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+  .public-nav {
+    min-height: 44px;
+    padding: 0 22px;
+    justify-content: flex-start;
+  }
+  .public-nav > span {
+    display: none;
+  }
+  .public-nav > .active {
+    min-height: 44px;
+    font-size: 14px;
+    padding: 0;
+  }
+}

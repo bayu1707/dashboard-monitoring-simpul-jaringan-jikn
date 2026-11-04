@@ -6,6 +6,8 @@ export default tseslint.config(
   {
     ignores: [
       'dist',
+      'frontend/**',
+      'backend/**',
       'node_modules',
       'tmp',
       '.local/**',

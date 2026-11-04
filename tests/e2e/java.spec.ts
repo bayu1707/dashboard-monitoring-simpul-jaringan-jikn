@@ -1,4 +1,5 @@
 import { useFixtureTiles } from './tileFixture';
+import { activateRegionBadge } from './regionBadge';
 import { expect, test, type Page } from '@playwright/test';
 test.beforeEach(async ({ page }) => useFixtureTiles(page));
 import { existsSync, readFileSync } from 'node:fs';
@@ -54,16 +55,16 @@ for (const name of [
     expect(record, 'Nama harus ada di sumber Excel yang dipilih').toBeDefined();
     expect(record.coordinates).not.toBeNull();
     await open(page);
-    await page.locator(`[data-region-count-id="${record.provinceId}"]`).click();
+    await activateRegionBadge(page, record.provinceId!);
     await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'provinsi');
     await expect(page.locator('#desktop-province')).toHaveValue(record.provinceId!);
     await expect(page.locator('[data-region-id]').first()).toBeVisible();
     await stable(page);
     const city = page.locator(`[data-region-count-id="${record.kabKotaId}"]`);
-    await city.hover();
+    await city.focus();
     await expect(page.getByRole('tooltip').filter({ hasText: record.kabKotaName! })).toBeVisible();
     await expect(page.locator('.instansi-popup')).toHaveCount(0);
-    await city.click();
+    await activateRegionBadge(page, record.kabKotaId!);
     await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'instansi');
     await expect(page.locator('#desktop-kabkota')).toHaveValue(record.kabKotaId!);
     await expect(page.locator('#desktop-jenis')).toHaveValue('');
@@ -118,19 +119,17 @@ test('enam provinsi, hitungan ID unik dan katalog LKD sesuai snapshot; pin Jawa 
   await expect(page.locator('.profile-fields')).toContainText(String(record.joinedYear));
 });
 
-test('pusat lingkaran kab/kota Jawa tidak terhalang kotak transparan wilayah tetangga', async ({ page }) => {
+test('kab/kota Jawa tetap dapat dipilih lewat dropdown ketika badge bertumpuk', async ({ page }) => {
   await open(page);
   for (const province of references!.provinces.filter((item) => ['31', '32', '33', '34', '35', '36'].includes(item.id))) {
     await page.locator('#desktop-province').selectOption(province.id);
     await stable(page);
-    const blocked = await page.locator('.region-count-marker').evaluateAll((markers) => markers.flatMap((marker) => {
-      const box = marker.getBoundingClientRect();
-      const top = document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2);
-      const hitId = top?.closest<HTMLElement>('[data-region-count-id]')?.dataset.regionCountId;
-      const id = (marker as HTMLElement).dataset.regionCountId;
-      return hitId === id ? [] : [{ id, hitId: hitId ?? top?.className }];
-    }));
-    expect(blocked, `Lingkaran ${province.name} harus bisa diarahkan pada pusatnya`).toEqual([]);
+    const city = references!.kabKota.find((item) => item.provinceId === province.id)!;
+    await page.locator('#desktop-kabkota').selectOption(city.id);
+    await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'instansi');
+    await expect(page.locator('#desktop-province')).toHaveValue(province.id);
+    await expect(page.locator('#desktop-kabkota')).toHaveValue(city.id);
+    await expect(page.locator('[data-region-count-id]')).toHaveCount(0);
   }
 });
 

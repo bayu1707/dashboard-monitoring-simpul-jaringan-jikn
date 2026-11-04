@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
 import type { SnapshotData } from '../../src/types/domain';
 import { useFixtureTiles } from './tileFixture';
+import { activateRegionBadge } from './regionBadge';
 const snapshot = JSON.parse(readFileSync('public/data/datasets/pilot/snapshot.json', 'utf8')) as SnapshotData;
 const sumatra = snapshot.instansi.filter((row) => Number(row.provinceId) < 30);
 const errors = new WeakMap<Page, string[]>();
@@ -50,14 +51,14 @@ for (const provinceId of ['11', '12', '16', '19']) {
   test(`Sumatra ${provinceId}: klik provinsi → kab/kota → hover → detail → kembali`, async ({ page }) => {
     const record = sumatra.find((row) => row.provinceId === provinceId && row.coordinates)!;
     await page.goto('/simpul-jaringan');
-    await expect(page.locator('.region-count-marker')).toHaveCount(16);
+    await expect(page.locator('.region-count-marker')).toHaveCount(38);
     await settled(page);
-    await page.locator(`[data-region-count-id="${provinceId}"]`).click();
+    await activateRegionBadge(page, provinceId);
     await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'provinsi');
     await expect(page.locator('#desktop-province')).toHaveValue(provinceId);
     await expect(page.locator('.instansi-popup')).toHaveCount(0);
     await settled(page);
-    await page.locator(`[data-region-count-id="${record.kabKotaId}"]`).click();
+    await activateRegionBadge(page, record.kabKotaId!);
     await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'instansi');
     await expect(page.locator('#desktop-kabkota')).toHaveValue(record.kabKotaId!);
     await expect(page.locator('#desktop-jenis')).toHaveValue('');
@@ -87,7 +88,7 @@ for (const provinceId of ['11', '12', '16', '19']) {
 }
 test('10 provinsi Sumatra dapat dipilih; tanpa pin tetap dapat dibuka dan reset menutup popup', async ({ page }) => {
   await page.goto('/simpul-jaringan');
-  await expect(page.locator('#desktop-province option')).toHaveCount(17);
+  await expect(page.locator('#desktop-province option')).toHaveCount(39);
   for (const id of ['11', '12', '13', '14', '15', '16', '17', '18', '19', '21']) {
     await page.locator('#desktop-province').selectOption(id);
     await expect(page.locator('.map-stage')).toHaveAttribute('data-level', 'provinsi');

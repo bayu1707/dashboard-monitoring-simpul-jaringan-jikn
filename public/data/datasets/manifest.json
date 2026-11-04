@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "release": "pilot-jawa-sumatra-pin-publik-20261019",
+  "release": "kolaborasi-indonesia-762c7ee7c0579876",
   "defaultDataset": "pilot",
   "sharingApproval": {
     "confirmedAt": "2026-10-19",
@@ -12,9 +12,9 @@
       "snapshot": "/data/datasets/pilot/snapshot.json",
       "references": "/data/datasets/pilot/references.json",
       "datasetKind": "pilot",
-      "records": 418,
-      "pins": 417,
-      "years": 418,
+      "records": 643,
+      "pins": 627,
+      "years": 643,
       "verifiedLandingPages": 1
     },
     "excel": {
@@ -29,8 +29,8 @@
   },
   "sha256": {
     "/data/datasets/excel/snapshot.json": "da653f461b63fd8bd9bc4b2e451f7549080a761eb5a3f69feacddd89f9293fa0",
-    "/data/datasets/pilot/references.json": "e87b1986ae0a12db215b158937a8e82554e6c7f4e017305daefbb97997d0a848",
-    "/data/datasets/pilot/snapshot.json": "fa775e926a00f0bdb5b0f4f50099ea7d74592c7ac3fa12f25bdf0d3e797d5133",
+    "/data/datasets/pilot/references.json": "e092c0e042791de158c67570678249a77958219b3824e266b8dcc245129178e0",
+    "/data/datasets/pilot/snapshot.json": "2846dab2b7cd93fef721cacd9dca37d26cf16e224fcc18652395b617b52bf350",
     "/data/geometry/LICENSE-cahyadsn.txt": "4f1ca94ef4795a12d24c82b92761e80e358d03f37c4024ea8a2b89a787de5b89",
     "/data/geometry/kab-kota/11.json": "bae29bc1914970bc6dc9b19b6bd28c8ae8b56ae6ef4d5fee200e5d55f2ffec3b",
     "/data/geometry/kab-kota/12.json": "4b55fad41820783a14cd5cb6098940cececd8d9108cbc14407bd0358469d4b94",

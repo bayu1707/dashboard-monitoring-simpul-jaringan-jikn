@@ -1,0 +1,50 @@
+name: Nuxt dan Laravel
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  migration:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.19.0'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mbstring, xml, ctype, json, tokenizer, pdo_sqlite, fileinfo
+          coverage: none
+      - run: composer install --no-interaction --prefer-dist
+        working-directory: backend
+      - run: php -r "if (!file_exists('.env')) copy('.env.example', '.env');"
+        working-directory: backend
+      - run: php artisan key:generate
+        working-directory: backend
+      - run: php artisan test
+        working-directory: backend
+      - run: npm ci
+        working-directory: frontend
+      - run: npm run typecheck
+        working-directory: frontend
+      - run: npm run lint
+        working-directory: frontend
+      - run: npm test
+        working-directory: frontend
+      - run: npm run build
+        working-directory: frontend
+      - run: npx playwright install --with-deps chromium
+        working-directory: frontend
+      - run: npm run test:e2e
+        working-directory: frontend
+        env:
+          CI: 'true'
